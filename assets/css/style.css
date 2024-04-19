@@ -1,0 +1,403 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+}
+
+.webview {
+  width: 100%;
+  margin: auto;
+}
+.webview .intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-color: #29AE81;
+  color: #FFFFFF;
+}
+.webview .intro .container h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+.webview .intro .container p {
+  font-size: 1rem;
+  text-align: center;
+}
+.webview .intro .container .m-auto-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 8px;
+}
+.webview .intro .container .m-auto-btn .btn-portfolio {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  width: 160px;
+  height: 35px;
+  border-radius: 6px;
+  border: 1px solid #FFFFFF;
+  background-color: transparent;
+  color: #FFFFFF;
+}
+
+.webview .sobre {
+  width: 100%;
+}
+.webview .sobre .container {
+  padding: 10px;
+}
+.webview .sobre .container .title {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+.webview .sobre .container .title h2 {
+  font-family: "Ruda", sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #29AE81;
+}
+.webview .sobre .container .row {
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.webview .sobre .container .row .c-photo {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+.webview .sobre .container .row .c-photo img {
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.webview .sobre .container .row .c-descricao {
+  width: 100%;
+}
+.webview .sobre .container .row .c-descricao p {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  text-align: justify;
+  margin-bottom: 20px;
+}
+.webview .sobre .container .row .c-descricao .habilidades {
+  width: 100%;
+}
+.webview .sobre .container .row .c-descricao .habilidades .h-item {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.webview .sobre .container .row .c-descricao .habilidades .h-item .h-title {
+  width: 100%;
+}
+.webview .sobre .container .row .c-descricao .habilidades .h-item .h-title h3 {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.webview .sobre .container .row .c-descricao .habilidades .h-item .h-c-porcentagem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  min-height: 25px;
+}
+.webview .sobre .container .row .c-descricao .habilidades .h-item .h-c-porcentagem .h-porcentagem-geral {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  height: 6px;
+  border-radius: 6px;
+}
+.webview .sobre .container .row .c-descricao .habilidades .h-item .h-c-porcentagem .h-porcentagem-geral .h-porcentagem-conhecimento {
+  height: 100%;
+}
+.webview .sobre .container .row .c-descricao .habilidades .h-item .h-c-porcentagem .h-porcentagem-geral span {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  margin-left: 10px;
+}
+
+.webview .servicos {
+  width: 100%;
+  background-color: #29AE81;
+  color: #FFFFFF;
+}
+.webview .servicos .container {
+  padding: 10px;
+}
+.webview .servicos .container .s-title {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.webview .servicos .container .s-title h2 {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.webview .servicos .container .s-carrousel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.webview .servicos .container .s-carrousel .s-carrousel-container {
+  display: flex;
+  flex-direction: row;
+  min-width: 100%;
+}
+.webview .servicos .container .s-carrousel .s-carrousel-container .s-carrousel-item {
+  min-height: 260px;
+  background-color: #FFFFFF;
+  color: #29AE81;
+}
+.webview .servicos .container .s-carrousel .s-carrousel-container .s-carrousel-item .title {
+  width: 100%;
+  padding: 10px;
+}
+.webview .servicos .container .s-carrousel .s-carrousel-container .s-carrousel-item .title p {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.webview .servicos .container .s-carrousel .s-carrousel-container .s-carrousel-item .body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 180px;
+}
+.webview .servicos .container .s-carrousel .s-carrousel-container .s-carrousel-item .body .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.webview .servicos .container .s-carrousel .s-carrousel-container .s-carrousel-item .body .icon span i {
+  font-size: 38px;
+}
+.webview .servicos .container .s-carrousel .s-carrousel-container .s-carrousel-item .body .texto {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 10px;
+}
+.webview .servicos .container .s-carrousel .s-carrousel-container .s-carrousel-item .body .texto p {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 1.4rem;
+}
+
+.webview .portfolios {
+  width: 100%;
+  min-height: 100vh;
+}
+.webview .portfolios .container {
+  padding: 10px;
+}
+.webview .portfolios .container .p-title {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.webview .portfolios .container .p-title h2 {
+  font-family: "Ruda", sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #29AE81;
+}
+.webview .portfolios .container .p-projetos {
+  width: 100%;
+}
+.webview .portfolios .container .p-projetos .projeto {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: repeat(3, auto);
+  row-gap: 10px;
+}
+.webview .portfolios .container .p-projetos .projeto .photos {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+.webview .portfolios .container .p-projetos .projeto .photos .img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.webview .portfolios .container .p-projetos .projeto .photos .img:hover .descricao {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  background-color: #29AE81;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+}
+.webview .portfolios .container .p-projetos .projeto .photos .img:hover .descricao p {
+  display: block;
+  color: #FFFFFF;
+}
+.webview .portfolios .container .p-projetos .projeto .photos .img img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.webview .portfolios .container .p-projetos .projeto .photos .descricao {
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 50px;
+}
+.webview .portfolios .container .p-projetos .projeto .photos .descricao p {
+  display: none;
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+.webview .contato {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.webview .contato .container {
+  padding: 10px;
+}
+.webview .contato .container .title {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+.webview .contato .container .title h2 {
+  font-family: "Ruda", sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color-scheme: #29AE81;
+}
+.webview .contato .container .formulario {
+  width: 100%;
+}
+.webview .contato .container .formulario form {
+  width: 100%;
+}
+.webview .contato .container .formulario form .form-group {
+  width: 100%;
+}
+.webview .contato .container .formulario form .form-group .controls {
+  width: 100%;
+  min-height: 70px;
+}
+.webview .contato .container .formulario form .form-group .controls label {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  font-weight: bold;
+  color: #29AE81;
+}
+.webview .contato .container .formulario form .form-group .controls input {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  width: 100%;
+  height: 30px;
+  padding: 10px;
+  border: 1px solid #29AE81;
+}
+.webview .contato .container .formulario form .form-group .controls input:active {
+  border: 1px solid #29AE81;
+  border-radius: 2px;
+}
+.webview .contato .container .formulario form .form-group .controls input:focus {
+  border: 1px solid #29AE81;
+  border-radius: 2px;
+}
+.webview .contato .container .formulario form .form-group .controls textarea {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  width: 100%;
+  height: 180px;
+  padding: 10px;
+  border: 1px solid #29AE81;
+  outline: none;
+}
+.webview .contato .container .formulario form .form-group .controls textarea:active {
+  border: 1px solid #29AE81;
+  border-radius: 2px;
+}
+.webview .contato .container .formulario form .form-group .controls textarea:focus {
+  border: 1px solid #29AE81;
+  border-radius: 2px;
+}
+.webview .contato .container .formulario form .form-group .btn-form-send {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  margin-top: 20px;
+  width: 140px;
+  height: 40px;
+  border: none;
+  background-color: #29AE81;
+  color: #FFFFFF;
+  border-radius: 2px;
+}
+.webview .contato .container .formulario form .form-group .btn-form-send:hover {
+  background-color: #29AE81;
+}
+.webview .contato .container .formulario form .form-group .btn-form-send:active {
+  background-color: #29AE81;
+}
+
+.webview footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: #29AE81;
+}
+.webview footer span {
+  font-family: "Ruda", sans-serif;
+  font-weight: 400;
+  color: #FFFFFF;
+}
+
+/*# sourceMappingURL=style.css.map */
