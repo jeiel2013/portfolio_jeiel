@@ -13,17 +13,17 @@ $media-desktop: 1024px;
 
 // Mixins de fontes
 @mixin font-title {
-    font-family: 'Ruda', sans-serif;
+    font-family: 'Fira Code', sans-serif;
     font-weight: 700;
 }
 
 @mixin font-subtitle {
     font-family
-    : 'Ruda', sans-serif;
+    : 'Fira Code', sans-serif;
     font-weight: 500;
 }
 
 @mixin font-paragraf {
-    font-family: 'Ruda', sans-serif;
+    font-family: 'Fira Code', sans-serif;
     font-weight: 400;
 }
