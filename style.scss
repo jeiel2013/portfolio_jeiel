@@ -26,7 +26,6 @@ body {
         align-items: center;
         width: 100%;
         height: 100vh;
-        // background-color: config.$color-green;
         color: config.$color-white;
 
         .container {
@@ -69,7 +68,6 @@ body {
 
     .sobre {
         width: 100%;
-        // position: relative;
 
         .container {
             padding: 10px;
@@ -77,7 +75,7 @@ body {
             .title {
                 width: 16%;
                 text-align: center;
-                margin-top: 20px;
+                margin-top: 10px;
                 z-index: 1;
                 display: inline-block;
                 position: relative;
@@ -104,7 +102,7 @@ body {
                     position: absolute;
                     top: 0;
                     left: 170px;
-                    margin-top: 25px;
+                    margin-top: 50px;
                 }
             }
 
@@ -239,6 +237,7 @@ body {
                 justify-content: center;
                 width: 100%;
                 margin-bottom: 30px;
+                margin-top: -20px;
 
                 .s-carrousel-container {
                     display: flex;
@@ -271,7 +270,6 @@ body {
                             width: 100%;
                             min-height: 180px;
                             border-top: 1px solid #ABB2BF;
-                            // border-radius: 10px;
 
                             .icon {
                                 display: flex;
@@ -379,7 +377,7 @@ body {
                                     display: flex;
                                     width: 100%;
                                     height: 50px;
-                                    background-color: #29AE81;
+                                    background-color: #404752;
                                     bottom: 0;
                                     left: 0;
                                     z-index: 9999;
@@ -387,6 +385,7 @@ body {
                                     p {
                                         display: block;
                                         color: config.$color-white;
+                                        background-color: #404752;
                                     }
                                 }
                             }
@@ -432,17 +431,39 @@ body {
             padding: 10px;
 
             .title {
-                width: 100%;
+                width: 16%;
                 text-align: center;
                 margin-top: 20px;
                 margin-bottom: 30px;
+                z-index: 1;
+                display: inline-block;
+                position: relative;
 
                 h2 {
                     @include config.font-subtitle;
                     font-size: 1.6rem;
                     font-weight: bold;
-                    color-scheme: config.$color-green;
+                    color: config.$color-white;
                 }
+
+                span {
+                    @include config.font-subtitle;
+                    font-size: 1.6rem;
+                    font-weight: bold;
+                    color: #C778DD;
+                }
+
+                .rectangle {
+                    width: 511px;
+                    height: 1px;
+                    background-color: #C778DD;
+                    border-radius: 10px;
+                    position: absolute;
+                    top: 0;
+                    left: 200px;
+                    margin-top: 25px;
+                }
+
             }
 
             .formulario {
@@ -461,7 +482,7 @@ body {
                             label {
                                 @include config.font-paragraf;
                                 font-weight: bold;
-                                color: config.$color-green;
+                                color: config.$color-white;
                             }
 
                             input {
@@ -469,17 +490,8 @@ body {
                                 width: 100%;
                                 height: 30px;
                                 padding: 10px;
-                                border: 1px solid config.$color-green;
-
-                                &:active {
-                                    border: 1px solid config.$color-green;
-                                    border-radius: 2px;
-                                }
-
-                                &:focus {
-                                    border: 1px solid config.$color-green;
-                                    border-radius: 2px;
-                                }
+                                border: 1px solid config.$color-white;
+                                border-radius: 1px;
                             }
 
                             textarea {
@@ -487,16 +499,16 @@ body {
                                 width: 100%;
                                 height: 180px;
                                 padding: 10px;
-                                border: 1px solid config.$color-green;
+                                border: 1px solid config.$color-white;
                                 outline: none;
 
                                 &:active {
-                                    border: 1px solid config.$color-green;
+                                    border: 1px solid config.$color-white;
                                     border-radius: 2px;
                                 }
 
                                 &:focus {
-                                    border: 1px solid config.$color-green;
+                                    border: 1px solid config.$color-white;
                                     border-radius: 2px;
                                 }
                             }
@@ -508,17 +520,17 @@ body {
                             width: 140px;
                             height: 40px;
                             border: none;
-                            background-color: config.$color-green;
+                            background-color: #404752;
                             color: config.$color-white;
                             border-radius: 2px;
                             cursor: pointer;
 
                             &:hover {
-                                background-color: config.$color-green;
+                                background-color: #C778DD;
                             }
 
                             &:active {
-                                background-color: config.$color-green;
+                                background-color: #C778DD;
                             }
                         }
                     }
@@ -537,7 +549,16 @@ body {
         align-items: center;
         width: 100%;
         height: 50px;
-        background-color: config.$color-green;
+
+        .rectangle {
+            width: 99%;
+            height: 2px;
+            background-color: #404752;
+            border-radius: 10px;
+            position: absolute;
+            margin-top: -50px;
+            left: 10px;
+        }
 
         span {
             @include config.font-paragraf;
@@ -649,14 +670,14 @@ body {
                                     display: flex;
                                     width: 100%;
                                     height: 50px;
-                                    background-color: config.$color-green;
+                                    background-color: #404752;
                                     bottom: 0;
                                     left: 0;
                                     z-index: 9999;
 
                                     p {
                                         display: block;
-                                        color: config.$color-white;
+                                        color: #404752;
                                     }
                                 }
                             }
@@ -815,7 +836,7 @@ body {
             .s-carrousel {
                 width: 96%;
                 margin: auto;
-                margin-bottom: 40px;
+                margin-bottom: 50px;
             }
         }
     }
@@ -855,7 +876,7 @@ body {
                                     display: flex;
                                     width: 100%;
                                     height: 50px;
-                                    background-color: config.$color-green;
+                                    background-color: #404752;
                                     bottom: 0;
                                     left: 0;
                                     z-index: 9999;
@@ -863,6 +884,7 @@ body {
                                     p {
                                         display: block;
                                         color: config.$color-white;
+                                        background-color: #404752;
                                     }
                                 }
                             }
@@ -904,5 +926,4 @@ body {
             }
         }
     }
-
 }

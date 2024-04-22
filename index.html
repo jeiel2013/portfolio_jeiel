@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +10,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/owl-carrousel/owl.carousel.min.css">
     <link rel="stylesheet" href="./assets/css/owl-carrousel/owl.theme.green.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
+
 <body>
-    
+
     <div class="webview">
         <section class="intro">
             <div class="container">
-                <h1>Jeiel Jedson Leão Alves</h1>
-                <p>Desenvolvedor Aspirante</p>
+                <h1 id="element">Jeiel Jedson Leão Alves</h1>
+                <p id="elementtwo">Desenvolvedor Aspirante</p>
                 <div class="m-auto-btn">
                     <!-- <button class="btn-portfolio">Meu Portfólio</button>s -->
                 </div>
@@ -24,8 +27,8 @@
         </section>
 
         <section class="sobre">
-            <div class="container">
-                <div class="title">
+            <div class="container" data-aos="fade-down" data-aos-delay="700" data-aos-duration="1500">
+                <div class="title">>
                     <h2> <span>#</span>sobre</h2>
                     <div class="rectangle"></div>
                 </div>
@@ -35,57 +38,18 @@
                     </div>
                     <div class="c-descricao">
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dolores eos ipsam consectetur, suscipit perspiciatis cum ullam, officiis exercitationem repellendus veritatis modi hic dignissimos delectus vero, quo similique optio reprehenderit.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dolores eos ipsam
+                            consectetur,
+                            suscipit perspiciatis cum ullam, officiis exercitationem repellendus veritatis modi hic
+                            dignissimos delectus vero, quo similique optio reprehenderit.
                         </p>
-                        <div class="habilidades">
-                            <div class="h-item">
-                                <div class="h-title">
-                                    <h3>HTML e CSS</h3>
-                                </div>
-                                <div class="h-c-porcentagem">
-                                    <div class="h-porcentagem-geral">
-                                        <div class="h-porcentagem-conhecimento c-80"></div>
-                                        <span>80%</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="h-item">
-                                <div class="h-title">
-                                    <h3>JavaScript</h3>
-                                </div>
-                                <div class="h-c-porcentagem">
-                                    <div class="h-porcentagem-geral">
-                                        <div class="h-porcentagem-conhecimento c-40">
-
-                                        </div>
-                                        <span>40%</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="h-item">
-                                <div class="h-title">
-                                    <h3>C#</h3>
-                                </div>
-                                <div class="h-c-porcentagem">
-                                    <div class="h-porcentagem-geral">
-                                        <div class="h-porcentagem-conhecimento c-50">
-
-                                        </div>
-                                        <span>50%</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <section class="servicos">
-            <div class="container">
+            <div class="container" data-aos="fade-down" data-aos-delay="700" data-aos-duration="1500">
                 <div class="s-title">
                     <h2><span>#</span>serviços</h2>
                     <div class="rectangle"></div>
@@ -169,7 +133,7 @@
         </section>
 
         <section class="portfolios">
-            <div class="container">
+            <div class="container" data-aos="fade-down" data-aos-delay="700" data-aos-duration="1500">
                 <div class="p-title">
                     <h2><span>#</span>projetos</h2>
                     <div class="rectangle"></div>
@@ -226,9 +190,10 @@
         </section>
 
         <section class="contato">
-            <div class="container">
+            <div class="container" data-aos="fade-down" data-aos-delay="700" data-aos-duration="1500">
                 <div class="title">
-                    <h2>Contato</h2>
+                    <h2><span>#</span>contato</h2>
+                    <div class="rectangle"></div>
                 </div>
 
                 <div class="formulario">
@@ -270,7 +235,8 @@
             </div>
         </section>
 
-        <footer>
+        <footer >
+            <div class="rectangle"></div>
             <span>&copy; Todos os direito reservados.</span>
         </footer>
 
@@ -286,4 +252,18 @@
 <script src="./assets/js/owl-carrousel/owl.carousel.js"></script>
 <script src="./assets/js/owl-carrousel/owl.carousel.min.js"></script>
 <script src="./assets/js/owl-carrousel/owl.start.function.js"></script>
+<!-- AOS -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>AOS.init();</script>
+<!-- Text -->
+<script src="./assets/js/text/text.js"></script>
+<script>var typed = new Typed('#element', {
+        strings: ['', 'Jeiel Jedson Leão Alves'],
+        typeSpeed: 100,
+    });</script>
+<script>var typed = new Typed('#elementtwo', {
+        strings: ['', 'Desenvolvedor Aspirante'],
+        typeSpeed: 100,
+    });</script>
+
 </html>

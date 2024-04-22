@@ -131,7 +131,7 @@ body {
 .webview .sobre .container .title {
   width: 16%;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
   z-index: 1;
   display: inline-block;
   position: relative;
@@ -158,7 +158,7 @@ body {
   position: absolute;
   top: 0;
   left: 170px;
-  margin-top: 25px;
+  margin-top: 50px;
 }
 .webview .sobre .container .row {
   width: 100%;
@@ -274,6 +274,7 @@ body {
   justify-content: center;
   width: 100%;
   margin-bottom: 30px;
+  margin-top: -20px;
 }
 .webview .servicos .container .s-carrousel .s-carrousel-container {
   display: flex;
@@ -396,7 +397,7 @@ body {
   display: flex;
   width: 100%;
   height: 50px;
-  background-color: #29AE81;
+  background-color: #404752;
   bottom: 0;
   left: 0;
   z-index: 9999;
@@ -404,6 +405,7 @@ body {
 .webview .portfolios .container .p-projetos .projeto .photos .img:hover .descricao p {
   display: block;
   color: #FFFFFF;
+  background-color: #404752;
 }
 .webview .portfolios .container .p-projetos .projeto .photos .img img {
   width: 100%;
@@ -436,17 +438,37 @@ body {
   padding: 10px;
 }
 .webview .contato .container .title {
-  width: 100%;
+  width: 16%;
   text-align: center;
   margin-top: 20px;
   margin-bottom: 30px;
+  z-index: 1;
+  display: inline-block;
+  position: relative;
 }
 .webview .contato .container .title h2 {
   font-family: "Fira Code", sans-serif;
   font-weight: 500;
   font-size: 1.6rem;
   font-weight: bold;
-  color-scheme: #29AE81;
+  color: #FFFFFF;
+}
+.webview .contato .container .title span {
+  font-family: "Fira Code", sans-serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #C778DD;
+}
+.webview .contato .container .title .rectangle {
+  width: 511px;
+  height: 1px;
+  background-color: #C778DD;
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 200px;
+  margin-top: 25px;
 }
 .webview .contato .container .formulario {
   width: 100%;
@@ -465,7 +487,7 @@ body {
   font-family: "Fira Code", sans-serif;
   font-weight: 400;
   font-weight: bold;
-  color: #29AE81;
+  color: #FFFFFF;
 }
 .webview .contato .container .formulario form .form-group .controls input {
   font-family: "Fira Code", sans-serif;
@@ -473,15 +495,8 @@ body {
   width: 100%;
   height: 30px;
   padding: 10px;
-  border: 1px solid #29AE81;
-}
-.webview .contato .container .formulario form .form-group .controls input:active {
-  border: 1px solid #29AE81;
-  border-radius: 2px;
-}
-.webview .contato .container .formulario form .form-group .controls input:focus {
-  border: 1px solid #29AE81;
-  border-radius: 2px;
+  border: 1px solid #FFFFFF;
+  border-radius: 1px;
 }
 .webview .contato .container .formulario form .form-group .controls textarea {
   font-family: "Fira Code", sans-serif;
@@ -489,15 +504,15 @@ body {
   width: 100%;
   height: 180px;
   padding: 10px;
-  border: 1px solid #29AE81;
+  border: 1px solid #FFFFFF;
   outline: none;
 }
 .webview .contato .container .formulario form .form-group .controls textarea:active {
-  border: 1px solid #29AE81;
+  border: 1px solid #FFFFFF;
   border-radius: 2px;
 }
 .webview .contato .container .formulario form .form-group .controls textarea:focus {
-  border: 1px solid #29AE81;
+  border: 1px solid #FFFFFF;
   border-radius: 2px;
 }
 .webview .contato .container .formulario form .form-group .btn-form-send {
@@ -507,16 +522,16 @@ body {
   width: 140px;
   height: 40px;
   border: none;
-  background-color: #29AE81;
+  background-color: #404752;
   color: #FFFFFF;
   border-radius: 2px;
   cursor: pointer;
 }
 .webview .contato .container .formulario form .form-group .btn-form-send:hover {
-  background-color: #29AE81;
+  background-color: #C778DD;
 }
 .webview .contato .container .formulario form .form-group .btn-form-send:active {
-  background-color: #29AE81;
+  background-color: #C778DD;
 }
 
 .webview footer {
@@ -526,7 +541,15 @@ body {
   align-items: center;
   width: 100%;
   height: 50px;
-  background-color: #29AE81;
+}
+.webview footer .rectangle {
+  width: 99%;
+  height: 2px;
+  background-color: #404752;
+  border-radius: 10px;
+  position: absolute;
+  margin-top: -50px;
+  left: 10px;
 }
 .webview footer span {
   font-family: "Fira Code", sans-serif;
@@ -585,14 +608,14 @@ body {
     display: flex;
     width: 100%;
     height: 50px;
-    background-color: #29AE81;
+    background-color: #404752;
     bottom: 0;
     left: 0;
     z-index: 9999;
   }
   .webview .portfolios .container .p-projetos .projeto .photos img:hover .descricao p {
     display: block;
-    color: #FFFFFF;
+    color: #404752;
   }
   .webview .contato .container .title {
     margin-top: 30px;
@@ -685,7 +708,7 @@ body {
   .webview .servicos .container .s-carrousel {
     width: 96%;
     margin: auto;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
   .webview .portfolios {
     min-height: auto;
@@ -718,7 +741,7 @@ body {
     display: flex;
     width: 100%;
     height: 50px;
-    background-color: #29AE81;
+    background-color: #404752;
     bottom: 0;
     left: 0;
     z-index: 9999;
@@ -726,6 +749,7 @@ body {
   .webview .portfolios .container .p-projetos .projeto .photos .img:hover .descricao p {
     display: block;
     color: #FFFFFF;
+    background-color: #404752;
   }
   .webview .contato {
     margin-bottom: 50px;
