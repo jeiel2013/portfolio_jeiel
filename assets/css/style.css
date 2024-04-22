@@ -81,6 +81,10 @@ body {
   font-size: 18px;
 }
 
+.header {
+  display: none;
+}
+
 .webview {
   width: 100%;
   margin: auto;
@@ -548,16 +552,33 @@ body {
   background-color: #404752;
   border-radius: 10px;
   position: absolute;
-  margin-top: -50px;
+  margin-top: -110px;
   left: 10px;
 }
 .webview footer span {
   font-family: "Fira Code", sans-serif;
   font-weight: 400;
-  color: #FFFFFF;
+  color: #ABB2BF;
+  position: absolute;
+  margin-top: 40px;
+}
+.webview footer i {
+  color: #C778DD;
+  font-size: 35px;
+  align-items: center;
+  justify-content: center;
+}
+.webview footer .footer-icons {
+  display: flex;
+  gap: 44px;
+  margin-bottom: 50px;
+  margin-left: 0%;
 }
 
 @media only screen and (min-width: 425px) {
+  .header {
+    display: none;
+  }
   .webview .intro .container h1 {
     font-size: 2.4rem;
   }
@@ -630,7 +651,34 @@ body {
   }
 }
 @media only screen and (min-width: 1024px) {
+  .header {
+    display: block;
+  }
+  .header .header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 8vh;
+    margin-left: 650px;
+    margin-top: 12px;
+  }
+  .header .header-content a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  .header .header-content span {
+    color: #C778DD;
+  }
+  .header .header-content .nav-list {
+    list-style: none;
+    display: flex;
+  }
+  .header .header-content .nav-list li {
+    margin-left: 32px;
+  }
   .webview .intro .container h1 {
+    margin-top: -90px;
     font-size: 4.5rem;
   }
   .webview .intro .container p {
