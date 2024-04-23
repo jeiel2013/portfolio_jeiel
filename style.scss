@@ -99,14 +99,14 @@ body {
                 }
 
                 .rectangle {
-                    width: 511px;
+                    width: 170px;
                     height: 1px;
                     background-color: #C778DD;
                     border-radius: 10px;
                     position: absolute;
                     top: 0;
-                    left: 170px;
-                    margin-top: 50px;
+                    left: 120px;
+                    margin-top: 22px;
                 }
             }
 
@@ -224,14 +224,14 @@ body {
                 }
 
                 .rectangle {
-                    width: 511px;
+                    width: 127px;
                     height: 1px;
                     background-color: #C778DD;
                     border-radius: 10px;
                     position: absolute;
                     top: 0;
-                    left: 220px;
-                    margin-top: 25px;
+                    left: 165px;
+                    margin-top: 22px;
                 }
             }
 
@@ -343,14 +343,14 @@ body {
                 }
 
                 .rectangle {
-                    width: 511px;
+                    width: 127px;
                     height: 1px;
                     background-color: #C778DD;
                     border-radius: 10px;
                     position: absolute;
                     top: 0;
-                    left: 220px;
-                    margin-top: 25px;
+                    left: 165px;
+                    margin-top: 22px;
                 }
             }
 
@@ -458,14 +458,14 @@ body {
                 }
 
                 .rectangle {
-                    width: 511px;
+                    width: 137px;
                     height: 1px;
                     background-color: #C778DD;
                     border-radius: 10px;
                     position: absolute;
                     top: 0;
-                    left: 200px;
-                    margin-top: 25px;
+                    left: 145px;
+                    margin-top: 22px;
                 }
 
             }
@@ -555,20 +555,23 @@ body {
         height: 50px;
 
         .rectangle {
-            width: 99%;
+            width: 92%;
             height: 2px;
             background-color: #404752;
             border-radius: 10px;
             position: absolute;
-            margin-top: -110px;
+            margin-top: -100px;
             left: 10px;
         }
 
         span {
             @include config.font-paragraf;
+            display: flex;
             color: #ABB2BF;
             position: absolute;
-            margin-top: 40px;
+            margin-top: 50px;
+            display: inline-block;
+            left: 60px;
         }
 
         i {
@@ -581,6 +584,7 @@ body {
         .footer-icons {
             display: flex;
             gap: 44px;
+            margin-top: 20px;
             margin-bottom: 50px;
             margin-left: 0%;
         }
@@ -813,10 +817,21 @@ body {
 
             .title {
                 margin-top: 40px;
-                margin-bottom: 40px;
+                margin-bottom: 5px;
 
                 h2 {
                     font-size: 2rem;
+                }
+
+                .rectangle {
+                    width: 511px;
+                    height: 1px;
+                    background-color: #C778DD;
+                    border-radius: 10px;
+                    position: absolute;
+                    top: 0;
+                    left: 170px;
+                    margin-top: 26px;
                 }
             }
 
@@ -888,6 +903,17 @@ body {
                 h2 {
                     font-size: 2rem;
                 }
+
+                .rectangle {
+                    width: 511px;
+                    height: 1px;
+                    background-color: #C778DD;
+                    border-radius: 10px;
+                    position: absolute;
+                    top: 0;
+                    left: 210px;
+                    margin-top: 26px;
+                }
             }
 
             .s-carrousel {
@@ -908,6 +934,17 @@ body {
             .p-title {
                 h2 {
                     font-size: 2rem;
+                }
+
+                .rectangle {
+                    width: 511px;
+                    height: 1px;
+                    background-color: #C778DD;
+                    border-radius: 10px;
+                    position: absolute;
+                    top: 0;
+                    left: 210px;
+                    margin-top: 26px;
                 }
             }
 
@@ -966,6 +1003,17 @@ body {
                 h2 {
                     font-size: 2rem;
                 }
+
+                .rectangle {
+                    width: 511px;
+                    height: 1px;
+                    background-color: #C778DD;
+                    border-radius: 10px;
+                    position: absolute;
+                    top: 0;
+                    left: 190px;
+                    margin-top: 26px;
+                }
             }
 
             .formulario {
@@ -982,5 +1030,51 @@ body {
                 }
             }
         }
+    }
+
+    .webview {
+
+        footer {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 50px;
+    
+            .rectangle {
+                width: 98%;
+                height: 2px;
+                background-color: #404752;
+                border-radius: 10px;
+                position: absolute;
+                margin-top: -100px;
+                left: 10px;
+            }
+    
+            span {
+                @include config.font-paragraf;
+                display: flex;
+                color: #ABB2BF;
+                margin-top: 50px;
+                left: 37%;
+            }
+    
+            i {
+                color: #C778DD;
+                font-size: 35px;
+                align-items: center;
+                justify-content: center;
+            }
+    
+            .footer-icons {
+                display: flex;
+                gap: 44px;
+                margin-top: 20px;
+                margin-bottom: 50px;
+                margin-left: 0%;
+            }
+        }
+
     }
 }
