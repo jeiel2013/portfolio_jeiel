@@ -499,8 +499,15 @@ body {
   width: 100%;
   height: 30px;
   padding: 10px;
+  color: #C778DD;
   border: 1px solid #FFFFFF;
   border-radius: 1px;
+}
+.webview .contato .container .formulario form .form-group .controls input:active {
+  background-color: #404752;
+}
+.webview .contato .container .formulario form .form-group .controls input:focus {
+  background-color: #404752;
 }
 .webview .contato .container .formulario form .form-group .controls textarea {
   font-family: "Fira Code", sans-serif;
@@ -536,6 +543,9 @@ body {
 }
 .webview .contato .container .formulario form .form-group .btn-form-send:active {
   background-color: #C778DD;
+}
+.webview .contato .container .formulario form p {
+  color: #C778DD;
 }
 
 .webview footer {

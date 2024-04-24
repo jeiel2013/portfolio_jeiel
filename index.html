@@ -60,7 +60,7 @@
         </section>
 
         <section class="servicos" id="servicos">
-            <div class="container" >
+            <div class="container">
                 <div class="s-title" data-aos="fade-down" data-aos-delay="700" data-aos-duration="1500">
                     <h2><span>#</span>serviços</h2>
                     <div class="rectangle"></div>
@@ -208,7 +208,7 @@
                 </div>
 
                 <div class="formulario">
-                    <form>
+                    <form id="formulario" action="https://formspree.io/f/xleqavnk" method="POST">
                         <div class="form-group" data-aos="fade-down" data-aos-delay="700" data-aos-duration="1500">
                             <div class="controls">
                                 <label for="nome">Nome:</label>
@@ -238,23 +238,30 @@
                             </div>
                         </div>
 
-                        <div class="form-group m-auto" data-aos="fade-down" data-aos-delay="1300" data-aos-duration="1500">
-                            <button class="btn-form-send">Enviar</button>
+                        <div class="form-group m-auto" data-aos="fade-down" data-aos-delay="1300"
+                            data-aos-duration="1500">
+                            <button class="btn-form-send" id="my-form-button">Enviar</button>
                         </div>
+
+                        <p id="my-form-status"></p>
                     </form>
                 </div>
             </div>
         </section>
 
-        <footer >
+        <footer>
             <div class="rectangle"></div>
             <span>&copy; Todos os direito reservados.</span>
 
             <div class="footer-icons">
-                <a href="https://www.instagram.com/jeiel2013/" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                <a href="https://www.linkedin.com/in/jeiel2013/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                <a href="https://twitter.com/jeiel2013" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                <a href="https://github.com/jeiel2013" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/jeiel2013/" target="_blank"><i class="fa fa-instagram"
+                        aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/jeiel2013/" target="_blank"><i class="fa fa-linkedin"
+                        aria-hidden="true"></i></a>
+                <a href="https://twitter.com/jeiel2013" target="_blank"><i class="fa fa-twitter"
+                        aria-hidden="true"></i></a>
+                <a href="https://github.com/jeiel2013" target="_blank"><i class="fa fa-github"
+                        aria-hidden="true"></i></a>
             </div>
         </footer>
 
@@ -283,5 +290,7 @@
         strings: ['', 'Desenvolvedor Aspirante'],
         typeSpeed: 100,
     });</script>
+<!-- Form  -->
+<script src="./assets/js/form/send.js"></script>
 
 </html>
