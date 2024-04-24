@@ -512,17 +512,20 @@ body {
                                 width: 100%;
                                 height: 180px;
                                 padding: 10px;
+                                color: #C778DD;
                                 border: 1px solid config.$color-white;
                                 outline: none;
 
                                 &:active {
                                     border: 1px solid config.$color-white;
                                     border-radius: 2px;
+                                    background-color: #404752;
                                 }
 
                                 &:focus {
                                     border: 1px solid config.$color-white;
                                     border-radius: 2px;
+                                    background-color: #404752;
                                 }
                             }
                         }
