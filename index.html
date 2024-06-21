@@ -32,7 +32,6 @@
                 <h1 id="element">Jeiel Jedson Leão Alves</h1>
                 <p id="elementtwo">Desenvolvedor Aspirante</p>
                 <div class="m-auto-btn">
-                    <!-- <button class="btn-portfolio">Meu Portfólio</button>s -->
                 </div>
             </div>
         </section>
@@ -53,6 +52,7 @@
                             Informação em 2023, além de estudar alguns conteúdos a parte. Gosto de transformar
                             soluções em código, de estar junto com outras pessoas, de jogar, de ficar com amigos.
                         </p>
+                        <a href="./assets/PDF/Curriculo Jeiel.pdf" target="_blank"> <i class="fa fa-cloud-download"></i>Download CV</a>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
         <section class="servicos" id="servicos">
             <div class="container">
                 <div class="s-title" data-aos="fade-down" data-aos-delay="700" data-aos-duration="1500">
-                    <h2><span>#</span>serviços</h2>
+                    <h2><span>#</span>skills</h2>
                     <div class="rectangle"></div>
                 </div>
                 <div class="s-carrousel" data-aos="fade-down" data-aos-delay="900" data-aos-duration="1500">
@@ -154,7 +154,8 @@
                             <div class="img">
                                 <img src="./assets/img/projetos/projeto-1.jpg" alt="Projeto 01">
                                 <div class="descricao">
-                                    <p>Projeto 01</p>
+                                    <p>Projeto de 3 camadas em C#, contendo WinForms e MySQL.</p>
+                                    <button onclick="irParaLink(`https://github.com/jeiel2013/3-Layer-Design`)"><i class="fa fa-github"></i> Github</button>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +164,8 @@
                             <div class="img">
                                 <img src="./assets/img/projetos/projeto-2.jpg" alt="Projeto 02">
                                 <div class="descricao">
-                                    <p>Projeto 02</p>
+                                    <p>Projeto de um PDV em C#, utilizando o Terminal do Windows.</p>
+                                    <button onclick="irParaLink(`https://github.com/jeiel2013/POS_Bakery_Precious_Bread`)"><i class="fa fa-github"></i> Github</button>
                                 </div>
                             </div>
                         </div>
@@ -172,7 +174,8 @@
                             <div class="img">
                                 <img src="./assets/img/projetos/projeto-3.jpg" alt="Projeto 03">
                                 <div class="descricao">
-                                    <p>Projeto 03</p>
+                                    <p>Projeto de Login e Cadastro de veículos usando Java.</p>
+                                    <button onclick="irParaLink(`https://github.com/jeiel2013/VehicleLoginSystem`)"><i class="fa fa-github"></i> Github</button>
                                 </div>
                             </div>
                         </div>
@@ -181,19 +184,21 @@
                             <div class="img">
                                 <img src="./assets/img/projetos/projeto-4.jpg" alt="Projeto 04">
                                 <div class="descricao">
-                                    <p>Projeto 04</p>
+                                    <p>Projeto de Ping-Pong feito em HTML, CSS e JavaScript.</p>
+                                    <button onclick="irParaLink(`https://github.com/jeiel2013/3-Layer-Design`)"><i class="fa fa-github"></i> Github</button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="photos">
+                        <!-- <div class="photos">
                             <div class="img">
                                 <img src="./assets/img/projetos/projeto-6.jpg" alt="Projeto 05">
                                 <div class="descricao">
                                     <p>Projeto 05</p>
+                                    <button onclick="irParaLink(`https://github.com/jeiel2013/3-Layer-Design`)"><i class="fa fa-github"></i> Github</button>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -291,5 +296,10 @@
     });</script>
 <!-- Form  -->
 <script src="./assets/js/form/send.js"></script>
+<script>
+    function irParaLink(url) {
+        window.open(url, '_blank');
+    }
+</script>
 
 </html>

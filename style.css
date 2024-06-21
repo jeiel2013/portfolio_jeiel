@@ -687,7 +687,8 @@ body {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     row-gap: 10px;
-    column-gap: 10px;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
   }
   .webview .portfolios .container .p-projetos .projeto .photos {
     height: 100%;
@@ -906,7 +907,8 @@ body {
     grid-template-rows: 1fr;
     grid-auto-rows: 1fr;
     row-gap: 10px;
-    column-gap: 10px;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
   }
   .webview .portfolios .container .p-projetos .projeto .photos {
     height: 100%;
@@ -1027,6 +1029,4 @@ body {
     margin-bottom: 50px;
     margin-left: 0%;
   }
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

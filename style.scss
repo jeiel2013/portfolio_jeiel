@@ -14,6 +14,7 @@ body {
     width: 100%;
     height: 100%;
     font-size: 18px;
+    scroll-behavior: smooth;
 }
 
 .header {
@@ -138,6 +139,30 @@ body {
                         color: #ABB2BF;
                     }
 
+                    a {
+                        display: inline-block;
+                        padding: 10px 20px;
+                        text-decoration: none;
+                        color: white;
+                        border: 2px solid white;
+                        border-radius: 8px;
+                        font-family: 'Fira Code', sans-serif;
+                        text-align: center;
+                        transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+
+                        &:hover {
+                            background-color: #C778DD;
+                            color: white;
+                            border-color: #C778DD;
+                        }
+
+                        i {
+                            background: transparent;
+                            color: white;
+                            padding-right: 10px;
+                        }
+                    }
+
                     .habilidades {
                         width: 100%;
 
@@ -204,7 +229,7 @@ body {
                 width: 16%;
                 text-align: center;
                 margin-top: 20px;
-                margin-bottom: 30px;
+                margin-bottom: 60px;
                 z-index: 1;
                 display: inline-block;
                 position: relative;
@@ -224,13 +249,13 @@ body {
                 }
 
                 .rectangle {
-                    width: 127px;
+                    width: 157px;
                     height: 1px;
                     background-color: #C778DD;
                     border-radius: 10px;
                     position: absolute;
                     top: 0;
-                    left: 165px;
+                    left: 135px;
                     margin-top: 22px;
                 }
             }
@@ -241,7 +266,7 @@ body {
                 justify-content: center;
                 width: 100%;
                 margin-bottom: 30px;
-                margin-top: -20px;
+                margin-top: -40px;
 
                 .s-carrousel-container {
                     display: flex;
@@ -367,7 +392,7 @@ body {
                     .photos {
                         width: 100%;
                         height: 100%;
-                        border-radius: 4px;
+                        border-radius: 10px;
 
                         .img {
                             width: 100%;
@@ -375,21 +400,51 @@ body {
                             position: relative;
 
                             &:hover {
-
                                 .descricao {
                                     position: absolute;
                                     display: flex;
+                                    justify-content: center;
+                                    align-items: center;
                                     width: 100%;
-                                    height: 50px;
+                                    height: 100%;
                                     background-color: #404752;
+                                    opacity: 90%;
                                     bottom: 0;
                                     left: 0;
                                     z-index: 9999;
 
                                     p {
+                                        font-size: 20px;
+                                        text-align: center;
                                         display: block;
                                         color: config.$color-white;
                                         background-color: #404752;
+                                    }
+
+                                    button {
+                                        font-size: 22px;
+                                        text-align: center;
+                                        display: block;
+                                        background: transparent;
+                                        border: 2px solid white;
+                                        border-radius: 7px;
+                                        color: config.$color-white;
+                                        cursor: pointer;
+                                        font-family: 'Fira Code', sans-serif;
+                                        padding-right: 20px;
+
+                                        &:hover {
+                                            background-color: white;
+                                            color: black;
+                                            border-color: white;
+                                        }
+                                    }
+
+                                    i {
+                                        background: transparent;
+                                        font-size: 25px;
+                                        padding: 7px;
+                                        margin-left: 10px;
                                     }
                                 }
                             }
@@ -400,6 +455,7 @@ body {
                                 background-size: cover;
                                 background-repeat: no-repeat;
                                 background-position: center;
+                                border-radius: 8px;
                             }
                         }
 
@@ -582,12 +638,14 @@ body {
 
         span {
             @include config.font-paragraf;
+            font-size: 13px;
+            align-items: center;
+            justify-content: center;
             display: flex;
             color: #ABB2BF;
             position: absolute;
             margin-top: 50px;
             display: inline-block;
-            left: 60px;
         }
 
         i {
@@ -598,11 +656,12 @@ body {
         }
 
         .footer-icons {
+            align-items: center;
+            justify-content: center;
             display: flex;
             gap: 44px;
             margin-top: 20px;
             margin-bottom: 50px;
-            margin-left: 0%;
         }
     }
 }
@@ -709,20 +768,51 @@ body {
                             position: relative;
 
                             &:hover {
-
                                 .descricao {
                                     position: absolute;
                                     display: flex;
+                                    justify-content: center;
+                                    align-items: center;
                                     width: 100%;
-                                    height: 50px;
+                                    height: 100%;
                                     background-color: #404752;
+                                    opacity: 90%;
                                     bottom: 0;
                                     left: 0;
                                     z-index: 9999;
 
                                     p {
+                                        font-size: 15px;
+                                        text-align: center;
                                         display: block;
-                                        color: #404752;
+                                        color: config.$color-white;
+                                        background-color: #404752;
+                                    }
+
+                                    button {
+                                        font-size: 15px;
+                                        text-align: center;
+                                        display: block;
+                                        background: transparent;
+                                        border: 2px solid white;
+                                        border-radius: 7px;
+                                        color: config.$color-white;
+                                        cursor: pointer;
+                                        font-family: 'Fira Code', sans-serif;
+                                        padding-right: 20px;
+
+                                        &:hover {
+                                            background-color: white;
+                                            color: black;
+                                            border-color: white;
+                                        }
+                                    }
+
+                                    i {
+                                        background: transparent;
+                                        font-size: 15px;
+                                        padding: 7px;
+                                        margin-left: 10px;
                                     }
                                 }
                             }
@@ -764,6 +854,7 @@ body {
 
     .header {
         display: block;
+
         .header-content {
             display: flex;
             justify-content: center;
@@ -984,17 +1075,48 @@ body {
                                 .descricao {
                                     position: absolute;
                                     display: flex;
+                                    justify-content: center;
+                                    align-items: center;
                                     width: 100%;
-                                    height: 50px;
+                                    height: 100%;
                                     background-color: #404752;
+                                    opacity: 90%;
                                     bottom: 0;
                                     left: 0;
                                     z-index: 9999;
 
                                     p {
+                                        font-size: 25px;
+                                        text-align: center;
                                         display: block;
                                         color: config.$color-white;
                                         background-color: #404752;
+                                    }
+
+                                    button {
+                                        font-size: 25px;
+                                        text-align: center;
+                                        display: block;
+                                        background: transparent;
+                                        border: 2px solid white;
+                                        border-radius: 7px;
+                                        color: config.$color-white;
+                                        cursor: pointer;
+                                        font-family: 'Fira Code', sans-serif;
+                                        padding-right: 20px;
+
+                                        &:hover {
+                                            background-color: white;
+                                            color: black;
+                                            border-color: white;
+                                        }
+                                    }
+
+                                    i {
+                                        background: transparent;
+                                        font-size: 25px;
+                                        padding: 7px;
+                                        margin-left: 10px;
                                     }
                                 }
                             }
@@ -1057,7 +1179,7 @@ body {
             align-items: center;
             width: 100%;
             height: 50px;
-    
+
             .rectangle {
                 width: 98%;
                 height: 2px;
@@ -1067,7 +1189,7 @@ body {
                 margin-top: -100px;
                 left: 10px;
             }
-    
+
             span {
                 @include config.font-paragraf;
                 display: flex;
@@ -1075,14 +1197,14 @@ body {
                 margin-top: 50px;
                 left: 37%;
             }
-    
+
             i {
                 color: #C778DD;
                 font-size: 35px;
                 align-items: center;
                 justify-content: center;
             }
-    
+
             .footer-icons {
                 display: flex;
                 gap: 44px;
