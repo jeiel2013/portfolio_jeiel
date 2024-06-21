@@ -666,6 +666,160 @@ body {
     }
 }
 
+@media only screen and (min-width: config.$media-mobile-s) {
+    .webview .sobre {
+        .container {
+            .title {
+                .rectangle {
+                    width: 180px;
+                }
+            }
+
+            .row {
+                .c-descricao {
+                    a {
+                        font-size: 20px;
+                        margin-left: 15%;
+                    }
+                }
+            }
+        }
+    }
+
+    .webview .servicos {
+        .container {
+
+            .s-title {
+
+                margin-bottom: 70px;
+
+                .rectangle {
+                    width: 140px;
+                }
+            }
+        }
+    }
+
+    .webview .portfolios {
+
+        .container {
+            .p-title {
+
+                .rectangle {
+                    width: 120px;
+                }
+            }
+
+            .projeto .photos {
+                img {
+                    &:hover {
+                        .descricao {
+                            p {
+                                font-size: 25px;
+                            }
+
+                            a {
+                                font-size: 25px;
+                            }
+
+                            button {
+                                font-size: 27px;
+                            }
+
+                            i {
+                                font-size: 27px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .webview .contato .container .title {
+        .rectangle {
+            width: 130px;
+        }
+    }
+}
+
+@media only screen and (min-width: config.$media-mobile-m) {
+    .webview .sobre {
+        .container {
+            .title {
+                .rectangle {
+                    width: 230px;
+                }
+            }
+
+            .row {
+                .c-descricao {
+                    a {
+                        font-size: 20px;
+                        margin-left: 22.5%;
+                    }
+                }
+            }
+        }
+    }
+
+    .webview .servicos {
+        .container {
+
+            .s-title {
+
+                margin-bottom: 70px;
+
+                .rectangle {
+                    width: 215px;
+                }
+            }
+        }
+    }
+
+    .webview .portfolios {
+
+        .container {
+            .p-title {
+
+                .rectangle {
+                    width: 190px;
+                }
+            }
+
+            .projeto .photos {
+                img {
+                    &:hover {
+                        .descricao {
+                            p {
+                                font-size: 25px;
+                            }
+
+                            a {
+                                font-size: 25px;
+                            }
+
+                            button {
+                                font-size: 27px;
+                            }
+
+                            i {
+                                font-size: 27px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .webview .contato .container .title {
+        .rectangle {
+            width: 200px;
+        }
+    }
+}
+
 
 @media only screen and (min-width: config.$media-mobile-l) {
     .header {
@@ -690,19 +844,32 @@ body {
 
         .container {
 
+            .title {
+                .rectangle {
+                    width: 280px;
+                }
+            }
+
             .row {
                 display: grid;
-                grid-template-columns: repeat(2, 50%);
+                grid-template-columns: repeat(1, 100%);
 
                 .c-photo {
-                    padding: 10px;
+                    width: 90%;
                 }
 
                 .c-descricao {
                     padding: 10px;
+                    align-items: center;
+                    justify-content: center;
 
                     p {
                         font-size: 1.2rem;
+                    }
+
+                    a {
+                        font-size: 20px;
+                        margin-left: 23%;
                     }
 
                     .habilidades {
@@ -737,6 +904,12 @@ body {
 
         .container {
 
+            .s-title {
+                .rectangle {
+                    width: 265px;
+                }
+            }
+
             .s-carrousel {
                 margin-bottom: 40px;
                 height: 400px;
@@ -751,17 +924,24 @@ body {
             .p-title {
                 margin-top: 30px;
                 margin-bottom: 30px;
+
+                .rectangle {
+                    width: 240px;
+                }
             }
 
             .p-projetos {
 
                 .projeto {
-                    grid-template-columns: repeat(2, 1fr);
-                    grid-template-rows: repeat(2, 1fr);
+                    grid-template-columns: repeat(1, 2fr);
+                    grid-template-rows: repeat(1, 2fr);
                     row-gap: 10px;
                     column-gap: 10px;
 
                     .photos {
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
                         height: 100%;
 
                         img {
@@ -777,12 +957,10 @@ body {
                                     height: 100%;
                                     background-color: #404752;
                                     opacity: 90%;
-                                    bottom: 0;
-                                    left: 0;
                                     z-index: 9999;
 
                                     p {
-                                        font-size: 15px;
+                                        font-size: 25px;
                                         text-align: center;
                                         display: block;
                                         color: config.$color-white;
@@ -790,7 +968,7 @@ body {
                                     }
 
                                     button {
-                                        font-size: 15px;
+                                        font-size: 26px;
                                         text-align: center;
                                         display: block;
                                         background: transparent;
@@ -810,7 +988,7 @@ body {
 
                                     i {
                                         background: transparent;
-                                        font-size: 15px;
+                                        font-size: 26px;
                                         padding: 7px;
                                         margin-left: 10px;
                                     }
@@ -830,6 +1008,10 @@ body {
             .title {
                 margin-top: 30px;
                 margin-bottom: 30px;
+
+                .rectangle {
+                    width: 250px;
+                }
             }
 
             .formulario {
@@ -846,6 +1028,99 @@ body {
                     }
                 }
             }
+        }
+    }
+}
+
+@media only screen and (min-width: config.$media-tablet) {
+    .webview .sobre {
+        .container {
+            .title {
+                .rectangle {
+                    width: 590px;
+                }
+            }
+
+            .row {
+                display: grid;
+                grid-template-columns: 40% 60%;
+                margin-bottom: 40px;
+
+                .c-descricao {
+                    a {
+                        font-size: 20px;
+                        margin-left: 25%;
+                    }
+                }
+
+                .c-photo {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    padding: 10px;
+
+                    img {
+                        width: 100%;
+                        max-width: 400px;
+                    }
+                }
+            }
+        }
+    }
+
+    .webview .servicos {
+        .container {
+
+            .s-title {
+
+                margin-bottom: 30px;
+
+                .rectangle {
+                    width: 580px;
+                }
+            }
+        }
+    }
+
+    .webview .portfolios {
+
+        .container {
+            .p-title {
+
+                .rectangle {
+                    width: 560px;
+                }
+            }
+
+            .projeto .photos {
+                img {
+                    &:hover {
+                        .descricao {
+                            p {
+                                font-size: 25px;
+                            }
+
+                            a {
+                                font-size: 25px;
+                            }
+
+                            button {
+                                font-size: 27px;
+                            }
+
+                            i {
+                                font-size: 27px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .webview .contato .container .title {
+        .rectangle {
+            width: 580px;
         }
     }
 }
