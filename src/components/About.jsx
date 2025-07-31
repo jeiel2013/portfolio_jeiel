@@ -47,7 +47,7 @@ function AboutSection() {
         
         {/* Lado esquerdo - Sobre mim (fundo claro) */}
         <div className="w-full lg:w-1/2 bg-gray-50 flex items-center justify-center min-h-screen lg:min-h-full py-12 lg:py-16 px-6 sm:px-8 lg:px-12">
-          <div className="max-w-2xl -mt-50">
+          <div className="max-w-2xl -mt-10">
             <div className="space-y-8">
               <div className="text-center lg:text-left">
                 <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
@@ -106,7 +106,7 @@ function AboutSection() {
             <div className="absolute bottom-20 right-1/3 w-1 h-1 bg-purple-300 opacity-50 rounded-full animate-pulse delay-500"></div>
           </div>
 
-          <div className="relative z-10 max-w-2xl w-full -mt-50">
+          <div className="relative z-10 max-w-2xl w-full -mt-22">
             <div className="text-center mb-12">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
                 Hard 
