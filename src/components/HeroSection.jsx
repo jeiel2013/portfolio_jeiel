@@ -39,7 +39,8 @@ function HeroSection() {
 
             <div className="pt-4">
               <a
-                href="#projects"
+                href="https://github.com/jeiel2013?tab=repositories"
+                target='_blank'
                 className="group relative inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-10 rounded-xl shadow-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-blue-500/25"
               >
                 <span className="relative z-10">Ver Meus Projetos</span>
@@ -48,24 +49,34 @@ function HeroSection() {
             </div>
           </div>
 
-          {/* Lado direito - Imagem */}
+          {/* Lado direito - Imagem circular */}
           <div className="flex-1 flex justify-center lg:justify-end max-w-xl">
             <div className="relative group">
-              {/* Efeito de brilho atrás da imagem */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
-              
-              <img
-                src={foto}
-                alt="Ilustração"
-                className="relative rounded-2xl shadow-2xl w-full max-w-xs transform transition-transform duration-500 group-hover:scale-105"
-              />
-              
-              {/* Overlay sutil na imagem */}
-              <div className="absolute inset-0 bg-gradient-to-t from-gray-900/20 to-transparent rounded-2xl"></div>
+              {/* Container com borda gradiente */}
+              <div className="relative w-80 h-80">
+                {/* Borda gradiente animada */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-blue-500 rounded-full p-1 animate-gradient-x">
+                  <div className="w-full h-full bg-gray-900 rounded-full"></div>
+                </div>
+                
+                {/* Efeito de brilho atrás da imagem */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+                
+                {/* Imagem circular */}
+                <img
+                  src={foto}
+                  alt="Jeiel Alves"
+                  className="absolute inset-1 w-[calc(100%-8px)] h-[calc(100%-8px)] rounded-full object-cover shadow-2xl transform transition-transform duration-500 group-hover:scale-105"
+                />
+                
+                {/* Overlay sutil na imagem */}
+                <div className="absolute inset-1 bg-gradient-to-t from-gray-900/20 to-transparent rounded-full"></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
 
       {/* Indicador de scroll */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
@@ -76,6 +87,21 @@ function HeroSection() {
           <span className="text-white/60 text-sm font-light">Scroll</span>
         </div>
       </div>
+
+      {/* Estilo para animação do gradiente da borda */}
+      <style jsx>{`
+        @keyframes gradient-x {
+          0%, 100% {
+            transform: rotate(0deg);
+          }
+          50% {
+            transform: rotate(180deg);
+          }
+        }
+        .animate-gradient-x {
+          animation: gradient-x 4s ease infinite;
+        }
+      `}</style>
     </section>
   );
 }

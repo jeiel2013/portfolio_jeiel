@@ -6,25 +6,25 @@ function ContactSection() {
     {
       name: 'GitHub',
       icon: FaGithub,
-      url: 'https://github.com/seu-usuario',
+      url: 'https://github.com/jeiel2013',
       color: 'hover:text-gray-400'
     },
     {
       name: 'LinkedIn',
       icon: FaLinkedin,
-      url: 'https://linkedin.com/in/seu-usuario',
+      url: 'https://linkedin.com/in/jeiel2013',
       color: 'hover:text-blue-400'
     },
     {
       name: 'Instagram',
       icon: FaInstagram,
-      url: 'https://instagram.com/seu-usuario',
+      url: 'https://instagram.com/jeiel2013',
       color: 'hover:text-pink-400'
     }
   ];
 
   return (
-    <section id="contato" className="relative w-full min-h-[70vh] overflow-hidden bg-gray-900 text-white flex items-center justify-center">
+    <section id="contato" className="relative w-full min-h-[60vh] overflow-hidden bg-gray-900 text-white flex items-center justify-center">
       {/* Fundo com gradiente em toda a tela */}
       <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-800 to-purple-900 opacity-70 z-0" />
       
@@ -99,27 +99,13 @@ function ContactSection() {
               >
                 <FaEnvelope className="w-6 h-6 text-blue-400" />
                 <span className="text-lg font-medium text-gray-300 group-hover:text-white transition-colors duration-300">
-                  seu-email@exemplo.com
+                  contatojeiel2013@gmail.com
                 </span>
               </a>
-              
-              <p className="text-gray-500 text-sm">
-                Respondo em até 24 horas
-              </p>
             </div>
-          </div>
-
-          {/* Call to action adicional */}
-          <div className="pt-8">
-            <p className="text-gray-400 text-lg font-light">
-              Disponível para projetos freelance e oportunidades de trabalho
-            </p>
           </div>
         </div>
       </div>
-
-      {/* Elemento decorativo no canto inferior */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-gray-900 to-transparent z-10"></div>
     </section>
   );
 }
