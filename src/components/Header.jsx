@@ -19,7 +19,7 @@ function Header() {
         : 'bg-gray-800/70 backdrop-blur-sm shadow-md py-4'
     }`}>
       {/* Container principal centralizado */}
-      <div className="container mx-auto flex justify-between items-center max-w-6xl px-6 sm:px-8">
+      <div className="container mx-auto flex justify-center md:justify-between items-center max-w-6xl px-6 sm:px-8">
         
         {/* Logo/Nome */}
         <div className="relative group">
@@ -36,7 +36,7 @@ function Header() {
         </div>
 
         {/* Menu de navegação */}
-        <ul className="flex space-x-8 text-white">
+        <ul className="hidden md:flex space-x-8 text-white">
           <li className="relative group">
             <a 
               href="#inicio" 

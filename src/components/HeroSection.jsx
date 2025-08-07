@@ -3,7 +3,7 @@ import foto from '../assets/images/foto-jeiel.jpg';
 
 function HeroSection() {
   return (
-    <section id='inicio' className="relative w-full min-h-screen overflow-hidden bg-gray-900 text-white flex items-center justify-center">
+    <section id='inicio' className="relative w-full min-h-screen overflow-hidden bg-gray-900 text-white flex items-center justify-center pt-20 md:pt-0">
       {/* Fundo com gradiente em toda a tela */}
       <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-800 to-purple-900 opacity-70 z-0" />
       
@@ -50,7 +50,7 @@ function HeroSection() {
           </div>
 
           {/* Lado direito - Imagem circular */}
-          <div className="flex-1 flex justify-center lg:justify-end max-w-xl">
+          <div className="flex-1 flex justify-center lg:justify-end max-w-xl -mt-30 md:mt-0">
             <div className="relative group">
               {/* Container com borda gradiente */}
               <div className="relative w-80 h-80">
@@ -78,7 +78,7 @@ function HeroSection() {
       </div>
 
 
-      {/* Indicador de scroll */}
+      {/* Indicador de scroll
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10">
         <div className="flex flex-col items-center space-y-2 animate-bounce">
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
@@ -86,7 +86,7 @@ function HeroSection() {
           </div>
           <span className="text-white/60 text-sm font-light">Scroll</span>
         </div>
-      </div>
+      </div> */}
 
       {/* Estilo para animação do gradiente da borda */}
       <style jsx>{`
