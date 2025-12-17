@@ -18,7 +18,7 @@ function Footer() {
               Jeiel Alves
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Back-End Developer apaixonado por criar soluções eficientes e escaláveis. 
+              Fullstack Developer apaixonado por criar soluções eficientes e escaláveis. 
               Sempre em busca de novos desafios e aprendizados.
             </p>
           </div>
@@ -52,11 +52,6 @@ function Footer() {
             {/* Copyright */}
             <p className="text-gray-500 text-sm text-center sm:text-left">
               © {currentYear} Jeiel Alves. Todos os direitos reservados.
-            </p>
-            
-            {/* Feito com amor */}
-            <p className="text-gray-500 text-sm flex items-center">
-              Feito com <FaHeart className="w-4 h-4 mx-1 text-red-500" />
             </p>
           </div>
         </div>

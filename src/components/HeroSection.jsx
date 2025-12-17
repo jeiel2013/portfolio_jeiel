@@ -31,7 +31,7 @@ function HeroSection() {
               
               <div className="relative">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl text-gray-200 font-light tracking-wide">
-                  Back-End Developer
+                  Desenvolvedor Fullstack
                 </h2>
                 <div className="absolute -bottom-2 left-0 lg:left-0 right-0 lg:right-auto h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full w-32 mx-auto lg:mx-0"></div>
               </div>

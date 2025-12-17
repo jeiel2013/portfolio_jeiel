@@ -57,6 +57,15 @@ function Header() {
           </li>
           <li className="relative group">
             <a 
+              href="#projects" 
+              className="text-base font-medium hover:text-blue-400 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-white/5"
+            >
+              Projetos
+              <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-blue-400 w-0 group-hover:w-full transition-all duration-300"></span>
+            </a>
+          </li>
+          <li className="relative group">
+            <a 
               href="#contato" 
               className="text-base font-medium hover:text-blue-400 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-white/5"
             >
