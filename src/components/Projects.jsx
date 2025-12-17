@@ -22,7 +22,7 @@ function ProjectsSection() {
       title: "User Hub",
       description:
         "CRUD completo de usuários desenvolvido com NestJS e Prisma.",
-      image: {hub}, // Substitua pelo caminho real da imagem
+      image: hub, // Substitua pelo caminho real da imagem
       technologies: [
         { name: "NestJS", icon: <SiNestjs className="w-5 h-5" /> },
         { name: "Node.js", icon: <SiNodedotjs className="w-5 h-5" /> },
@@ -38,7 +38,7 @@ function ProjectsSection() {
       title: "Batista Assessoria Contábil",
       description:
         "Site desenvolvido para uma empresa de contabilidade, tendo serviços e modos de contato.",
-      image: {batista}, // Substitua pelo caminho real da imagem
+      image: batista, // Substitua pelo caminho real da imagem
       technologies: [
         { name: "React", icon: <SiReact className="w-5 h-5" /> },
         { name: "Vite", icon: <SiVite className="w-5 h-5" /> },
@@ -52,7 +52,7 @@ function ProjectsSection() {
       title: "ToDo List",
       description:
         "Aplicação simples de lista de tarefas feita para prática e aprendizado.",
-      image: {todo}, // Substitua pelo caminho real da imagem
+      image: todo, // Substitua pelo caminho real da imagem
       technologies: [
         { name: "React", icon: <SiReact className="w-5 h-5" /> },
         { name: "TailwindCss", icon: <SiTailwindcss className="w-5 h-5" /> },
