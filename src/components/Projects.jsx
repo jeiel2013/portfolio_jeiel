@@ -12,13 +12,17 @@ import {
 } from "react-icons/si";
 import { FaGithub, FaPlay } from "react-icons/fa";
 
+import batista from '../assets/images/batistaecontabil.jpg';
+import hub from '../assets/images/hub.jpg';
+import todo from '../assets/images/todo.jpg';
+
 function ProjectsSection() {
   const projects = [
     {
       title: "User Hub",
       description:
         "CRUD completo de usuários desenvolvido com NestJS e Prisma.",
-      image: "/src/assets/images/hub.jpg", // Substitua pelo caminho real da imagem
+      image: {hub}, // Substitua pelo caminho real da imagem
       technologies: [
         { name: "NestJS", icon: <SiNestjs className="w-5 h-5" /> },
         { name: "Node.js", icon: <SiNodedotjs className="w-5 h-5" /> },
@@ -34,7 +38,7 @@ function ProjectsSection() {
       title: "Batista Assessoria Contábil",
       description:
         "Site desenvolvido para uma empresa de contabilidade, tendo serviços e modos de contato.",
-      image: "src/assets/images/batistaecontabil.jpg", // Substitua pelo caminho real da imagem
+      image: {batista}, // Substitua pelo caminho real da imagem
       technologies: [
         { name: "React", icon: <SiReact className="w-5 h-5" /> },
         { name: "Vite", icon: <SiVite className="w-5 h-5" /> },
@@ -48,7 +52,7 @@ function ProjectsSection() {
       title: "ToDo List",
       description:
         "Aplicação simples de lista de tarefas feita para prática e aprendizado.",
-      image: "src/assets/images/todo.jpg", // Substitua pelo caminho real da imagem
+      image: {todo}, // Substitua pelo caminho real da imagem
       technologies: [
         { name: "React", icon: <SiReact className="w-5 h-5" /> },
         { name: "TailwindCss", icon: <SiTailwindcss className="w-5 h-5" /> },
