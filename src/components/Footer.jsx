@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaHeart, FaMapMarkerAlt } from 'react-icons/fa';
+import Snowfall from 'react-snowfall';
 
 function Footer() {
   const currentYear = new Date().getFullYear();

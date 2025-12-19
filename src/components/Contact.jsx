@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaGithub, FaLinkedin, FaWhatsapp, FaEnvelope, FaInstagram } from 'react-icons/fa';
+import Snowfall from 'react-snowfall';
 
 function ContactSection() {
   const socialLinks = [
@@ -25,6 +26,7 @@ function ContactSection() {
 
   return (
     <section id="contato" className="relative w-full min-h-[60vh] overflow-hidden bg-gray-900 text-white flex items-center justify-center">
+      <Snowfall color="#82C3D9" />
       {/* Fundo com gradiente em toda a tela */}
       <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-800 to-purple-900 opacity-70 z-0" />
       
