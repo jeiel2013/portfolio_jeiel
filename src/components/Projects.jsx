@@ -71,8 +71,8 @@ function ProjectsSection() {
         { name: "TailwindCss", icon: <SiTailwindcss className="w-5 h-5" /> },
         { name: "JavaScript", icon: <SiJavascript className="w-5 h-5" /> },
       ],
-      githubUrl: "https://github.com/jeiel2013/CoroaciRadioFM",
-      demoUrl: "https://coroaciradiofm.vercel.app/",
+      githubUrl: "https://github.com/jeiel2013/batistaecontabil",
+      demoUrl: "https://batistaecontabil.vercel.app/",
     },
     {
       title: "ToDo List",
@@ -194,7 +194,7 @@ function ProjectsSection() {
                 key={index}
                 className="project-card flex-shrink-0 w-[calc(33.333%-1.33rem)] min-w-[320px] md:min-w-[350px]"
               >
-                <div className="group relative bg-gray-900/50 backdrop-blur-sm border border-purple-500/30 rounded-3xl overflow-hidden hover:border-purple-400/60 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 h-full">
+                <div className="group relative bg-gray-900/50 backdrop-blur-sm border border-purple-500/30 rounded-3xl overflow-hidden hover:border-purple-400/60 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20 h-full">
                   {/* Borda animada */}
                   <div className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
 
