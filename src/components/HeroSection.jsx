@@ -1,11 +1,9 @@
 import React from 'react';
 import foto from '../assets/images/foto-jeiel.jpg';
-import Snowfall from 'react-snowfall';
 
 function HeroSection() {
   return (
     <section id='inicio' className="relative w-full min-h-screen overflow-hidden bg-gray-900 text-white flex items-center justify-center pt-20 md:pt-0">
-      <Snowfall color="#82C3D9" />
       {/* Fundo com gradiente em toda a tela */}
       <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-800 to-purple-900 opacity-70 z-0" />
       

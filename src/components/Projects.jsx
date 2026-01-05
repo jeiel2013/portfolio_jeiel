@@ -16,7 +16,6 @@ import {
   FaChevronLeft,
   FaChevronRight,
 } from "react-icons/fa";
-import Snowfall from "react-snowfall";
 
 import batista from "../assets/images/batistaecontabil.jpg";
 import hub from "../assets/images/hub.jpg";
@@ -131,8 +130,6 @@ function ProjectsSection() {
       id="projects"
       className="w-full min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 py-20 px-6 sm:px-8 lg:px-12 relative overflow-hidden"
     >
-      <Snowfall color="#82C3D9" />
-
       {/* Partículas decorativas */}
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-2 h-2 bg-blue-400 opacity-30 rounded-full animate-pulse"></div>

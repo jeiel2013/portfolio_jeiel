@@ -7,7 +7,6 @@ import {
   SiTailwindcss,
   SiVite,
 } from "react-icons/si";
-import Snowfall from "react-snowfall";
 
 function AboutSection() {
   const skills = [
@@ -63,12 +62,10 @@ function AboutSection() {
 
   return (
     <section id="about-me" className="w-full min-h-[80vh] flex items-stretch">
-      <Snowfall color="#82C3D9" />
       <div className="w-full flex flex-col lg:flex-row min-h-[80vh]">
         {/* Lado esquerdo - Sobre mim (fundo claro) */}
         <div className="w-full lg:w-1/2 bg-gray-50 flex flex-col min-h-screen lg:min-h-full py-12 lg:py-16 px-6 sm:px-8 lg:px-12">
           <div className="max-w-2xl mx-auto w-full">
-            <Snowfall color="#82C3D9" />
             {/* Título fixo no topo */}
             <div className="text-center mb-16 pt-8">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
@@ -122,7 +119,6 @@ function AboutSection() {
 
         {/* Lado direito - Skills (fundo escuro) */}
         <div className="w-full lg:w-1/2 bg-gray-900 flex items-center justify-center min-h-screen lg:min-h-full py-12 lg:py-16 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
-          <Snowfall color="#82C3D9" />
           {/* Fundo com gradiente */}
           <div className="absolute inset-0 bg-gradient-to-br from-blue-800/20 to-purple-900/20"></div>
 
