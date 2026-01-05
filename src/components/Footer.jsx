@@ -41,7 +41,7 @@ function Footer() {
               Entre em contato por e-mail:
             </p>
             <p className="text-blue-400 text-sm">
-              contatojeiel2013@gmail.com
+              jeieldev.alves@gmail.com
             </p>
           </div>
         </div>
