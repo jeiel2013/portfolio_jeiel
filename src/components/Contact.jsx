@@ -99,7 +99,7 @@ function ContactSection() {
               >
                 <FaEnvelope className="w-6 h-6 text-blue-400" />
                 <span className="text-lg font-medium text-gray-300 group-hover:text-white transition-colors duration-300">
-                  contatojeiel2013@gmail.com
+                  jeieldev.alves@gmail.com
                 </span>
               </a>
             </div>
