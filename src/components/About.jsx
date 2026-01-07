@@ -67,7 +67,7 @@ function AboutSection() {
         <div className="w-full lg:w-1/2 bg-gray-50 flex flex-col min-h-screen lg:min-h-full py-12 lg:py-16 px-6 sm:px-8 lg:px-12">
           <div className="max-w-2xl mx-auto w-full">
             {/* Título fixo no topo */}
-            <div className="text-center mb-16 pt-4">
+            <div className="text-center mb-16 lg:pt-15">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
                 Sobre
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 ml-3">
