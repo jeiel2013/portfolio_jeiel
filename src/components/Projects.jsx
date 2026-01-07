@@ -191,7 +191,7 @@ function ProjectsSection() {
                 key={index}
                 className="project-card flex-shrink-0 w-[calc(33.333%-1.33rem)] min-w-[320px] md:min-w-[350px]"
               >
-                <div className="group relative bg-gray-900/50 backdrop-blur-sm border border-purple-500/30 rounded-3xl overflow-hidden hover:border-purple-400/60 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20 h-full">
+                <div className="group relative bg-gray-900/50 backdrop-blur-sm border border-purple-500/30 rounded-3xl overflow-hidden hover:border-purple-400/60 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20 h-full flex flex-col">
                   {/* Borda animada */}
                   <div className="absolute inset-0 rounded-3xl border-2 border-transparent bg-gradient-to-r from-purple-500 to-blue-500 opacity-0 group-hover:opacity-20 transition-opacity duration-300 pointer-events-none"></div>
 
@@ -199,7 +199,7 @@ function ProjectsSection() {
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
 
                   {/* Imagem do projeto */}
-                  <div className="relative h-48 bg-gradient-to-br from-blue-800/30 to-purple-800/30 overflow-hidden">
+                  <div className="relative h-48 bg-gradient-to-br from-blue-800/30 to-purple-800/30 overflow-hidden flex-shrink-0">
                     <img
                       src={project.image}
                       alt={project.title}
@@ -210,7 +210,7 @@ function ProjectsSection() {
                   </div>
 
                   {/* Conteúdo */}
-                  <div className="relative p-6 space-y-4 bg-gray-900/50">
+                  <div className="relative p-6 space-y-4 bg-gray-900/50 flex-1 flex flex-col">
                     <h3 className="text-2xl font-bold text-white group-hover:text-purple-300 transition-colors duration-300">
                       {project.title}
                     </h3>
@@ -220,11 +220,11 @@ function ProjectsSection() {
                     </p>
 
                     {/* Tecnologias */}
-                    <div className="flex flex-wrap gap-3 pt-2">
+                    <div className="flex flex-wrap gap-3 pt-2 flex-1">
                       {project.technologies.map((tech, techIndex) => (
                         <div
                           key={techIndex}
-                          className="flex items-center gap-2 px-3 py-1.5 bg-gray-800/50 border border-gray-700 rounded-full text-gray-300 text-sm"
+                          className="flex items-center gap-2 px-3 py-1.5 bg-gray-800/50 border border-gray-700 rounded-full text-gray-300 text-sm h-fit"
                         >
                           <span className="text-purple-400">{tech.icon}</span>
                           <span>{tech.name}</span>
@@ -233,7 +233,7 @@ function ProjectsSection() {
                     </div>
 
                     {/* Botões */}
-                    <div className="flex gap-4 pt-4">
+                    <div className="flex gap-4 pt-4 mt-auto">
                       <a
                         href={project.githubUrl}
                         target="_blank"
@@ -247,7 +247,7 @@ function ProjectsSection() {
                         <span className="text-sm font-medium">Código</span>
                       </a>
 
-                      {project.demoUrl && (
+                      {project.demoUrl ? (
                         <a
                           href={project.demoUrl}
                           target="_blank"
@@ -258,6 +258,11 @@ function ProjectsSection() {
                           <FaPlay className="w-3 h-3" />
                           <span className="text-sm font-medium">Demo</span>
                         </a>
+                      ) : (
+                        <div className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-gray-800/50 text-gray-500 rounded-lg border border-gray-700/50 cursor-not-allowed">
+                          <FaPlay className="w-3 h-3" />
+                          <span className="text-sm font-medium">Em breve</span>
+                        </div>
                       )}
                     </div>
                   </div>

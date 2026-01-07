@@ -67,7 +67,7 @@ function AboutSection() {
         <div className="w-full lg:w-1/2 bg-gray-50 flex flex-col min-h-screen lg:min-h-full py-12 lg:py-16 px-6 sm:px-8 lg:px-12">
           <div className="max-w-2xl mx-auto w-full">
             {/* Título fixo no topo */}
-            <div className="text-center mb-16 pt-8">
+            <div className="text-center mb-16 pt-4">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
                 Sobre
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 ml-3">
@@ -78,7 +78,7 @@ function AboutSection() {
             </div>
 
             {/* Conteúdo centralizado */}
-            <div className="flex-1 flex flex-col justify-center space-y-8 pt-8">
+            <div className="flex-1 flex flex-col justify-center space-y-8 pt-4">
               <div className="space-y-6 text-gray-700 leading-relaxed text-left">
                 <p className="text-lg">
                   Sou estudante de <strong>Sistemas de Informação</strong> desde
@@ -118,7 +118,7 @@ function AboutSection() {
         </div>
 
         {/* Lado direito - Skills (fundo escuro) */}
-        <div className="w-full lg:w-1/2 bg-gray-900 flex items-center justify-center min-h-screen lg:min-h-full py-12 lg:py-16 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
+        <div className="w-full lg:w-1/2 bg-gray-900 flex items-center justify-center min-h-[60vh] lg:min-h-full py-12 lg:py-16 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
           {/* Fundo com gradiente */}
           <div className="absolute inset-0 bg-gradient-to-br from-blue-800/20 to-purple-900/20"></div>
 
@@ -130,13 +130,13 @@ function AboutSection() {
             <div className="absolute bottom-20 right-1/3 w-1 h-1 bg-purple-300 opacity-50 rounded-full animate-pulse delay-500"></div>
           </div>
 
-          <div className="relative z-10 max-w-2xl w-full -mt-22">
-            <div className="text-center mb-12">
+          <div className="relative z-10 max-w-2xl w-full">
+            <div className="text-center mb-16">
               <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
-                Hard
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 ml-3">
+                Tecnologias
+                {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 ml-3">
                   Skills
-                </span>
+                </span> */}
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto"></div>
             </div>
