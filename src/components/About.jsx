@@ -36,7 +36,7 @@ function AboutSection() {
     },
     {
       name: "Prisma",
-      icon: <SiPrisma className="w-8 h-8 text-[#2D3748]" />,
+      icon: <SiPrisma className="w-8 h-8 text-zinc-100" />,
     },
     {
       name: "JavaScript",
@@ -48,7 +48,7 @@ function AboutSection() {
     },
     {
       name: "React",
-      icon: <SiReact className="w-8 h-8 " />,
+      icon: <SiReact className="w-8 h-8" />,
     },
     {
       name: "Vite",
@@ -63,29 +63,48 @@ function AboutSection() {
   return (
     <section id="about-me" className="w-full min-h-[80vh] flex items-stretch">
       <div className="w-full flex flex-col lg:flex-row min-h-[80vh]">
-        {/* Lado esquerdo - Sobre mim (fundo claro) */}
-        <div className="w-full lg:w-1/2 bg-gray-50 flex flex-col min-h-screen lg:min-h-full py-12 lg:py-16 px-6 sm:px-8 lg:px-12">
-          <div className="max-w-2xl mx-auto w-full">
+        {/* Lado esquerdo - Sobre mim */}
+        <div className="w-full lg:w-1/2 bg-zinc-900 flex flex-col min-h-screen lg:min-h-full py-12 lg:py-16 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
+          {/* Grid pattern sutil */}
+          <div
+            className="absolute inset-0 z-0 opacity-5"
+            style={{
+              backgroundImage: `linear-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(16, 185, 129, 0.1) 1px, transparent 1px)`,
+              backgroundSize: "30px 30px",
+            }}
+          ></div>
+
+          <div className="max-w-2xl mx-auto w-full relative z-10">
             {/* Título fixo no topo */}
             <div className="text-center mb-16 lg:pt-15">
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">
+              <h2
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-100 mb-4"
+                style={{ fontFamily: "'Fira Code', monospace" }}
+              >
                 Sobre
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 ml-3">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 ml-3">
                   Mim
                 </span>
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full mx-auto"></div>
             </div>
 
             {/* Conteúdo centralizado */}
             <div className="flex-1 flex flex-col justify-center space-y-8 pt-4">
-              <div className="space-y-6 text-gray-700 leading-relaxed text-left">
+              <div
+                className="space-y-6 text-zinc-300 leading-relaxed text-left"
+                style={{ fontFamily: "'Fira Code', monospace" }}
+              >
                 <p className="text-lg">
-                  Sou estudante de <strong>Sistemas de Informação</strong> desde
-                  2023, com foco no desenvolvimento fullstack. Estudo de forma
-                  independente, aprofundando conhecimentos em{" "}
-                  <strong>TypeScript</strong>, <strong>NestJS</strong> e{" "}
-                  <strong>React</strong>.
+                  Sou estudante de{" "}
+                  <strong className="text-emerald-400">
+                    Sistemas de Informação
+                  </strong>{" "}
+                  desde 2023, com foco no desenvolvimento fullstack. Estudo de
+                  forma independente, aprofundando conhecimentos em{" "}
+                  <strong className="text-emerald-400">TypeScript</strong>,{" "}
+                  <strong className="text-emerald-400">NestJS</strong> e{" "}
+                  <strong className="text-emerald-400">React</strong>.
                 </p>
 
                 <p className="text-lg">
@@ -101,14 +120,17 @@ function AboutSection() {
               </div>
 
               <div className="pt-4">
-                <div className="flex flex-wrap gap-3 justify-left">
-                  <span className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                <div
+                  className="flex flex-wrap gap-3 justify-left"
+                  style={{ fontFamily: "'Fira Code', monospace" }}
+                >
+                  <span className="px-4 py-2 bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 rounded-full text-sm font-medium">
                     Desenvolvimento Backend
                   </span>
-                  <span className="px-4 py-2 bg-purple-100 text-purple-800 rounded-full text-sm font-medium">
+                  <span className="px-4 py-2 bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 rounded-full text-sm font-medium">
                     Trabalho em Equipe
                   </span>
-                  <span className="px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                  <span className="px-4 py-2 bg-teal-500/10 text-teal-400 border border-teal-500/30 rounded-full text-sm font-medium">
                     Aprendizado Contínuo
                   </span>
                 </div>
@@ -117,51 +139,50 @@ function AboutSection() {
           </div>
         </div>
 
-        {/* Lado direito - Skills (fundo escuro) */}
-        <div className="w-full lg:w-1/2 bg-gray-900 flex items-center justify-center min-h-[60vh] lg:min-h-full py-12 lg:py-16 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
+        {/* Lado direito - Skills */}
+        <div className="w-full lg:w-1/2 bg-zinc-950 flex items-center justify-center min-h-[60vh] lg:min-h-full py-12 lg:py-16 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
           {/* Fundo com gradiente */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-800/20 to-purple-900/20"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-zinc-900/50 to-black/50"></div>
 
           {/* Partículas decorativas */}
           <div className="absolute inset-0">
-            <div className="absolute top-20 left-10 w-2 h-2 bg-blue-400 opacity-30 rounded-full animate-pulse"></div>
-            <div className="absolute top-40 right-20 w-1 h-1 bg-purple-400 opacity-40 rounded-full animate-pulse delay-300"></div>
-            <div className="absolute bottom-32 left-1/4 w-3 h-3 bg-blue-300 opacity-20 rounded-full animate-pulse delay-700"></div>
-            <div className="absolute bottom-20 right-1/3 w-1 h-1 bg-purple-300 opacity-50 rounded-full animate-pulse delay-500"></div>
+            <div className="absolute top-20 left-10 w-2 h-2 bg-emerald-500 opacity-30 rounded-full animate-pulse"></div>
+            <div className="absolute top-40 right-20 w-1 h-1 bg-cyan-400 opacity-40 rounded-full animate-pulse delay-300"></div>
+            <div className="absolute bottom-32 left-1/4 w-3 h-3 bg-emerald-400 opacity-20 rounded-full animate-pulse delay-700"></div>
+            <div className="absolute bottom-20 right-1/3 w-1 h-1 bg-cyan-300 opacity-50 rounded-full animate-pulse delay-500"></div>
           </div>
 
           <div className="relative z-10 max-w-2xl w-full">
             <div className="text-center mb-16">
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
+              <h2
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-zinc-100 mb-4"
+                style={{ fontFamily: "'Fira Code', monospace" }}
+              >
                 Tecnologias
-                {/* <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 ml-3">
-                  Skills
-                </span> */}
               </h2>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-full mx-auto"></div>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
               {skills.map((skill, index) => (
                 <div
                   key={index}
-                  className="group relative bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-6 hover:bg-gray-700/50 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/10"
+                  className="group relative bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-2xl p-6 hover:bg-zinc-800/50 hover:border-emerald-500/50 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-emerald-500/10"
                 >
                   {/* Efeito de brilho no hover */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-500/10 to-cyan-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                   <div className="relative z-10 flex flex-col items-center space-y-3">
-                    <div className="text-blue-400 group-hover:text-blue-300 transition-colors duration-300">
+                    <div className="text-emerald-400 group-hover:text-emerald-300 transition-colors duration-300">
                       {skill.icon}
                     </div>
-                    <h3 className="text-white font-semibold text-sm sm:text-base text-center">
+                    <h3
+                      className="text-zinc-100 font-semibold text-sm sm:text-base text-center"
+                      style={{ fontFamily: "'Fira Code', monospace" }}
+                    >
                       {skill.name}
                     </h3>
                   </div>
-
-                  {/* Borda animada */}
-                  <div className="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-                  <div className="absolute inset-0.5 bg-gray-800 rounded-2xl -z-10"></div>
                 </div>
               ))}
             </div>
