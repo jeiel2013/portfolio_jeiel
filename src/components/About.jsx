@@ -100,7 +100,7 @@ function AboutSection() {
                 Aprendizado Contínuo
               </h3>
               <p className="text-xs text-[#a1a1aa]">
-                Constantemente explorando novas tecnologias como StyledX e
+                Constantemente explorando novas tecnologias como React e
                 NestJS.
               </p>
             </div>
