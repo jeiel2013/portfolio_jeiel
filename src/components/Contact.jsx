@@ -33,7 +33,7 @@ function ContactSection() {
 
         <div className="flex justify-center gap-8 mt-16">
           <a
-            href="https://github.com/jeielalves"
+            href="https://github.com/jeiel2013"
             target="_blank"
             rel="noopener noreferrer"
             className="text-[#a1a1aa] hover:text-white transition-colors"
