@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 
 function Header() {
@@ -13,78 +14,37 @@ function Header() {
   }, []);
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-zinc-950/95 backdrop-blur-md shadow-2xl py-3 border-b border-zinc-800/50"
-          : "bg-zinc-950/70 backdrop-blur-sm py-4 border-b border-zinc-900/30"
-      }`}
-    >
-      {/* Container principal centralizado */}
-      <div className="container mx-auto flex justify-center md:justify-between items-center max-w-6xl px-6 sm:px-8">
-        {/* Logo/Nome */}
-        <div className="relative group">
-          <div
-            className="text-2xl sm:text-3xl font-bold transition-all duration-300 hover:scale-105"
-            style={{ fontFamily: "'Fira Code', monospace" }}
-          >
-            <span className="block drop-shadow-2xl">
-              <span className="text-zinc-100">Jeiel</span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400 ml-2">
-                Alves
-              </span>
-            </span>
-          </div>
-          {/* Linha decorativa sob o nome */}
-          <div className="absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-emerald-500 to-cyan-500 w-0 group-hover:w-full transition-all duration-500"></div>
+    <nav className="fixed top-0 w-full z-50 border-b border-white/[0.08] bg-[#0a0a0a]/80 backdrop-blur-md">
+      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a
+          href="#"
+          className="text-sm font-mono font-medium tracking-tight hover:text-[#00d9a3] transition-colors"
+        >
+          JEIEL.DEV<span className="text-[#00d9a3]">_</span>
+        </a>
+
+        <div className="hidden md:flex gap-8 text-sm text-[#a1a1aa] font-medium">
+          <a href="#about" className="hover:text-white transition-colors">
+            Sobre
+          </a>
+          <a href="#tech" className="hover:text-white transition-colors">
+            Stack
+          </a>
+          <a href="#projects" className="hover:text-white transition-colors">
+            Projetos
+          </a>
+          <a href="#contact" className="hover:text-white transition-colors">
+            Contato
+          </a>
         </div>
 
-        {/* Menu de navegação */}
-        <ul
-          className="hidden md:flex space-x-8 text-zinc-100"
-          style={{ fontFamily: "'Fira Code', monospace" }}
+        <a
+          href="#contact"
+          className="px-4 py-2 text-xs font-medium bg-white/5 border border-white/[0.08] rounded-full hover:bg-white/10 transition-colors hidden sm:block"
         >
-          <li className="relative group">
-            <a
-              href="#inicio"
-              className="text-base font-medium hover:text-emerald-400 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-zinc-800/50"
-            >
-              Início
-              <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-emerald-400 w-0 group-hover:w-full transition-all duration-300"></span>
-            </a>
-          </li>
-          <li className="relative group">
-            <a
-              href="#about-me"
-              className="text-base font-medium hover:text-emerald-400 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-zinc-800/50"
-            >
-              Sobre Mim
-              <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-emerald-400 w-0 group-hover:w-full transition-all duration-300"></span>
-            </a>
-          </li>
-          <li className="relative group">
-            <a
-              href="#projects"
-              className="text-base font-medium hover:text-emerald-400 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-zinc-800/50"
-            >
-              Projetos
-              <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-emerald-400 w-0 group-hover:w-full transition-all duration-300"></span>
-            </a>
-          </li>
-          <li className="relative group">
-            <a
-              href="#contato"
-              className="text-base font-medium hover:text-emerald-400 transition-all duration-300 py-2 px-3 rounded-lg hover:bg-zinc-800/50"
-            >
-              Contato
-              <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 h-0.5 bg-emerald-400 w-0 group-hover:w-full transition-all duration-300"></span>
-            </a>
-          </li>
-        </ul>
+          Vamos conversar
+        </a>
       </div>
-
-      {/* Linha decorativa no fundo do header */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent"></div>
     </nav>
   );
 }
