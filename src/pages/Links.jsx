@@ -10,6 +10,7 @@ import {
   Instagram,
   Twitter,
 } from "lucide-react";
+const currentYear = new Date().getFullYear();
 
 const Links = () => {
   const canvasRef = useRef(null);
@@ -157,7 +158,7 @@ const Links = () => {
             <div className="absolute -inset-1 bg-gradient-to-r from-[#00d9a3] to-blue-500 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-700"></div>
             <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-[#00d9a3]/30 p-1 bg-[#121212]">
               <img
-                src="https://api.dicebear.com/7.x/notionists/svg?seed=Jeiel&backgroundColor=1a1a1a"
+                src="https://github.com/jeiel2013.png"
                 alt="Jeiel Alves"
                 className="w-full h-full rounded-full object-cover"
               />
@@ -257,7 +258,7 @@ const Links = () => {
             </a>
           </div>
           <p className="text-xs text-[#a1a1aa]/50 font-mono">
-            © 2024 Jeiel Alves
+            © {currentYear} Jeiel Alves
           </p>
         </footer>
       </main>
