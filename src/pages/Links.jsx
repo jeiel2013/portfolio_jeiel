@@ -245,16 +245,16 @@ const Links = () => {
         >
           <div className="flex justify-center gap-6 mb-6">
             <a
-              href="#"
+              href="https://instagram.com/jeiel2013"
               className="text-[#a1a1aa] hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full"
             >
               <Instagram className="w-5 h-5" />
             </a>
             <a
-              href="#"
+              href="https://linkedin.com/in/jeiel2013"
               className="text-[#a1a1aa] hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full"
             >
-              <Twitter className="w-5 h-5" />
+              <Linkedin className="w-5 h-5" />
             </a>
           </div>
           <p className="text-xs text-[#a1a1aa]/50 font-mono">
