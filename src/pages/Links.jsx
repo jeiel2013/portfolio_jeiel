@@ -10,6 +10,7 @@ import {
   Instagram,
   Twitter,
 } from "lucide-react";
+import { SiX } from "react-icons/si";
 const currentYear = new Date().getFullYear();
 
 const Links = () => {
@@ -251,10 +252,10 @@ const Links = () => {
               <Instagram className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com/in/jeiel2013"
+              href="https://x.com/in/jeiel2013"
               className="text-[#a1a1aa] hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full"
             >
-              <Linkedin className="w-5 h-5" />
+              <SiX className="w-5 h-5" />
             </a>
           </div>
           <p className="text-xs text-[#a1a1aa]/50 font-mono">

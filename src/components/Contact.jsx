@@ -1,6 +1,7 @@
 import React from "react";
 import { Mail } from "lucide-react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { SiX } from "react-icons/si";
 
 function ContactSection() {
   return (
@@ -58,6 +59,15 @@ function ContactSection() {
             aria-label="Instagram"
           >
             <FaInstagram className="w-6 h-6" />
+          </a>
+          <a
+            href="https://x.com/jeiel2013"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#a1a1aa] hover:text-[#ffffff] transition-colors"
+            aria-label="X"
+          >
+            <SiX className="w-6 h-6" />
           </a>
         </div>
       </div>
