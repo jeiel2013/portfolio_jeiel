@@ -6,13 +6,39 @@ import batistaImg from "../assets/images/batistaecontabil.jpg";
 import hubImg from "../assets/images/hub.jpg";
 import radioImg from "../assets/images/radio.jpg";
 import todoImg from "../assets/images/todo.jpg";
+import karineImg from "../assets/images/karine.png"
 
 function ProjectsSection() {
   const projects = [
     {
+      title: "Karine Azevedo",
+      description:
+        "Landing Page para a fotógrafa Karine Azevedo com seus projetos, falando sobre ela e entrar em contato também",
+      technologies: [
+        "React",
+        "TailwindCSS",
+        "Vite",
+        "Lucide Icons"
+      ],
+      githubUrl: "https://github.com/jeiel2013/karine-azevedo",
+      demoUrl: "https://karineazevedo.vercel.app/",
+      icon: "layout-template",
+      image: karineImg, // Adicione a imagem aqui
+    },
+    {
+      title: "Batista Assessoria",
+      description:
+      "Plataforma institucional moderna para contabilidade, otimizada para conversão e velocidade.",
+      technologies: ["React", "Shadcnui", "Vite", "TailwindCSS"],
+      githubUrl: "https://github.com/jeiel2013/batistaecontabil",
+      demoUrl: "https://batistaecontabil.vercel.app/",
+      icon: "building-2",
+      image: batistaImg, // Adicione a imagem aqui
+    },
+    {
       title: "User Hub",
       description:
-        "Sistema robusto de gerenciamento de usuários focado em escalabilidade e segurança de dados.",
+      "Sistema robusto de gerenciamento de usuários focado em escalabilidade e segurança de dados.",
       technologies: [
         "NestJS",
         "Prisma",
@@ -26,17 +52,7 @@ function ProjectsSection() {
       icon: "layout-template",
       image: hubImg, // Adicione a imagem aqui
     },
-    {
-      title: "Batista Assessoria",
-      description:
-        "Plataforma institucional moderna para contabilidade, otimizada para conversão e velocidade.",
-      technologies: ["React", "Shadcnui", "Vite", "TailwindCSS"],
-      githubUrl: "https://github.com/jeiel2013/batistaecontabil",
-      demoUrl: "https://batistaecontabil.vercel.app/",
-      icon: "building-2",
-      image: batistaImg, // Adicione a imagem aqui
-      featured: true,
-    },
+    
     {
       title: "Coroaci Rádio FM",
       description:
