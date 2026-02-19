@@ -110,7 +110,7 @@ const Links = () => {
     },
     {
       title: "Karine Azevedo",
-      url: "https://karinaazevedo.vercel.app/",
+      url: "https://karineazevedo.vercel.app/",
       icon: <Star className="w-5 h-5" />,
       description: "Último projeto lançado",
       color: "primary",
