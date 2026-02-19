@@ -109,8 +109,8 @@ const Links = () => {
       delay: "300ms",
     },
     {
-      title: "Batista Assessoria",
-      url: "https://batistaecontabil.vercel.app/",
+      title: "Karine Azevedo",
+      url: "https://karinaazevedo.vercel.app/",
       icon: <Star className="w-5 h-5" />,
       description: "Último projeto lançado",
       color: "primary",
