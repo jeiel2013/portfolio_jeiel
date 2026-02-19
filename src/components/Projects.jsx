@@ -17,6 +17,7 @@ function ProjectsSection() {
       technologies: [
         "React",
         "TailwindCSS",
+        "TypeScript",
         "Vite",
         "Lucide Icons"
       ],
@@ -29,7 +30,7 @@ function ProjectsSection() {
       title: "Batista Assessoria",
       description:
       "Plataforma institucional moderna para contabilidade, otimizada para conversão e velocidade.",
-      technologies: ["React", "Shadcnui", "Vite", "TailwindCSS"],
+      technologies: ["React", "TypeScript", "Shadcnui", "Vite", "TailwindCSS"],
       githubUrl: "https://github.com/jeiel2013/batistaecontabil",
       demoUrl: "https://batistaecontabil.vercel.app/",
       icon: "building-2",
