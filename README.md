@@ -87,10 +87,3 @@ Se você curtiu o projeto ou se ele te inspirou de alguma forma, deixe uma estre
 ## 📬 Contato
 
 Sinta-se à vontade para entrar em contato comigo pelas minhas redes — você encontra tudo lá no próprio site! 😉
-
----
-
-Se quiser, posso também criar uma **versão em inglês** ou formatar esse README com badges (ícones de tecnologias, links sociais etc.). É só pedir!
-
-[1]: https://github.com/jeiel2013/portfolio_jeiel "GitHub - jeiel2013/portfolio_jeiel: My personal portfolio."
-[2]: https://ric.cps.sp.gov.br/bitstream/123456789/12113/1/informatica_2022_2_analicevieiradasilva_financemeaplicacaoparagerenciamentofinanceiro.pdf?utm_source=chatgpt.com "CENTRO PAULA SOUZA"
