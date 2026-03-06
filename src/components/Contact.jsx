@@ -14,7 +14,7 @@ function ContactSection() {
 
       <div className="max-w-3xl mx-auto text-center">
         <span className="text-[#00d9a3] font-mono text-sm tracking-widest mb-4 block">
-          04. O QUE VEM A SEGUIR?
+          05. O QUE VEM A SEGUIR?
         </span>
         <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6">
           Vamos criar algo extraordinário.
