@@ -25,7 +25,7 @@ function ContactSection() {
         </p>
 
         <a
-          href="mailto:jeieldev.alves@gmail.com"
+          href="mailto:contatojeiel2013@gmail.com"
           className="inline-flex items-center gap-2 px-8 py-4 bg-[#00d9a3] text-black font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#00d9a3]/20"
         >
           <Mail className="w-5 h-5" />
