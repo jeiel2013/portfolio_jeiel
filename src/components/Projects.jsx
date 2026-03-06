@@ -25,7 +25,17 @@ function ProjectsSection() {
       title: "Karine Azevedo",
       description:
         "Landing Page para a fotógrafa Karine Azevedo com seus projetos, falando sobre ela e entrar em contato também",
+<<<<<<< HEAD
       technologies: ["React", "TailwindCSS", "Vite", "Lucide Icons"],
+=======
+      technologies: [
+        "React",
+        "TailwindCSS",
+        "TypeScript",
+        "Vite",
+        "Lucide Icons"
+      ],
+>>>>>>> 9c9a7cfeda7985f747dd9a58fd5edaa432208835
       githubUrl: "https://github.com/jeiel2013/karine-azevedo",
       demoUrl: "https://karineazevedo.vercel.app/",
       icon: "layout-template",
@@ -34,8 +44,13 @@ function ProjectsSection() {
     {
       title: "Batista Assessoria",
       description:
+<<<<<<< HEAD
         "Plataforma institucional moderna para contabilidade, otimizada para conversão e velocidade.",
       technologies: ["React", "Shadcnui", "Vite", "TailwindCSS"],
+=======
+      "Plataforma institucional moderna para contabilidade, otimizada para conversão e velocidade.",
+      technologies: ["React", "TypeScript", "Shadcnui", "Vite", "TailwindCSS"],
+>>>>>>> 9c9a7cfeda7985f747dd9a58fd5edaa432208835
       githubUrl: "https://github.com/jeiel2013/batistaecontabil",
       demoUrl: "https://batistaecontabil.vercel.app/",
       icon: "building-2",
