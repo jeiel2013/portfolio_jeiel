@@ -109,8 +109,8 @@ const Links = () => {
       delay: "300ms",
     },
     {
-      title: "Karine Azevedo",
-      url: "https://karineazevedo.vercel.app/",
+      title: "Studio Kather",
+      url: "https://studiokather.com/",
       icon: <Star className="w-5 h-5" />,
       description: "Último projeto lançado",
       color: "primary",
