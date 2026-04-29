@@ -4,7 +4,7 @@ import {
   FileDown,
 } from "lucide-react";
 
-import Curriculo from "../assets/pdf/CurrículoJeielAlves.pdf";
+import Curriculo from "../assets/pdf/CurrículoJeiel.pdf";
 
 const educationItems = [
   {
