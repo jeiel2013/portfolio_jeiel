@@ -13,6 +13,7 @@ export const projects = [
   {
     title: "Studio Kather",
     category: "cliente",
+    slug: "studio-kather",
     description:
       "Site institucional desenvolvido para apresentar os serviços do Studio Kather e fortalecer sua presença digital.",
     technologies: ["React", "TailwindCSS", "TypeScript", "Vite"],
@@ -20,10 +21,19 @@ export const projects = [
     demoUrl: "https://studiokather.com",
     icon: "layout-template",
     image: katherImg,
+    caseStudy: {
+      challenge:
+        "O Studio Kather precisava de um site institucional profissional para apresentar seus serviços e fortalecer a presença digital da marca.",
+      solution:
+        "Desenvolvi um site institucional moderno com foco em performance e identidade visual, usando React, TypeScript e TailwindCSS.",
+      result:
+        "Site no ar com carregamento rápido e visual alinhado à marca, servindo como cartão de visitas digital do estúdio.",
+    },
   },
   {
     title: "Karine Azevedo",
     category: "cliente",
+    slug: "karine-azevedo",
     description:
       "Landing Page para a fotógrafa Karine Azevedo com seus projetos, falando sobre ela e entrar em contato também",
     technologies: [
@@ -37,10 +47,19 @@ export const projects = [
     demoUrl: "https://karineazevedo.vercel.app/",
     icon: "layout-template",
     image: karineImg,
+    caseStudy: {
+      challenge:
+        "A fotógrafa Karine Azevedo precisava de uma landing page para apresentar seu portfólio e facilitar o contato com clientes.",
+      solution:
+        "Criei uma landing page com galeria de projetos, seção sobre e contato direto, priorizando a experiência visual das fotos.",
+      result:
+        "Página no ar reunindo portfólio e contato em um só lugar, com visual que valoriza o trabalho fotográfico.",
+    },
   },
   {
     title: "Batista Assessoria",
     category: "cliente",
+    slug: "batista-assessoria",
     description:
       "Plataforma institucional moderna para contabilidade, otimizada para conversão e velocidade.",
     technologies: ["React", "TypeScript", "Shadcnui", "Vite", "TailwindCSS"],
@@ -48,6 +67,14 @@ export const projects = [
     demoUrl: "https://batistaecontabil.vercel.app/",
     icon: "building-2",
     image: batistaImg,
+    caseStudy: {
+      challenge:
+        "A Batista Assessoria Contábil precisava de uma plataforma institucional moderna, rápida e otimizada para conversão de visitantes.",
+      solution:
+        "Construí o site com React, TypeScript e Shadcn/ui, priorizando velocidade de carregamento e clareza na apresentação dos serviços contábeis.",
+      result:
+        "Plataforma no ar com foco em performance e em transformar visitantes em contatos qualificados.",
+    },
   },
   {
     title: "User Hub",
