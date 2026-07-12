@@ -1,5 +1,5 @@
 import React from "react";
-import { Code2, Users, Sparkles } from "lucide-react";
+import { Code2, MessageSquareText, Sparkles } from "lucide-react";
 import {
   SiTypescript,
   SiReact,
@@ -39,25 +39,29 @@ function AboutSection() {
             </h2>
             <div className="space-y-4 text-[#a1a1aa] text-sm leading-7">
               <p>
-                Iniciei minha trajetória no desenvolvimento em 2023, movido pela
-                curiosidade em compreender como sistemas funcionam por trás da
-                interface. Atualmente, curso{" "}
+                Sou{" "}
+                <span className="text-white font-medium">
+                  desenvolvedor fullstack freelancer
+                </span>
+                , atuando desde 2023 na criação de sites e sistemas sob medida
+                para negócios e profissionais que precisam de uma presença
+                digital sólida. Curso{" "}
                 <span className="text-white font-medium">
                   Sistemas de Informação
                 </span>{" "}
-                e uno a base acadêmica a uma prática constante em projetos reais
-                e desenvolvimento independente.
+                e uno a base acadêmica a uma prática constante em projetos
+                reais para clientes.
               </p>
 
               <p>
-                Tenho como foco a criação de experiências web modernas e
-                performáticas, utilizando o ecossistema{" "}
+                Tenho como foco entregar experiências web modernas,
+                performáticas e sob medida, utilizando o ecossistema{" "}
                 <span className="text-white font-medium">
                   JavaScript/TypeScript
                 </span>
-                . Acredito que uma boa tecnologia é aquela que não se impõe, mas
-                atua de forma silenciosa, conectando problemas reais a soluções
-                eficientes e bem pensadas.
+                . Acredito que uma boa tecnologia é aquela que não se impõe,
+                mas resolve o problema do cliente de forma silenciosa,
+                eficiente e bem pensada.
               </p>
 
               <p>
@@ -83,13 +87,13 @@ function AboutSection() {
 
             {/* Stat Card 2 */}
             <div className="glass-panel p-6 rounded-xl hover:border-[#00d9a3]/30 transition-colors group bg-white/[0.03] backdrop-blur-[10px] border border-white/[0.08]">
-              <Users className="w-6 h-6 mb-4 text-[#00d9a3]" />
+              <MessageSquareText className="w-6 h-6 mb-4 text-[#00d9a3]" />
               <h3 className="font-medium text-white mb-2">
-                Trabalho em Equipe
+                Atendimento Direto
               </h3>
               <p className="text-xs text-[#a1a1aa]">
-                Experiência em colaboração e metodologias ágeis de
-                desenvolvimento.
+                Comunicação próxima e acompanhamento em cada etapa do
+                projeto, do orçamento à entrega.
               </p>
             </div>
 
@@ -101,7 +105,7 @@ function AboutSection() {
               </h3>
               <p className="text-xs text-[#a1a1aa]">
                 Constantemente explorando novas tecnologias como React e
-                NestJS.
+                NestJS para entregar soluções mais eficientes.
               </p>
             </div>
           </div>
