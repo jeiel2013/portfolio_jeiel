@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Background from "../components/Background";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
@@ -8,6 +10,18 @@ import ContactSection from "../components/Contact";
 import Footer from "../components/Footer";
 
 function Home() {
+    const location = useLocation();
+
+    // Se a Home for aberta com um hash (ex: veio do Header em outra página
+    // clicando em "Sobre" ou "Contato"), rola até a seção certa.
+    useEffect(() => {
+        if (!location.hash) return;
+        const target = document.querySelector(location.hash);
+        if (target) {
+            setTimeout(() => target.scrollIntoView({ behavior: "smooth" }), 0);
+        }
+    }, [location]);
+
     return (
         <div className="relative min-h-screen bg-[#0a0a0a] text-white antialiased selection:bg-[#00d9a3] selection:text-black">
             {/* Background com grid e partículas */}
