@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { getProjectIcon } from "../utils/projectIcons";
 
 function ProjectGridCard({ project }) {
@@ -29,6 +30,15 @@ function ProjectGridCard({ project }) {
         <p className="text-sm text-[#a1a1aa] mb-6 flex-grow">
           {project.description}
         </p>
+
+        {project.slug && (
+          <Link
+            to={`/projetos/${project.slug}`}
+            className="text-xs font-medium text-[#00d9a3] hover:text-[#00b386] transition-colors mb-4 inline-block w-fit"
+          >
+            Ver case study →
+          </Link>
+        )}
 
         <div className="flex flex-wrap gap-2 mb-6">
           {project.technologies.map((tech, techIndex) => (
