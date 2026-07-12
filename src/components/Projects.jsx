@@ -1,5 +1,5 @@
- 
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 // Importe suas imagens aqui
 import batistaImg from "../assets/images/batistaecontabil.jpg";
@@ -9,91 +9,101 @@ import todoImg from "../assets/images/todo.jpg";
 import karineImg from "../assets/images/karine.png";
 import katherImg from "../assets/images/studiokather.png";
 
-function ProjectsSection() {
-  const projects = [
-    {
-      title: "Studio Kather",
-      description:
-        "Site institucional desenvolvido para apresentar os serviços do Studio Kather e fortalecer sua presença digital.",
-      technologies: ["React", "TailwindCSS", "TypeScript", "Vite"],
-      githubUrl: "https://github.com/jeiel2013/studiokather",
-      demoUrl: "https://studiokather.com",
-      icon: "layout-template",
-      image: katherImg,
-    },
-    {
-      title: "Karine Azevedo",
-      description:
-        "Landing Page para a fotógrafa Karine Azevedo com seus projetos, falando sobre ela e entrar em contato também",
-      technologies: [
-        "React",
-        "TailwindCSS",
-        "TypeScript",
-        "Vite",
-        "Lucide Icons"
-      ],
-      githubUrl: "https://github.com/jeiel2013/karine-azevedo",
-      demoUrl: "https://karineazevedo.vercel.app/",
-      icon: "layout-template",
-      image: karineImg,
-    },
-    {
-      title: "Batista Assessoria",
-      description:
-      "Plataforma institucional moderna para contabilidade, otimizada para conversão e velocidade.",
-      technologies: ["React", "TypeScript", "Shadcnui", "Vite", "TailwindCSS"],
-      githubUrl: "https://github.com/jeiel2013/batistaecontabil",
-      demoUrl: "https://batistaecontabil.vercel.app/",
-      icon: "building-2",
-      image: batistaImg,
-    },
-    {
-      title: "User Hub",
-      description:
-        "Sistema robusto de gerenciamento de usuários focado em escalabilidade e segurança de dados.",
-      technologies: [
-        "NestJS",
-        "Prisma",
-        "PostgreSQL",
-        "Node.js",
-        "React",
-        "Vite",
-      ],
-      githubUrl: "https://github.com/jeiel2013/User-Hub/tree/main",
-      demoUrl: null,
-      icon: "layout-template",
-      image: hubImg,
-    },
-    {
-      title: "Coroaci Rádio FM",
-      description:
-        "Aplicação de rádio web com streaming ao vivo e integração em tempo real.",
-      technologies: ["React", "TailwindCSS", "Vite", "JavaScript"],
-      githubUrl: "https://github.com/jeiel2013/batistaecontabil",
-      demoUrl: "https://coroaciradiofm.vercel.app/",
-      icon: "radio",
-      image: radioImg,
-      featured: true,
-    },
-    {
-      title: "ToDo List",
-      description:
-        "Aplicação simples de lista de tarefas feita para prática e aprendizado.",
-      technologies: [
-        "React",
-        "TailwindCSS",
-        "Shadcnui",
-        "PostgreSQL",
-        "NestJS",
-        "Prisma",
-      ],
-      githubUrl: "https://github.com/jeiel2013/frontend-todo",
-      demoUrl: "https://frontend-todo-x6f1.onrender.com/login",
-      icon: "radio",
-      image: todoImg,
-      featured: true,
-    },
-  ];
+// Projetos exibidos em destaque na Home (trabalhos para clientes reais)
+const FEATURED_TITLES = ["Studio Kather", "Karine Azevedo", "Batista Assessoria"];
+
+const allProjects = [
+  {
+    title: "Studio Kather",
+    description:
+      "Site institucional desenvolvido para apresentar os serviços do Studio Kather e fortalecer sua presença digital.",
+    technologies: ["React", "TailwindCSS", "TypeScript", "Vite"],
+    githubUrl: "https://github.com/jeiel2013/studiokather",
+    demoUrl: "https://studiokather.com",
+    icon: "layout-template",
+    image: katherImg,
+  },
+  {
+    title: "Karine Azevedo",
+    description:
+      "Landing Page para a fotógrafa Karine Azevedo com seus projetos, falando sobre ela e entrar em contato também",
+    technologies: [
+      "React",
+      "TailwindCSS",
+      "TypeScript",
+      "Vite",
+      "Lucide Icons"
+    ],
+    githubUrl: "https://github.com/jeiel2013/karine-azevedo",
+    demoUrl: "https://karineazevedo.vercel.app/",
+    icon: "layout-template",
+    image: karineImg,
+  },
+  {
+    title: "Batista Assessoria",
+    description:
+    "Plataforma institucional moderna para contabilidade, otimizada para conversão e velocidade.",
+    technologies: ["React", "TypeScript", "Shadcnui", "Vite", "TailwindCSS"],
+    githubUrl: "https://github.com/jeiel2013/batistaecontabil",
+    demoUrl: "https://batistaecontabil.vercel.app/",
+    icon: "building-2",
+    image: batistaImg,
+  },
+  {
+    title: "User Hub",
+    description:
+      "Sistema robusto de gerenciamento de usuários focado em escalabilidade e segurança de dados.",
+    technologies: [
+      "NestJS",
+      "Prisma",
+      "PostgreSQL",
+      "Node.js",
+      "React",
+      "Vite",
+    ],
+    githubUrl: "https://github.com/jeiel2013/User-Hub/tree/main",
+    demoUrl: null,
+    icon: "layout-template",
+    image: hubImg,
+  },
+  {
+    title: "Coroaci Rádio FM",
+    description:
+      "Aplicação de rádio web com streaming ao vivo e integração em tempo real.",
+    technologies: ["React", "TailwindCSS", "Vite", "JavaScript"],
+    githubUrl: "https://github.com/jeiel2013/batistaecontabil",
+    demoUrl: "https://coroaciradiofm.vercel.app/",
+    icon: "radio",
+    image: radioImg,
+    featured: true,
+  },
+  {
+    title: "ToDo List",
+    description:
+      "Aplicação simples de lista de tarefas feita para prática e aprendizado.",
+    technologies: [
+      "React",
+      "TailwindCSS",
+      "Shadcnui",
+      "PostgreSQL",
+      "NestJS",
+      "Prisma",
+    ],
+    githubUrl: "https://github.com/jeiel2013/frontend-todo",
+    demoUrl: "https://frontend-todo-x6f1.onrender.com/login",
+    icon: "radio",
+    image: todoImg,
+    featured: true,
+  },
+];
+
+// variant: "home" mostra só os destaques + CTA para a página completa
+// variant: "full" (default) mostra todos os projetos — usado na futura página /projetos
+function ProjectsSection({ variant = "full" }) {
+  const projects =
+    variant === "home"
+      ? allProjects.filter((p) => FEATURED_TITLES.includes(p.title))
+      : allProjects;
 
   const carouselRef = useRef(null);
   const isDragging = useRef(false);
@@ -173,6 +183,30 @@ function ProjectsSection() {
           ))}
         </div>
       </div>
+
+      {variant === "home" && (
+        <div className="max-w-6xl mx-auto px-6 mt-10 text-center">
+          <Link
+            to="/projetos"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 text-white text-sm font-medium rounded-full hover:bg-white/10 transition-all"
+          >
+            Ver todos os projetos
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+          </Link>
+        </div>
+      )}
 
       <style>{`
         div::-webkit-scrollbar { display: none; }

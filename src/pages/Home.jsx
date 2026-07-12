@@ -19,7 +19,7 @@ function Home() {
                 <main>
                     <HeroSection />
                     <AboutSection />
-                    <ProjectsSection />
+                    <ProjectsSection variant="home" />
                     <Education />
                     <ContactSection />
                 </main>
