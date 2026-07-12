@@ -1,11 +1,8 @@
 import React from "react";
 import { MessageCircle } from "lucide-react";
+import { getWhatsAppLink } from "../config/whatsapp";
 
-// TODO: troque pelo seu número real (código do país + DDD + número, sem espaços/símbolos)
-const WHATSAPP_NUMBER = "5533999999999";
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(
-  "Olá, Jeiel! Vi seu portfólio e quero conversar sobre um projeto."
-)}`;
+const WHATSAPP_LINK = getWhatsAppLink();
 
 function HeroSection() {
   return (
