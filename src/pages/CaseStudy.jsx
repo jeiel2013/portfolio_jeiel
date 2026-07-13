@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { projects } from "../data/projects";
 import { getMailtoLink } from "../config/contact";
+import CopyEmailButton from "../components/CopyEmailButton";
 
 function CaseStudy() {
   const { slug } = useParams();
@@ -144,13 +145,16 @@ function CaseStudy() {
               <p className="text-[#a1a1aa] mb-8 max-w-md mx-auto">
                 Resposta rápida e orçamento sem compromisso por e-mail.
               </p>
-              <a
-                href={getMailtoLink()}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#00d9a3] text-black font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#00d9a3]/20"
-              >
-                <Mail className="w-5 h-5" />
-                Enviar E-mail
-              </a>
+              <div className="flex items-center justify-center gap-3">
+                <a
+                  href={getMailtoLink()}
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#00d9a3] text-black font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#00d9a3]/20"
+                >
+                  <Mail className="w-5 h-5" />
+                  Enviar E-mail
+                </a>
+                <CopyEmailButton />
+              </div>
             </div>
           </section>
         </main>

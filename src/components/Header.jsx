@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { getMailtoLink } from "../config/contact";
+import CopyEmailButton from "./CopyEmailButton";
 
 // hash: seção dentro da Home | to: página própria (rota)
 const NAV_LINKS = [
@@ -104,12 +105,15 @@ function Header() {
         </div>
 
         <div className="flex items-center gap-3">
-          <a
-            href={getMailtoLink()}
-            className="px-4 py-2 text-xs font-medium bg-white/5 border border-white/[0.08] rounded-full hover:bg-white/10 transition-colors hidden sm:block"
-          >
-            Vamos conversar
-          </a>
+          <div className="hidden sm:flex items-center gap-2">
+            <a
+              href={getMailtoLink()}
+              className="px-4 py-2 text-xs font-medium bg-white/5 border border-white/[0.08] rounded-full hover:bg-white/10 transition-colors"
+            >
+              Vamos conversar
+            </a>
+            <CopyEmailButton className="w-9 h-9" />
+          </div>
 
           {/* Botão hambúrguer — só aparece abaixo do breakpoint md */}
           <button
@@ -140,6 +144,7 @@ function Header() {
           >
             Vamos conversar
           </a>
+          <CopyEmailButton variant="full" />
         </div>
       </div>
     </nav>

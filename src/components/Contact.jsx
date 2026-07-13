@@ -3,6 +3,7 @@ import { Mail } from "lucide-react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { SiX } from "react-icons/si";
 import { getMailtoLink } from "../config/contact";
+import CopyEmailButton from "./CopyEmailButton";
 
 function ContactSection() {
   return (
@@ -26,13 +27,16 @@ function ContactSection() {
           ideia e retorno rápido.
         </p>
 
-        <a
-          href={getMailtoLink()}
-          className="inline-flex items-center gap-2 px-8 py-4 bg-[#00d9a3] text-black font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#00d9a3]/20"
-        >
-          <Mail className="w-5 h-5" />
-          Enviar E-mail
-        </a>
+        <div className="flex items-center justify-center gap-3">
+          <a
+            href={getMailtoLink()}
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#00d9a3] text-black font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#00d9a3]/20"
+          >
+            <Mail className="w-5 h-5" />
+            Enviar E-mail
+          </a>
+          <CopyEmailButton />
+        </div>
 
         <div className="flex justify-center gap-8 mt-16">
           <a

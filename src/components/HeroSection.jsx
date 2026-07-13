@@ -1,6 +1,7 @@
 import React from "react";
 import { Mail } from "lucide-react";
 import { getMailtoLink } from "../config/contact";
+import CopyEmailButton from "./CopyEmailButton";
 
 function HeroSection() {
   return (
@@ -48,6 +49,7 @@ function HeroSection() {
             <Mail className="w-4 h-4" />
             Enviar E-mail
           </a>
+          <CopyEmailButton />
           <a
             href="#projects"
             className="group px-8 py-3 bg-white/5 border border-white/10 text-white text-sm font-medium rounded-full hover:bg-white/10 transition-all flex items-center gap-2"

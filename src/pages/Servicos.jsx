@@ -5,6 +5,7 @@ import Footer from "../components/Footer";
 import Services from "../components/Services";
 import Process from "../components/Process";
 import { getMailtoLink } from "../config/contact";
+import CopyEmailButton from "../components/CopyEmailButton";
 
 function Servicos() {
   return (
@@ -15,11 +16,11 @@ function Servicos() {
         <Header />
         <main className="pt-24">
           {/* Intro da página */}
-          <section className="px-6 pb-4 text-center max-w-3xl mx-auto">
-            <span className="text-[#00d9a3] font-mono text-xs tracking-widest mb-4 block">
+          <section className="px-6 pb-9 lg:pb-20 pt-6 text-center max-w-3xl mx-auto">
+            <span className="text-[#00d9a3] font-mono text-sm tracking-widest mb-4 block">
               SERVIÇOS
             </span>
-            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">
+            <h1 className="text-4xl md:text-5xl pt-8 font-semibold tracking-tight text-white">
               Soluções sob medida pra tirar seu projeto do papel.
             </h1>
           </section>
@@ -40,13 +41,16 @@ function Servicos() {
               <p className="text-[#a1a1aa] mb-10 max-w-md mx-auto">
                 Resposta rápida e orçamento sem compromisso por e-mail.
               </p>
-              <a
-                href={getMailtoLink()}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[#00d9a3] text-black font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#00d9a3]/20"
-              >
-                <Mail className="w-5 h-5" />
-                Enviar E-mail
-              </a>
+              <div className="flex items-center justify-center gap-3">
+                <a
+                  href={getMailtoLink()}
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#00d9a3] text-black font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#00d9a3]/20"
+                >
+                  <Mail className="w-5 h-5" />
+                  Enviar E-mail
+                </a>
+                <CopyEmailButton />
+              </div>
             </div>
           </section>
         </main>
