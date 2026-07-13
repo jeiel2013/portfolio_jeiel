@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { getWhatsAppLink } from "../config/whatsapp";
+import { getMailtoLink } from "../config/contact";
 
 // hash: seção dentro da Home | to: página própria (rota)
 const NAV_LINKS = [
@@ -105,9 +105,7 @@ function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href={getWhatsAppLink()}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={getMailtoLink()}
             className="px-4 py-2 text-xs font-medium bg-white/5 border border-white/[0.08] rounded-full hover:bg-white/10 transition-colors hidden sm:block"
           >
             Vamos conversar
@@ -136,9 +134,7 @@ function Header() {
           {NAV_LINKS.map((item) => renderNavItem(item, true))}
 
           <a
-            href={getWhatsAppLink()}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={getMailtoLink()}
             onClick={() => setIsMenuOpen(false)}
             className="mt-2 px-4 py-3.5 text-sm font-semibold text-center bg-[#00d9a3] text-black rounded-full hover:bg-[#00b386] transition-colors"
           >

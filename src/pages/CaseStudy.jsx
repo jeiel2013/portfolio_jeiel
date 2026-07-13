@@ -1,10 +1,10 @@
 import { useParams, Link } from "react-router-dom";
-import { MessageCircle, ArrowLeft } from "lucide-react";
+import { Mail, ArrowLeft } from "lucide-react";
 import Background from "../components/Background";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { projects } from "../data/projects";
-import { getWhatsAppLink } from "../config/whatsapp";
+import { getMailtoLink } from "../config/contact";
 
 function CaseStudy() {
   const { slug } = useParams();
@@ -57,8 +57,8 @@ function CaseStudy() {
               Voltar aos projetos
             </Link>
 
-            <span className="text-[#00d9a3] font-mono text-xs tracking-widest mb-4 block uppercase">
-              projeto
+            <span className="text-[#00d9a3] font-mono text-xs tracking-widest mb-4 block">
+              CASE STUDY
             </span>
             <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6">
               {project.title}
@@ -142,16 +142,14 @@ function CaseStudy() {
                 Quer um projeto assim para o seu negócio?
               </h2>
               <p className="text-[#a1a1aa] mb-8 max-w-md mx-auto">
-                Resposta rápida e orçamento sem compromisso pelo WhatsApp.
+                Resposta rápida e orçamento sem compromisso por e-mail.
               </p>
               <a
-                href={getWhatsAppLink()}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={getMailtoLink()}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-[#00d9a3] text-black font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#00d9a3]/20"
               >
-                <MessageCircle className="w-5 h-5" />
-                Falar no WhatsApp
+                <Mail className="w-5 h-5" />
+                Enviar E-mail
               </a>
             </div>
           </section>
