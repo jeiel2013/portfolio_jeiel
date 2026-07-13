@@ -112,7 +112,6 @@ function Header() {
             >
               Vamos conversar
             </a>
-            <CopyEmailButton className="w-9 h-9" />
           </div>
 
           {/* Botão hambúrguer — só aparece abaixo do breakpoint md */}
