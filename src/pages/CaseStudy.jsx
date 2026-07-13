@@ -57,8 +57,8 @@ function CaseStudy() {
               Voltar aos projetos
             </Link>
 
-            <span className="text-[#00d9a3] font-mono text-xs tracking-widest mb-4 block">
-              CASE STUDY
+            <span className="text-[#00d9a3] font-mono text-xs tracking-widest mb-4 block uppercase">
+              projeto
             </span>
             <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6">
               {project.title}

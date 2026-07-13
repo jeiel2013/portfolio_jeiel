@@ -60,7 +60,7 @@ function ProjectsSection({ variant = "full" }) {
           </h2>
           <div className="flex gap-2 text-[#a1a1aa]">
             <span className="text-xs font-mono border border-white/[0.08] px-2 py-1 rounded select-none">
-              ← ARRASTE →
+              EM DESTAQUE
             </span>
           </div>
         </div>

@@ -36,7 +36,7 @@ function ProjectGridCard({ project }) {
             to={`/projetos/${project.slug}`}
             className="text-xs font-medium text-[#00d9a3] hover:text-[#00b386] transition-colors mb-4 inline-block w-fit"
           >
-            Ver case study →
+            Ver projeto →
           </Link>
         )}
 
