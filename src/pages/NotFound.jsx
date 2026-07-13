@@ -8,17 +8,17 @@ function NotFound() {
   return (
     <div className="relative min-h-screen bg-[#0a0a0a] text-white antialiased selection:bg-[#00d9a3] selection:text-black">
       <Background />
-
-      <div className="relative z-10">
+      <div className="relative z-10 min-h-screen flex flex-col">
         <Header />
-        <main className="pt-40 px-6 text-center pb-32 min-h-[60vh] flex flex-col items-center justify-center">
-          <span className="text-[#00d9a3] font-mono text-sm tracking-widest mb-4 block">
+
+        <main className="flex-1 flex flex-col items-center justify-center text-center px-6 pt-16">
+          <span className="text-[#00d9a3] font-mono text-xl tracking-widest mb-4 block">
             404
           </span>
           <h1 className="text-3xl md:text-4xl font-semibold tracking-tight text-white mb-4">
             Página não encontrada
           </h1>
-          <p className="text-[#a1a1aa] text-sm mb-8 max-w-sm">
+          <p className="text-[#a1a1aa] text-lg mb-8 max-w-sm">
             A página que você procura não existe ou foi movida.
           </p>
           <Link
@@ -29,6 +29,7 @@ function NotFound() {
             Voltar para a Home
           </Link>
         </main>
+
         <Footer />
       </div>
     </div>
