@@ -1,22 +1,36 @@
 # 👋 Olá, eu sou o Jeiel
 
-Bem-vindo ao repositório do meu **portfólio pessoal**! Aqui está o código fonte do meu site que apresenta quem eu sou, meus projetos e minhas habilidades como desenvolvedor web. 🌐
+Bem-vindo ao repositório do meu **portfólio pessoal**! Aqui está o código fonte do meu site, que apresenta quem eu sou, meus serviços como desenvolvedor freelancer e os projetos que já entreguei. 🌐
 
 Você pode ver o resultado final ao vivo em:
-👉 [https://jeieldev.vercel.app/](https://jeieldev.vercel.app/) ([GitHub][1])
+👉 [https://jeieldev.vercel.app/](https://jeieldev.vercel.app/)
 
 ---
 
 ## ✨ Sobre este Portfólio
 
-Este portfólio foi criado para mostrar meus trabalhos, minhas tecnologias favoritas e servir como uma vitrine do meu desenvolvimento como programador. O design da interface foi construído com muito cuidado focando tanto na estética quanto na usabilidade.
+Este portfólio foi criado para apresentar meu trabalho como **desenvolvedor fullstack freelancer**: os serviços que ofereço, os projetos que já entreguei para clientes reais e uma vitrine técnica dos meus projetos pessoais. O design da interface foi construído com muito cuidado, focando tanto na estética quanto na usabilidade.
 
 Para **a UI (User Interface)**, contei com a ajuda de ferramentas modernas:
 
 - Usei _aura.build_ para acelerar e inspirar a criação da interface visual.
-- Utilizei _Claude_ para apoio no design, organização de ideias e refinamento dos layouts.
+- Utilizei _Claude_ para apoio no design, organização de ideias, refinamento dos layouts e evolução do site de landing page única para um portfólio multi-página.
 
 Essa combinação me ajudou a entregar um site bonito, fluido e responsivo. 🚀
+
+---
+
+## 📄 Páginas
+
+| Rota | Descrição |
+| --- | --- |
+| `/` | Home — hero, sobre, tecnologias, destaques de projetos e contato |
+| `/servicos` | O que ofereço como freelancer e como funciona o processo |
+| `/projetos` | Todos os projetos, separados em Projetos para Clientes e Projetos Técnicos & Pessoais |
+| `/projetos/:slug` | Case study individual de cada projeto para cliente (desafio, solução e resultado) |
+| `/links` | Página estilo "link in bio" com meus principais links |
+
+Rotas não encontradas caem numa página 404 própria, no mesmo estilo visual do site.
 
 ---
 
@@ -25,9 +39,11 @@ Essa combinação me ajudou a entregar um site bonito, fluido e responsivo. 🚀
 Este projeto foi desenvolvido com as seguintes tecnologias principais:
 
 - **React** – biblioteca JavaScript para construir interfaces.
+- **React Router** – navegação entre as páginas do site.
 - **Vite** – ferramenta de build super rápida para projetos web.
-- **Tailwind CSS / SCSS** – estilos modernos e utilitários para tornar a interface elegante e responsiva.
-- **Deploy no Vercel** – para hospedagem rápida e estável do site. ([Institucional do Conhecimento][2])
+- **Tailwind CSS** – estilos modernos e utilitários para tornar a interface elegante e responsiva.
+- **Lucide React / React Icons** – ícones usados em toda a interface.
+- **Deploy no Vercel** – para hospedagem rápida e estável do site.
 
 ---
 
@@ -35,8 +51,13 @@ Este projeto foi desenvolvido com as seguintes tecnologias principais:
 
 O repositório contém:
 
-- `/src` – código fonte da aplicação.
-- `/public` – arquivos estáticos como imagens, iconografia, etc.
+- `/src/pages` – as páginas do site (Home, Serviços, Projetos, Case Study, Links, 404).
+- `/src/components` – componentes reutilizados entre as páginas (Header, Footer, Background, seções da Home, cards de projeto, etc.).
+- `/src/data` – dados centralizados dos projetos (usados tanto na Home quanto na página completa de Projetos e nos Case Studies).
+- `/src/utils` – funções utilitárias compartilhadas (ex: ícones dos projetos).
+- `/src/config` – configurações centrais, como o e-mail de contato usado nos CTAs.
+- `/src/assets` – arquivos estáticos como imagens, iconografia e o PDF do currículo.
+- `/public` – arquivos estáticos servidos diretamente.
 - Configurações de lint, build e scripts para facilitar desenvolvimento local.
 - O README que você está lendo agora 😄
 
@@ -86,4 +107,4 @@ Se você curtiu o projeto ou se ele te inspirou de alguma forma, deixe uma estre
 
 ## 📬 Contato
 
-Sinta-se à vontade para entrar em contato comigo pelas minhas redes — você encontra tudo lá no próprio site! 😉
+Estou disponível para novos projetos freelancer — sites institucionais, sistemas web sob medida e parcerias de longo prazo. Sinta-se à vontade para entrar em contato comigo pelo e-mail disponível no próprio site, na página de Serviços ou no rodapé. 😉
