@@ -16,11 +16,11 @@ function Projetos() {
         <Header />
         <main className="pt-24">
           {/* Intro da página */}
-          <section className="px-6 pb-4 text-center max-w-3xl mx-auto">
-            <span className="text-[#00d9a3] font-mono text-xs tracking-widest mb-4 block">
+          <section className="px-6 pb-9 lg:pb-20 pt-6 text-center max-w-3xl mx-auto">
+            <span className="text-[#00d9a3] font-mono text-sm tracking-widest mb-4 block">
               PROJETOS
             </span>
-            <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-white">
+            <h1 className="text-4xl md:text-5xl pt-8 font-semibold tracking-tight text-white">
               Trabalhos entregues e projetos de prática.
             </h1>
           </section>
