@@ -10,7 +10,7 @@ import { useLanguage } from "../context/LanguageContext";
 
 function CaseStudy() {
   const { slug } = useParams();
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const project = projects.find((p) => p.slug === slug);
 
   if (!project || !project.caseStudy) {
@@ -39,6 +39,9 @@ function CaseStudy() {
   }
 
   const { challenge, solution, result } = project.caseStudy;
+  const challengeText = challenge[language];
+  const solutionText = solution[language];
+  const resultText = result[language];
 
   return (
     <div className="relative min-h-screen bg-[#0a0a0a] text-white antialiased selection:bg-[#00d9a3] selection:text-black">
@@ -92,21 +95,21 @@ function CaseStudy() {
               <h2 className="text-xl font-semibold tracking-tight mb-3 flex items-center gap-3">
                 <span className="text-[#00d9a3] text-lg">01.</span> {t.caseStudy.challengeLabel}
               </h2>
-              <p className="text-[#a1a1aa] text-sm leading-7">{challenge}</p>
+              <p className="text-[#a1a1aa] text-sm leading-7">{challengeText}</p>
             </div>
 
             <div>
               <h2 className="text-xl font-semibold tracking-tight mb-3 flex items-center gap-3">
                 <span className="text-[#00d9a3] text-lg">02.</span> {t.caseStudy.solutionLabel}
               </h2>
-              <p className="text-[#a1a1aa] text-sm leading-7">{solution}</p>
+              <p className="text-[#a1a1aa] text-sm leading-7">{solutionText}</p>
             </div>
 
             <div>
               <h2 className="text-xl font-semibold tracking-tight mb-3 flex items-center gap-3">
                 <span className="text-[#00d9a3] text-lg">03.</span> {t.caseStudy.resultLabel}
               </h2>
-              <p className="text-[#a1a1aa] text-sm leading-7">{result}</p>
+              <p className="text-[#a1a1aa] text-sm leading-7">{resultText}</p>
             </div>
 
             <div className="flex flex-wrap gap-4 pt-4 border-t border-white/[0.08]">

@@ -4,7 +4,7 @@ import { getProjectIcon } from "../utils/projectIcons";
 import { useLanguage } from "../context/LanguageContext";
 
 function ProjectGridCard({ project }) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <article className="bg-[#121212] rounded-xl border border-white/[0.08] overflow-hidden flex flex-col group hover:border-[#00d9a3]/50 transition-all duration-300">
@@ -31,7 +31,7 @@ function ProjectGridCard({ project }) {
         </h3>
 
         <p className="text-sm text-[#a1a1aa] mb-6 flex-grow">
-          {project.description}
+          {project.description[language]}
         </p>
 
         {project.slug && (

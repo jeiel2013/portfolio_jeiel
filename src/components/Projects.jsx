@@ -124,6 +124,8 @@ function ProjectsSection({ variant = "full" }) {
 }
 
 function ProjectCard({ project, dragging }) {
+  const { language } = useLanguage();
+
   return (
     <article className="snap-center shrink-0 w-[300px] md:w-[340px] bg-[#121212] rounded-xl border border-white/[0.08] overflow-hidden flex flex-col group hover:border-[#00d9a3]/50 transition-all duration-300">
       <div className="h-40 bg-gradient-to-br from-gray-800 to-black relative overflow-hidden group-hover:opacity-90 transition-opacity">
@@ -152,7 +154,7 @@ function ProjectCard({ project, dragging }) {
         </div>
 
         <p className="text-sm text-[#a1a1aa] mb-6 flex-grow">
-          {project.description}
+          {project.description[language]}
         </p>
 
         <div className="flex flex-wrap gap-2 mb-6">

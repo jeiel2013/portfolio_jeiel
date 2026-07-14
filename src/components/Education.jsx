@@ -6,39 +6,13 @@ import {
 import Curriculo from "../assets/pdf/CurrículoJeiel.pdf";
 import { useLanguage } from "../context/LanguageContext";
 
-const educationItems = [
-  {
-    icon: GraduationCap,
-    title: "Sistemas de Informação",
-    institution: "Univale (Universidade Vale do Rio Doce)",
-    period: "2023 – 2026",
-    description:
-      "Graduação com foco em engenharia de software, desenvolvimento web e banco de dados. Desenvolvimento de projetos práticos e aplicações fullstack durante a formação.",
-  },
-  {
-    icon: Code2,
-    title: "React JS com TypeScript do zero ao avançado na prática",
-    institution: "Udemy - Matheus Fraga",
-    period: "2026",
-    description:
-      "Focado no desenvolvimento de habilidades práticas na área de tecnologia, abordando conceitos fundamentais e aplicação prática por meio de exercícios e projetos.",
-  },
-  {
-    icon: Code2,
-    title: "NestJS para REST API com TypeORM, Autenticação JWT e Testes",
-    institution: "Udemy - Luiz Otávio Miranda",
-    period: "2025",
-    description:
-      "Curso voltado para o desenvolvimento de habilidades práticas, com foco na aplicação dos conceitos estudados em projetos e boas práticas de desenvolvimento.",
-  },
-  {
-    icon: Code2,
-    title: "Spring Boot Expert: JPA, REST, JWT, OAuth2 com Docker e AWS",
-    institution: "Udemy - Dougllas Sousa",
-    period: "2025",
-    description:
-      "Formação em Java com foco em fundamentos da linguagem, programação orientada a objetos, desenvolvimento de APIs e integração com banco de dados utilizando tecnologias como Spring Boot e JPA.",
-  },
+// Ícone, instituição e período são iguais nos dois idiomas (nomes próprios/datas);
+// título e descrição vêm do dicionário de traduções.
+const meta = [
+  { icon: GraduationCap, institution: "Univale (Universidade Vale do Rio Doce)", period: "2023 – 2026" },
+  { icon: Code2, institution: "Udemy - Matheus Fraga", period: "2026" },
+  { icon: Code2, institution: "Udemy - Luiz Otávio Miranda", period: "2025" },
+  { icon: Code2, institution: "Udemy - Dougllas Sousa", period: "2025" },
 ];
 
 export default function Education() {
@@ -82,8 +56,8 @@ export default function Education() {
           </div>
 
           <div className="md:w-2/3 space-y-4">
-            {educationItems.map((item, index) => {
-              const Icon = item.icon;
+            {t.education.items.map((item, index) => {
+              const { icon: Icon, institution, period } = meta[index];
               return (
                 <div
                   key={index}
@@ -101,12 +75,12 @@ export default function Education() {
                         {item.title}
                       </h3>
                       <span className="text-[10px] font-mono text-[#a1a1aa] bg-white/[0.05] px-2 py-0.5 rounded border border-white/[0.08] w-fit shrink-0">
-                        {item.period}
+                        {period}
                       </span>
                     </div>
 
                     <p className="text-xs text-[#00d9a3]/70 mb-2">
-                      {item.institution}
+                      {institution}
                     </p>
 
                     <p className="text-xs text-[#a1a1aa] leading-relaxed">

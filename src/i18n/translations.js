@@ -134,6 +134,28 @@ export const translations = {
       intro:
         "Minha jornada acadêmica e qualificações técnicas que fundamentam meu trabalho como desenvolvedor.",
       downloadCv: "Download CV",
+      items: [
+        {
+          title: "Sistemas de Informação",
+          description:
+            "Graduação com foco em engenharia de software, desenvolvimento web e banco de dados. Desenvolvimento de projetos práticos e aplicações fullstack durante a formação.",
+        },
+        {
+          title: "React JS com TypeScript do zero ao avançado na prática",
+          description:
+            "Focado no desenvolvimento de habilidades práticas na área de tecnologia, abordando conceitos fundamentais e aplicação prática por meio de exercícios e projetos.",
+        },
+        {
+          title: "NestJS para REST API com TypeORM, Autenticação JWT e Testes",
+          description:
+            "Curso voltado para o desenvolvimento de habilidades práticas, com foco na aplicação dos conceitos estudados em projetos e boas práticas de desenvolvimento.",
+        },
+        {
+          title: "Spring Boot Expert: JPA, REST, JWT, OAuth2 com Docker e AWS",
+          description:
+            "Formação em Java com foco em fundamentos da linguagem, programação orientada a objetos, desenvolvimento de APIs e integração com banco de dados utilizando tecnologias como Spring Boot e JPA.",
+        },
+      ],
     },
     notFound: {
       title: "Página não encontrada",
@@ -281,6 +303,28 @@ export const translations = {
       intro:
         "My academic journey and technical qualifications that support my work as a developer.",
       downloadCv: "Download CV",
+      items: [
+        {
+          title: "Information Systems",
+          description:
+            "Degree focused on software engineering, web development and databases. Hands-on projects and fullstack applications throughout the program.",
+        },
+        {
+          title: "React JS with TypeScript, from Zero to Advanced in Practice",
+          description:
+            "Focused on building practical technology skills, covering fundamental concepts and hands-on application through exercises and projects.",
+        },
+        {
+          title: "NestJS for REST APIs with TypeORM, JWT Authentication and Testing",
+          description:
+            "Course focused on practical skill-building, applying the concepts studied to real projects and development best practices.",
+        },
+        {
+          title: "Spring Boot Expert: JPA, REST, JWT, OAuth2 with Docker and AWS",
+          description:
+            "Java-focused training covering language fundamentals, object-oriented programming, API development and database integration using technologies like Spring Boot and JPA.",
+        },
+      ],
     },
     notFound: {
       title: "Page not found",
