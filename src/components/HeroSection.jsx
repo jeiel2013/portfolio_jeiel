@@ -32,7 +32,7 @@ function HeroSection() {
         </h1>
 
         <p className="text-lg md:text-xl text-[#a1a1aa] font-mono mt-4">
-          <span className="text-[#00d9a3]">&gt;</span> Desenvolvedor Fullstack Freelancer
+          <span className="text-[#00d9a3]">&gt;</span> Desenvolvedor Fullstack
         </p>
 
         <p className="max-w-xl mx-auto text-[#a1a1aa] text-sm md:text-base leading-relaxed pt-4">

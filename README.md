@@ -1,9 +1,17 @@
 # 👋 Olá, eu sou o Jeiel
 
+🌐 *Read this in [English](./README.en.md)*
+
 Bem-vindo ao repositório do meu **portfólio pessoal**! Aqui está o código fonte do meu site, que apresenta quem eu sou, meus serviços como desenvolvedor freelancer e os projetos que já entreguei. 🌐
 
 Você pode ver o resultado final ao vivo em:
 👉 [https://jeieldev.vercel.app/](https://jeieldev.vercel.app/)
+
+---
+
+## 📸 Preview
+
+![Preview do portfólio](./public/SiteJeiel.gif)
 
 ---
 
@@ -96,6 +104,16 @@ Se você quiser rodar esse projeto localmente:
    ```
    http://localhost:3000
    ```
+
+---
+
+## 🗺️ Roadmap
+
+Coisas que pretendo adicionar ao portfólio:
+
+- [ ] Modo Claro/Escuro
+- [ ] Mudar linguagem
+- [ ] Mais projetos detalhados
 
 ---
 
