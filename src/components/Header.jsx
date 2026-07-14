@@ -137,7 +137,7 @@ function Header() {
         <div className="flex items-center gap-3">
           <LanguageSwitch className="hidden sm:flex" />
 
-          <div className="hidden sm:flex items-center gap-2">
+          {/* <div className="hidden sm:flex items-center gap-2">
             <a
               href={getMailtoLink()}
               className="px-4 py-2 text-xs font-medium bg-white/5 border border-white/[0.08] rounded-full hover:bg-white/10 transition-colors"
@@ -145,7 +145,7 @@ function Header() {
               {t.nav.cta}
             </a>
             <CopyEmailButton className="w-9 h-9" />
-          </div>
+          </div> */}
 
           {/* Botão hambúrguer — só aparece abaixo do breakpoint md */}
           <button
