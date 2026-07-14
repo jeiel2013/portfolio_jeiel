@@ -8,22 +8,24 @@ import {
   SiTailwindcss,
   SiNestjs,
   SiMysql,
-  SiVuedotjs,
   SiJavascript,
   SiPostgresql,
   SiGit,
 } from "react-icons/si";
+import { useLanguage } from "../context/LanguageContext";
 
 function AboutSection() {
+  const { t } = useLanguage();
+
   const technologies = [
-    { name: "TypeScript", icon: SiTypescript, color: "#3178C6" }, //
-    { name: "React", icon: SiReact, color: "#61DAFB" }, //
-    { name: "Node.js", icon: SiNodedotjs, color: "#339933" }, //
-    { name: "Prisma", icon: SiPrisma, color: "#ffffff" }, //
-    { name: "Tailwind", icon: SiTailwindcss, color: "#38B2AC" }, //
-    { name: "NestJS", icon: SiNestjs, color: "#E0234E" }, //
-    { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" }, //
-    { name: "MySQL", icon: SiMysql, color: "#4479A1" }, //
+    { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+    { name: "React", icon: SiReact, color: "#61DAFB" },
+    { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
+    { name: "Prisma", icon: SiPrisma, color: "#ffffff" },
+    { name: "Tailwind", icon: SiTailwindcss, color: "#38B2AC" },
+    { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
+    { name: "JavaScript", icon: SiJavascript, color: "#F7DF1E" },
+    { name: "MySQL", icon: SiMysql, color: "#4479A1" },
     { name: "PostgreSQL", icon: SiPostgresql, color: "#ffffff" },
     { name: "Git", icon: SiGit, color: "#F1502F" },
   ];
@@ -35,78 +37,32 @@ function AboutSection() {
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
           <div className="space-y-6">
             <h2 className="text-3xl font-semibold tracking-tight flex items-center gap-3">
-              <span className="text-[#00d9a3] text-xl">01.</span> Sobre Mim
+              <span className="text-[#00d9a3] text-xl">01.</span> {t.about.title}
             </h2>
             <div className="space-y-4 text-[#a1a1aa] text-sm leading-7">
-              <p>
-                Sou{" "}
-                <span className="text-white font-medium">
-                  desenvolvedor fullstack freelancer
-                </span>
-                , atuando desde 2023 na criação de sites e sistemas sob medida
-                para negócios e profissionais que precisam de uma presença
-                digital sólida. Curso{" "}
-                <span className="text-white font-medium">
-                  Sistemas de Informação
-                </span>{" "}
-                e uno a base acadêmica a uma prática constante em projetos
-                reais para clientes.
-              </p>
-
-              <p>
-                Tenho como foco entregar experiências web modernas,
-                performáticas e sob medida, utilizando o ecossistema{" "}
-                <span className="text-white font-medium">
-                  JavaScript/TypeScript
-                </span>
-                . Acredito que uma boa tecnologia é aquela que não se impõe,
-                mas resolve o problema do cliente de forma silenciosa,
-                eficiente e bem pensada.
-              </p>
-
-              <p>
-                Fora do ambiente de código, encontro inspiração em jogos e
-                atividades que estimulam o raciocínio estratégico, a
-                criatividade e a tomada de decisão.
-              </p>
+              <p>{t.about.paragraph1}</p>
+              <p>{t.about.paragraph2}</p>
+              <p>{t.about.paragraph3}</p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 gap-4">
-            {/* Stat Card 1 */}
             <div className="glass-panel p-6 rounded-xl hover:border-[#00d9a3]/30 transition-colors group bg-white/[0.03] backdrop-blur-[10px] border border-white/[0.08]">
               <Code2 className="w-6 h-6 mb-4 text-[#00d9a3]" />
-              <h3 className="font-medium text-white mb-2">
-                Desenvolvimento Fullstack
-              </h3>
-              <p className="text-xs text-[#a1a1aa]">
-                Domínio do ciclo completo, do banco de dados à interface do
-                usuário.
-              </p>
+              <h3 className="font-medium text-white mb-2">{t.about.card1Title}</h3>
+              <p className="text-xs text-[#a1a1aa]">{t.about.card1Desc}</p>
             </div>
 
-            {/* Stat Card 2 */}
             <div className="glass-panel p-6 rounded-xl hover:border-[#00d9a3]/30 transition-colors group bg-white/[0.03] backdrop-blur-[10px] border border-white/[0.08]">
               <MessageSquareText className="w-6 h-6 mb-4 text-[#00d9a3]" />
-              <h3 className="font-medium text-white mb-2">
-                Atendimento Direto
-              </h3>
-              <p className="text-xs text-[#a1a1aa]">
-                Comunicação próxima e acompanhamento em cada etapa do
-                projeto, do orçamento à entrega.
-              </p>
+              <h3 className="font-medium text-white mb-2">{t.about.card2Title}</h3>
+              <p className="text-xs text-[#a1a1aa]">{t.about.card2Desc}</p>
             </div>
 
-            {/* Stat Card 3 */}
             <div className="glass-panel p-6 rounded-xl hover:border-[#00d9a3]/30 transition-colors group bg-white/[0.03] backdrop-blur-[10px] border border-white/[0.08]">
               <Sparkles className="w-6 h-6 mb-4 text-[#00d9a3]" />
-              <h3 className="font-medium text-white mb-2">
-                Aprendizado Contínuo
-              </h3>
-              <p className="text-xs text-[#a1a1aa]">
-                Constantemente explorando novas tecnologias como React e
-                NestJS para entregar soluções mais eficientes.
-              </p>
+              <h3 className="font-medium text-white mb-2">{t.about.card3Title}</h3>
+              <p className="text-xs text-[#a1a1aa]">{t.about.card3Desc}</p>
             </div>
           </div>
         </div>
@@ -119,7 +75,7 @@ function AboutSection() {
       >
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-semibold tracking-tight mb-12 flex items-center gap-3">
-            <span className="text-[#00d9a3] text-xl">02.</span> Tecnologias
+            <span className="text-[#00d9a3] text-xl">02.</span> {t.about.techTitle}
           </h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
@@ -133,7 +89,6 @@ function AboutSection() {
   );
 }
 
-// Componente separado para cada tecnologia
 function TechItem({ name, icon: Icon, color }) {
   return (
     <div className="flex flex-col items-center justify-center p-6 rounded-lg bg-[#121212] border border-white/[0.08] hover:border-[#00d9a3]/50 transition-all group">

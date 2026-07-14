@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { Copy, Check } from "lucide-react";
 import { CONTACT_EMAIL } from "../config/contact";
+import { useLanguage } from "../context/LanguageContext";
 
 // variant "icon": botão circular (usado ao lado de outros CTAs)
 // variant "full": botão de largura total com texto (usado no menu mobile)
 function CopyEmailButton({ variant = "icon", className = "" }) {
   const [copied, setCopied] = useState(false);
+  const { t } = useLanguage();
 
   const handleCopy = async () => {
     try {
@@ -29,7 +31,7 @@ function CopyEmailButton({ variant = "icon", className = "" }) {
         ) : (
           <Copy className="w-4 h-4" />
         )}
-        {copied ? "E-mail copiado!" : "Copiar e-mail"}
+        {copied ? t.copyEmail.copied : t.copyEmail.copy}
       </button>
     );
   }
@@ -38,8 +40,8 @@ function CopyEmailButton({ variant = "icon", className = "" }) {
     <button
       type="button"
       onClick={handleCopy}
-      aria-label="Copiar e-mail"
-      title={copied ? "E-mail copiado!" : "Copiar e-mail"}
+      aria-label={t.copyEmail.copy}
+      title={copied ? t.copyEmail.copied : t.copyEmail.copy}
       className={`w-11 h-11 shrink-0 flex items-center justify-center bg-white/5 border border-white/10 text-white rounded-full hover:bg-white/10 transition-all ${className}`}
     >
       {copied ? (

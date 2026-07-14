@@ -4,27 +4,27 @@ import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { SiX } from "react-icons/si";
 import { getMailtoLink } from "../config/contact";
 import CopyEmailButton from "./CopyEmailButton";
+import { useLanguage } from "../context/LanguageContext";
 
 function ContactSection() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="contact"
       className="py-32 px-6 border-t border-white/[0.08] relative overflow-hidden"
     >
-      {/* Background Glow */}
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#00d9a3]/5 rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-3xl mx-auto text-center">
         <span className="text-[#00d9a3] font-mono text-sm tracking-widest mb-4 block">
-          05. VAMOS CONVERSAR?
+          {t.contact.eyebrow}
         </span>
         <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6">
-          Tem um projeto em mente?
+          {t.contact.title}
         </h2>
         <p className="text-[#a1a1aa] text-lg mb-10 max-w-xl mx-auto">
-          Estou disponível para sites institucionais, sistemas web sob medida
-          e parcerias de longo prazo. Me envie um e-mail com um pouco sobre a
-          ideia e retorno rápido.
+          {t.contact.description}
         </p>
 
         <div className="flex items-center justify-center gap-3">
@@ -33,7 +33,7 @@ function ContactSection() {
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#00d9a3] text-black font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#00d9a3]/20"
           >
             <Mail className="w-5 h-5" />
-            Enviar E-mail
+            {t.contact.emailCta}
           </a>
           <CopyEmailButton />
         </div>

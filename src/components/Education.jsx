@@ -3,8 +3,8 @@ import {
   Code2,
   FileDown,
 } from "lucide-react";
-
 import Curriculo from "../assets/pdf/CurrículoJeiel.pdf";
+import { useLanguage } from "../context/LanguageContext";
 
 const educationItems = [
   {
@@ -42,6 +42,8 @@ const educationItems = [
 ];
 
 export default function Education() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="education"
@@ -49,14 +51,12 @@ export default function Education() {
     >
       <div className="max-w-5xl mx-auto">
 
-        {/* Título com número — mesmo padrão do About/Tech */}
         <h2 className="text-3xl font-semibold tracking-tight mb-12 flex items-center gap-3">
-          <span className="text-[#00d9a3] text-xl">04.</span> Formação &amp; Certificações
+          <span className="text-[#00d9a3] text-xl">04.</span> {t.education.title}
         </h2>
 
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
 
-          {/* ── Sidebar esquerda ── */}
           <div className="md:w-1/3">
             <div className="sticky top-24">
 
@@ -65,8 +65,7 @@ export default function Education() {
               </div>
 
               <p className="text-sm text-[#a1a1aa] leading-relaxed">
-                Minha jornada acadêmica e qualificações técnicas que fundamentam
-                meu trabalho como desenvolvedor.
+                {t.education.intro}
               </p>
 
               <div className="mt-8">
@@ -76,13 +75,12 @@ export default function Education() {
                   className="text-xs font-mono text-white/60 hover:text-white border-b border-white/20 hover:border-white transition-all pb-0.5 inline-flex items-center gap-2"
                 >
                   <FileDown size={13} />
-                  Download CV
+                  {t.education.downloadCv}
                 </a>
               </div>
             </div>
           </div>
 
-          {/* ── Lista de itens ── */}
           <div className="md:w-2/3 space-y-4">
             {educationItems.map((item, index) => {
               const Icon = item.icon;
@@ -91,14 +89,12 @@ export default function Education() {
                   key={index}
                   className="group flex flex-col sm:flex-row gap-4 p-5 rounded-xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-[10px] hover:bg-white/[0.05] hover:border-[#00d9a3]/30 transition-all duration-300"
                 >
-                  {/* Ícone circular */}
                   <div className="shrink-0">
                     <div className="w-10 h-10 rounded-full bg-[#121212] border border-white/[0.08] flex items-center justify-center text-[#a1a1aa] group-hover:text-[#00d9a3] transition-colors">
                       <Icon size={20} />
                     </div>
                   </div>
 
-                  {/* Conteúdo */}
                   <div className="flex-1">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-1 gap-1">
                       <h3 className="text-sm font-medium text-white">

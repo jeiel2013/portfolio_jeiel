@@ -2,10 +2,12 @@ import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { projects as allProjects, FEATURED_TITLES } from "../data/projects";
 import { getProjectIcon } from "../utils/projectIcons";
+import { useLanguage } from "../context/LanguageContext";
 
 // variant: "home" mostra só os destaques + CTA para a página completa
 // variant: "full" (default) mostra todos os projetos
 function ProjectsSection({ variant = "full" }) {
+  const { t } = useLanguage();
   const projects =
     variant === "home"
       ? allProjects.filter((p) => FEATURED_TITLES.includes(p.title))
@@ -56,11 +58,11 @@ function ProjectsSection({ variant = "full" }) {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between mb-12">
           <h2 className="text-3xl font-semibold tracking-tight flex items-center gap-3">
-            <span className="text-[#00d9a3] text-xl">03.</span> Projetos
+            <span className="text-[#00d9a3] text-xl">03.</span> {t.projectsSection.title}
           </h2>
           <div className="flex gap-2 text-[#a1a1aa]">
             <span className="text-xs font-mono border border-white/[0.08] px-2 py-1 rounded select-none">
-              EM DESTAQUE
+              {t.projectsSection.drag}
             </span>
           </div>
         </div>
@@ -96,7 +98,7 @@ function ProjectsSection({ variant = "full" }) {
             to="/projetos"
             className="inline-flex items-center gap-2 px-6 py-3 bg-white/5 border border-white/10 text-white text-sm font-medium rounded-full hover:bg-white/10 transition-all"
           >
-            Ver todos os projetos
+            {t.projectsSection.viewAll}
             <svg
               className="w-4 h-4"
               fill="none"

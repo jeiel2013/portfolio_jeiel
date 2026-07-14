@@ -4,20 +4,22 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { getMailtoLink } from "../config/contact";
 import CopyEmailButton from "./CopyEmailButton";
-
-// hash: seção dentro da Home | to: página própria (rota)
-const NAV_LINKS = [
-  { label: "Sobre", hash: "#about" },
-  { label: "Serviços", to: "/servicos" },
-  { label: "Projetos", to: "/projetos" },
-  { label: "Contato", hash: "#contact" },
-];
+import { useLanguage } from "../context/LanguageContext";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const isHome = location.pathname === "/";
+  const { language, setLanguage, t } = useLanguage();
+
+  // hash: seção dentro da Home | to: página própria (rota)
+  const NAV_LINKS = [
+    { label: t.nav.about, hash: "#about" },
+    { label: t.nav.services, to: "/servicos" },
+    { label: t.nav.projects, to: "/projetos" },
+    { label: t.nav.contact, hash: "#contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,8 +48,6 @@ function Header() {
     const mobileBaseClass =
       "flex items-center justify-between px-4 py-3.5 rounded-xl border text-sm font-medium transition-colors";
 
-    // Seção dentro da Home: âncora direta se já estiver na Home,
-    // senão navega pra Home com o hash (Home rola até a seção sozinha)
     if (item.hash) {
       const props = {
         key: item.label,
@@ -68,7 +68,6 @@ function Header() {
       );
     }
 
-    // Página própria (rota)
     const isActive = location.pathname === item.to;
     return (
       <Link
@@ -90,6 +89,37 @@ function Header() {
     );
   };
 
+  const LanguageSwitch = ({ className = "" }) => (
+    <div
+      className={`flex items-center bg-white/5 border border-white/[0.08] rounded-full p-0.5 text-[11px] font-mono ${className}`}
+    >
+      <button
+        type="button"
+        onClick={() => setLanguage("pt")}
+        aria-pressed={language === "pt"}
+        className={`px-2.5 py-1 rounded-full transition-colors ${
+          language === "pt"
+            ? "bg-[#00d9a3] text-black font-semibold"
+            : "text-[#a1a1aa] hover:text-white"
+        }`}
+      >
+        PT
+      </button>
+      <button
+        type="button"
+        onClick={() => setLanguage("en")}
+        aria-pressed={language === "en"}
+        className={`px-2.5 py-1 rounded-full transition-colors ${
+          language === "en"
+            ? "bg-[#00d9a3] text-black font-semibold"
+            : "text-[#a1a1aa] hover:text-white"
+        }`}
+      >
+        EN
+      </button>
+    </div>
+  );
+
   return (
     <nav className="fixed top-0 w-full z-50 border-b border-white/[0.08] bg-[#0a0a0a]/80 backdrop-blur-md">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -105,13 +135,16 @@ function Header() {
         </div>
 
         <div className="flex items-center gap-3">
+          <LanguageSwitch className="hidden sm:flex" />
+
           <div className="hidden sm:flex items-center gap-2">
             <a
               href={getMailtoLink()}
               className="px-4 py-2 text-xs font-medium bg-white/5 border border-white/[0.08] rounded-full hover:bg-white/10 transition-colors"
             >
-              Vamos conversar
+              {t.nav.cta}
             </a>
+            <CopyEmailButton className="w-9 h-9" />
           </div>
 
           {/* Botão hambúrguer — só aparece abaixo do breakpoint md */}
@@ -130,10 +163,12 @@ function Header() {
       {/* Menu mobile / tablet — mesmo visual (cards + glass) usado nas páginas */}
       <div
         className={`md:hidden overflow-hidden border-t border-white/[0.08] bg-[#0a0a0a]/95 backdrop-blur-md transition-all duration-300 ease-in-out ${
-          isMenuOpen ? "max-h-[28rem] opacity-100" : "max-h-0 opacity-0"
+          isMenuOpen ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="px-6 py-6 flex flex-col gap-3">
+          <LanguageSwitch className="mx-auto mb-1" />
+
           {NAV_LINKS.map((item) => renderNavItem(item, true))}
 
           <a
@@ -141,7 +176,7 @@ function Header() {
             onClick={() => setIsMenuOpen(false)}
             className="mt-2 px-4 py-3.5 text-sm font-semibold text-center bg-[#00d9a3] text-black rounded-full hover:bg-[#00b386] transition-colors"
           >
-            Vamos conversar
+            {t.nav.cta}
           </a>
           <CopyEmailButton variant="full" />
         </div>

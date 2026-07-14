@@ -2,8 +2,11 @@ import React from "react";
 import { Mail } from "lucide-react";
 import { getMailtoLink } from "../config/contact";
 import CopyEmailButton from "./CopyEmailButton";
+import { useLanguage } from "../context/LanguageContext";
 
 function HeroSection() {
+  const { t } = useLanguage();
+
   return (
     <section className="min-h-screen flex flex-col justify-center items-center px-6 pt-20 pb-12 text-center relative overflow-hidden">
       {/* Decorative gradient blur */}
@@ -23,7 +26,7 @@ function HeroSection() {
       <div className="space-y-4 max-w-4xl mx-auto">
         <div className="flex items-center justify-center gap-2 mb-2">
           <span className="px-3 py-1 rounded-full bg-[#00d9a3]/10 border border-[#00d9a3]/20 text-[#00d9a3] text-xs font-mono tracking-wide">
-            DISPONÍVEL PARA PROJETOS
+            {t.hero.badge}
           </span>
         </div>
 
@@ -32,13 +35,11 @@ function HeroSection() {
         </h1>
 
         <p className="text-lg md:text-xl text-[#a1a1aa] font-mono mt-4">
-          <span className="text-[#00d9a3]">&gt;</span> Desenvolvedor Fullstack
+          <span className="text-[#00d9a3]">&gt;</span> {t.hero.role}
         </p>
 
         <p className="max-w-xl mx-auto text-[#a1a1aa] text-sm md:text-base leading-relaxed pt-4">
-          Transformo ideias em sites e sistemas reais — do primeiro código ao
-          deploy. Atendo empresas e profissionais que precisam de uma presença
-          digital sólida, com comunicação direta e entrega ágil.
+          {t.hero.description}
         </p>
 
         <div className="flex flex-wrap gap-4 justify-center items-center mt-10">
@@ -47,14 +48,14 @@ function HeroSection() {
             className="group px-8 py-3 bg-[#00d9a3] text-black text-sm font-semibold rounded-full hover:bg-[#00b386] transition-all flex items-center gap-2"
           >
             <Mail className="w-4 h-4" />
-            Enviar E-mail
+            {t.hero.emailCta}
           </a>
           <CopyEmailButton />
           <a
             href="#projects"
             className="group px-8 py-3 bg-white/5 border border-white/10 text-white text-sm font-medium rounded-full hover:bg-white/10 transition-all flex items-center gap-2"
           >
-            Ver Projetos
+            {t.hero.projectsCta}
             <svg
               className="w-4 h-4 group-hover:translate-x-1 transition-transform"
               fill="none"

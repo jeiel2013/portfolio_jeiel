@@ -1,34 +1,12 @@
 import React from "react";
 import { MessageCircle, FileText, Code2, Rocket } from "lucide-react";
+import { useLanguage } from "../context/LanguageContext";
 
-const steps = [
-  {
-    icon: MessageCircle,
-    title: "Primeiro contato",
-    description:
-      "Conversamos sobre sua ideia, objetivo e prazo — sem compromisso.",
-  },
-  {
-    icon: FileText,
-    title: "Proposta e escopo",
-    description:
-      "Você recebe um orçamento claro, com prazos e etapas de entrega definidos.",
-  },
-  {
-    icon: Code2,
-    title: "Desenvolvimento",
-    description:
-      "Construo o projeto com atualizações periódicas, sem surpresas no caminho.",
-  },
-  {
-    icon: Rocket,
-    title: "Entrega e suporte",
-    description:
-      "Site ou sistema no ar, com suporte para ajustes após a entrega.",
-  },
-];
+const ICONS = [MessageCircle, FileText, Code2, Rocket];
 
 function Process() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="process"
@@ -36,12 +14,12 @@ function Process() {
     >
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-semibold tracking-tight mb-12 flex items-center gap-3">
-          <span className="text-[#00d9a3] text-xl">02.</span> Como funciona
+          <span className="text-[#00d9a3] text-xl">02.</span> {t.process.title}
         </h2>
 
         <div className="space-y-4">
-          {steps.map((step, index) => {
-            const Icon = step.icon;
+          {t.process.steps.map((step, index) => {
+            const Icon = ICONS[index];
             return (
               <div
                 key={index}
@@ -55,9 +33,7 @@ function Process() {
 
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-1 gap-2">
-                    <h3 className="text-sm font-medium text-white">
-                      {step.title}
-                    </h3>
+                    <h3 className="text-sm font-medium text-white">{step.title}</h3>
                     <span className="text-[10px] font-mono text-[#a1a1aa] bg-white/[0.05] px-2 py-0.5 rounded border border-white/[0.08] shrink-0">
                       {String(index + 1).padStart(2, "0")}
                     </span>
