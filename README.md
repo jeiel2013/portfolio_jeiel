@@ -112,7 +112,7 @@ Se você quiser rodar esse projeto localmente:
 Coisas que pretendo adicionar ao portfólio:
 
 - [ ] Modo Claro/Escuro
-- [ ] Mudar linguagem
+- [X] Mudar linguagem
 - [ ] Mais projetos detalhados
 
 ---

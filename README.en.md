@@ -76,7 +76,7 @@ The repository contains:
 Things I plan to add to the portfolio:
 
 - [ ] Mode Light/Dark
-- [ ] Change language
+- [X] Change language
 - [ ] More detailed projects
 
 ---
