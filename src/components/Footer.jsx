@@ -3,12 +3,12 @@ const currentYear = new Date().getFullYear();
 
 function Footer() {
   return (
-    <footer className="py-8 border-t border-white/[0.08] text-center">
+    <footer className="py-8 border-t border-[var(--border-subtle)] text-center">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-xs text-[#a1a1aa] font-mono">
+        <p className="text-xs text-[var(--text-secondary)] font-mono">
           &copy; {currentYear} Jeiel Alves
         </p>
-        <div className="flex items-center gap-2 text-xs text-[#a1a1aa]">
+        <div className="flex items-center gap-2 text-xs text-[var(--text-secondary)]">
           <svg
             className="w-4 h-4"
             fill="none"

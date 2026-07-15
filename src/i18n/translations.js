@@ -7,6 +7,11 @@ export const translations = {
       contact: "Contato",
       cta: "Vamos conversar",
     },
+    preferences: {
+      label: "Preferências",
+      language: "Idioma",
+      theme: "Tema",
+    },
     hero: {
       badge: "DISPONÍVEL PARA PROJETOS",
       role: "Desenvolvedor Fullstack Freelancer",
@@ -176,6 +181,11 @@ export const translations = {
       projects: "Projects",
       contact: "Contact",
       cta: "Let's talk",
+    },
+    preferences: {
+      label: "Preferences",
+      language: "Language",
+      theme: "Theme",
     },
     hero: {
       badge: "AVAILABLE FOR PROJECTS",

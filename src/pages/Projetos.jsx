@@ -12,27 +12,27 @@ function Projetos() {
   const { t } = useLanguage();
 
   return (
-    <div className="relative min-h-screen bg-[#0a0a0a] text-white antialiased selection:bg-[#00d9a3] selection:text-black">
+    <div className="relative min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)] antialiased selection:bg-[var(--accent)] selection:text-[var(--accent-on)]">
       <Background />
 
       <div className="relative z-10">
         <Header />
         <main className="pt-24">
           <section className="px-6 pb-9 lg:pb-20 pt-6 text-center max-w-3xl mx-auto">
-            <span className="text-[#00d9a3] font-mono text-sm tracking-widest mb-4 block">
+            <span className="text-[var(--accent)] font-bold text-lg tracking-widest mb-4 block">
               {t.projetosPage.eyebrow}
             </span>
-            <h1 className="text-4xl md:text-5xl pt-8 font-semibold tracking-tight text-white">
+            <h1 className="text-4xl md:text-5xl pt-8 font-semibold tracking-tight text-[var(--text-primary)]">
               {t.projetosPage.heading}
             </h1>
           </section>
 
-          <section className="py-24 px-6 border-t border-white/[0.08]">
+          <section className="py-24 px-6 border-t border-[var(--border-subtle)]">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-semibold tracking-tight mb-3 flex items-center gap-3">
-                <span className="text-[#00d9a3] text-xl">01.</span> {t.projetosPage.clientTitle}
+                <span className="text-[var(--accent)] text-xl">01.</span> {t.projetosPage.clientTitle}
               </h2>
-              <p className="text-[#a1a1aa] text-sm max-w-xl mb-12">
+              <p className="text-[var(--text-secondary)] text-sm max-w-xl mb-12">
                 {t.projetosPage.clientSubtitle}
               </p>
 
@@ -44,12 +44,12 @@ function Projetos() {
             </div>
           </section>
 
-          <section className="py-24 px-6 border-t border-white/[0.08] bg-[#1a1a1a]/30">
+          <section className="py-24 px-6 border-t border-[var(--border-subtle)] bg-[var(--bg-card-alt)]">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-semibold tracking-tight mb-3 flex items-center gap-3">
-                <span className="text-[#00d9a3] text-xl">02.</span> {t.projetosPage.personalTitle}
+                <span className="text-[var(--accent)] text-xl">02.</span> {t.projetosPage.personalTitle}
               </h2>
-              <p className="text-[#a1a1aa] text-sm max-w-xl mb-12">
+              <p className="text-[var(--text-secondary)] text-sm max-w-xl mb-12">
                 {t.projetosPage.personalSubtitle}
               </p>
 

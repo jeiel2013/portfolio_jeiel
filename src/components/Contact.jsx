@@ -12,18 +12,18 @@ function ContactSection() {
   return (
     <section
       id="contact"
-      className="py-32 px-6 border-t border-white/[0.08] relative overflow-hidden"
+      className="py-32 px-6 border-t border-[var(--border-subtle)] relative overflow-hidden"
     >
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#00d9a3]/5 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[var(--accent-10)] rounded-full blur-[100px] pointer-events-none"></div>
 
       <div className="max-w-3xl mx-auto text-center">
-        <span className="text-[#00d9a3] font-mono text-sm tracking-widest mb-4 block">
+        <span className="text-[var(--accent)] font-mono text-sm tracking-widest mb-4 block">
           {t.contact.eyebrow}
         </span>
-        <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-white mb-6">
+        <h2 className="text-4xl md:text-5xl font-semibold tracking-tight text-[var(--text-primary)] mb-6">
           {t.contact.title}
         </h2>
-        <p className="text-[#a1a1aa] text-lg mb-10 max-w-xl mx-auto">
+        <p className="text-[var(--text-secondary)] text-lg mb-10 max-w-xl mx-auto">
           {t.contact.description}
         </p>
 
@@ -31,7 +31,7 @@ function ContactSection() {
           href={getWhatsAppLink()}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-8 py-4 bg-[#00d9a3] text-black font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#00d9a3]/20"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--accent)] text-[var(--accent-on)] font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg shadow-[var(--accent-20)]"
         >
           <MessageCircle className="w-5 h-5" />
           {t.contact.whatsappCta}
@@ -40,7 +40,7 @@ function ContactSection() {
         <div className="mt-4">
           <a
             href={getMailtoLink()}
-            className="inline-flex items-center gap-1.5 text-xs text-[#a1a1aa] hover:text-white transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
           >
             <Mail className="w-3.5 h-3.5" />
             {t.contact.emailSecondary}
@@ -52,7 +52,7 @@ function ContactSection() {
             href="https://github.com/jeiel2013"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#a1a1aa] hover:text-white transition-colors"
+            className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
             aria-label="GitHub"
           >
             <FaGithub className="w-6 h-6" />
@@ -61,7 +61,7 @@ function ContactSection() {
             href="https://linkedin.com/in/jeiel2013"
             target="-blank"
             rel="noopener noreferrer"
-            className="text-[#a1a1aa] hover:text-[#0A66C2] transition-colors"
+            className="text-[var(--text-secondary)] hover:text-[#0A66C2] transition-colors"
             aria-label="LinkedIn"
           >
             <FaLinkedin className="w-6 h-6" />
@@ -70,7 +70,7 @@ function ContactSection() {
             href="https://instagram.com/jeiel2013"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#a1a1aa] hover:text-[#E4405F] transition-colors"
+            className="text-[var(--text-secondary)] hover:text-[#E4405F] transition-colors"
             aria-label="Instagram"
           >
             <FaInstagram className="w-6 h-6" />
@@ -79,7 +79,7 @@ function ContactSection() {
             href="https://x.com/jeiel2013"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#a1a1aa] hover:text-[#ffffff] transition-colors"
+            className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
             aria-label="X"
           >
             <SiX className="w-6 h-6" />

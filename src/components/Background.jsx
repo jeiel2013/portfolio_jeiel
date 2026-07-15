@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from "react";
+import { useTheme } from "../context/ThemeContext";
 
 function Background() {
   const canvasRef = useRef(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -11,6 +13,12 @@ function Background() {
     let width, height;
     const stars = [];
     const numStars = 70; // Número de partículas
+
+    // Cor das partículas segue o tema atual (a variável guarda só os
+    // componentes RGB, ex: "255, 255, 255", pra montar o rgba() aqui)
+    const particleRGB = getComputedStyle(document.documentElement)
+      .getPropertyValue("--particle-color")
+      .trim();
 
     // Configurar tamanho do canvas
     const resize = () => {
@@ -43,7 +51,7 @@ function Background() {
       }
 
       draw() {
-        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        ctx.fillStyle = `rgba(${particleRGB}, ${this.opacity})`;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
@@ -58,13 +66,14 @@ function Background() {
     };
 
     // Loop de animação
+    let animationFrame;
     const animate = () => {
       ctx.clearRect(0, 0, width, height);
       stars.forEach((star) => {
         star.update();
         star.draw();
       });
-      requestAnimationFrame(animate);
+      animationFrame = requestAnimationFrame(animate);
     };
 
     // Event listeners
@@ -78,8 +87,9 @@ function Background() {
     // Cleanup
     return () => {
       window.removeEventListener("resize", resize);
+      cancelAnimationFrame(animationFrame);
     };
-  }, []);
+  }, [theme]);
 
   return (
     <>

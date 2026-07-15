@@ -23,7 +23,7 @@ function Home() {
     }, [location]);
 
     return (
-        <div className="relative min-h-screen bg-[#0a0a0a] text-white antialiased selection:bg-[#00d9a3] selection:text-black">
+        <div className="relative min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)] antialiased selection:bg-[var(--accent)] selection:text-[var(--accent-on)]">
             {/* Background com grid e partículas */}
             <Background />
 
