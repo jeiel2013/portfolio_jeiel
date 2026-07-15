@@ -1,11 +1,10 @@
 import { useParams, Link } from "react-router-dom";
-import { Mail, ArrowLeft } from "lucide-react";
+import { MessageCircle, ArrowLeft } from "lucide-react";
 import Background from "../components/Background";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { projects } from "../data/projects";
-import { getMailtoLink } from "../config/contact";
-import CopyEmailButton from "../components/CopyEmailButton";
+import { getWhatsAppLink } from "../config/whatsapp";
 import { useLanguage } from "../context/LanguageContext";
 
 function CaseStudy() {
@@ -143,16 +142,15 @@ function CaseStudy() {
               <p className="text-[#a1a1aa] mb-8 max-w-md mx-auto">
                 {t.caseStudy.ctaText}
               </p>
-              <div className="flex items-center justify-center gap-3">
-                <a
-                  href={getMailtoLink()}
-                  className="inline-flex items-center gap-2 px-8 py-4 bg-[#00d9a3] text-black font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#00d9a3]/20"
-                >
-                  <Mail className="w-5 h-5" />
-                  {t.contact.emailCta}
-                </a>
-                <CopyEmailButton />
-              </div>
+              <a
+                href={getWhatsAppLink()}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-[#00d9a3] text-black font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#00d9a3]/20"
+              >
+                <MessageCircle className="w-5 h-5" />
+                {t.contact.whatsappCta}
+              </a>
             </div>
           </section>
         </main>

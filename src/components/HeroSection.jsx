@@ -1,7 +1,6 @@
 import React from "react";
-import { Mail } from "lucide-react";
-import { getMailtoLink } from "../config/contact";
-import CopyEmailButton from "./CopyEmailButton";
+import { MessageCircle } from "lucide-react";
+import { getWhatsAppLink } from "../config/whatsapp";
 import { useLanguage } from "../context/LanguageContext";
 
 function HeroSection() {
@@ -44,13 +43,14 @@ function HeroSection() {
 
         <div className="flex flex-wrap gap-4 justify-center items-center mt-10">
           <a
-            href={getMailtoLink()}
+            href={getWhatsAppLink()}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group px-8 py-3 bg-[#00d9a3] text-black text-sm font-semibold rounded-full hover:bg-[#00b386] transition-all flex items-center gap-2"
           >
-            <Mail className="w-4 h-4" />
-            {t.hero.emailCta}
+            <MessageCircle className="w-4 h-4" />
+            {t.hero.whatsappCta}
           </a>
-          <CopyEmailButton />
           <a
             href="#projects"
             className="group px-8 py-3 bg-white/5 border border-white/10 text-white text-sm font-medium rounded-full hover:bg-white/10 transition-all flex items-center gap-2"

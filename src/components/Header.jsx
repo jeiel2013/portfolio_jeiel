@@ -2,8 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import { getMailtoLink } from "../config/contact";
-import CopyEmailButton from "./CopyEmailButton";
+import { getWhatsAppLink } from "../config/whatsapp";
 import { useLanguage } from "../context/LanguageContext";
 
 function Header() {
@@ -137,15 +136,14 @@ function Header() {
         <div className="flex items-center gap-3">
           <LanguageSwitch className="hidden sm:flex" />
 
-          {/* <div className="hidden sm:flex items-center gap-2">
-            <a
-              href={getMailtoLink()}
-              className="px-4 py-2 text-xs font-medium bg-white/5 border border-white/[0.08] rounded-full hover:bg-white/10 transition-colors"
-            >
-              {t.nav.cta}
-            </a>
-            <CopyEmailButton className="w-9 h-9" />
-          </div> */}
+          <a
+            href={getWhatsAppLink()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:block px-4 py-2 text-xs font-medium bg-white/5 border border-white/[0.08] rounded-full hover:bg-white/10 transition-colors"
+          >
+            {t.nav.cta}
+          </a>
 
           {/* Botão hambúrguer — só aparece abaixo do breakpoint md */}
           <button
@@ -172,13 +170,14 @@ function Header() {
           {NAV_LINKS.map((item) => renderNavItem(item, true))}
 
           <a
-            href={getMailtoLink()}
+            href={getWhatsAppLink()}
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={() => setIsMenuOpen(false)}
             className="mt-2 px-4 py-3.5 text-sm font-semibold text-center bg-[#00d9a3] text-black rounded-full hover:bg-[#00b386] transition-colors"
           >
             {t.nav.cta}
           </a>
-          <CopyEmailButton variant="full" />
         </div>
       </div>
     </nav>

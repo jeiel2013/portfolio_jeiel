@@ -1,9 +1,9 @@
 import React from "react";
-import { Mail } from "lucide-react";
+import { MessageCircle, Mail } from "lucide-react";
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { SiX } from "react-icons/si";
+import { getWhatsAppLink } from "../config/whatsapp";
 import { getMailtoLink } from "../config/contact";
-import CopyEmailButton from "./CopyEmailButton";
 import { useLanguage } from "../context/LanguageContext";
 
 function ContactSection() {
@@ -27,15 +27,24 @@ function ContactSection() {
           {t.contact.description}
         </p>
 
-        <div className="flex items-center justify-center gap-3">
+        <a
+          href={getWhatsAppLink()}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-8 py-4 bg-[#00d9a3] text-black font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#00d9a3]/20"
+        >
+          <MessageCircle className="w-5 h-5" />
+          {t.contact.whatsappCta}
+        </a>
+
+        <div className="mt-4">
           <a
             href={getMailtoLink()}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#00d9a3] text-black font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg shadow-[#00d9a3]/20"
+            className="inline-flex items-center gap-1.5 text-xs text-[#a1a1aa] hover:text-white transition-colors"
           >
-            <Mail className="w-5 h-5" />
-            {t.contact.emailCta}
+            <Mail className="w-3.5 h-3.5" />
+            {t.contact.emailSecondary}
           </a>
-          <CopyEmailButton />
         </div>
 
         <div className="flex justify-center gap-8 mt-16">

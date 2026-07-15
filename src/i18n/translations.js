@@ -12,7 +12,7 @@ export const translations = {
       role: "Desenvolvedor Fullstack Freelancer",
       description:
         "Transformo ideias em sites e sistemas reais — do primeiro código ao deploy. Atendo empresas e profissionais que precisam de uma presença digital sólida, com comunicação direta e entrega ágil.",
-      emailCta: "Enviar E-mail",
+      whatsappCta: "Falar no WhatsApp",
       projectsCta: "Ver Projetos",
     },
     about: {
@@ -106,14 +106,15 @@ export const translations = {
       heading: "Soluções sob medida pra tirar seu projeto do papel.",
       ctaEyebrow: "03. VAMOS COMEÇAR?",
       ctaTitle: "Me conta sobre seu projeto.",
-      ctaText: "Resposta rápida e orçamento sem compromisso por e-mail.",
+      ctaText: "Resposta rápida e orçamento sem compromisso pelo WhatsApp.",
     },
     contact: {
       eyebrow: "05. VAMOS CONVERSAR?",
       title: "Tem um projeto em mente?",
       description:
-        "Estou disponível para sites institucionais, sistemas web sob medida e parcerias de longo prazo. Me envie um e-mail com um pouco sobre a ideia e retorno rápido.",
-      emailCta: "Enviar E-mail",
+        "Estou disponível para sites institucionais, sistemas web sob medida e parcerias de longo prazo. Chama no WhatsApp e resposta rápida garantida.",
+      whatsappCta: "Falar no WhatsApp",
+      emailSecondary: "ou envie um e-mail",
     },
     caseStudy: {
       back: "Voltar aos projetos",
@@ -125,7 +126,7 @@ export const translations = {
       visitSite: "Visitar Site",
       viewCode: "Ver Código",
       ctaTitle: "Quer um projeto assim para o seu negócio?",
-      ctaText: "Resposta rápida e orçamento sem compromisso por e-mail.",
+      ctaText: "Resposta rápida e orçamento sem compromisso pelo WhatsApp.",
       notFoundTitle: "Case study não encontrado",
       notFoundText: "Esse projeto ainda não tem um case study detalhado.",
     },
@@ -181,7 +182,7 @@ export const translations = {
       role: "Freelance Fullstack Developer",
       description:
         "I turn ideas into real websites and systems — from the first line of code to deployment. I work with businesses and professionals who need a solid digital presence, with direct communication and agile delivery.",
-      emailCta: "Send E-mail",
+      whatsappCta: "Chat on WhatsApp",
       projectsCta: "View Projects",
     },
     about: {
@@ -275,14 +276,15 @@ export const translations = {
       heading: "Custom solutions to get your project off the ground.",
       ctaEyebrow: "03. READY TO START?",
       ctaTitle: "Tell me about your project.",
-      ctaText: "Quick response and no-obligation quote by e-mail.",
+      ctaText: "Quick response and no-obligation quote via WhatsApp.",
     },
     contact: {
       eyebrow: "05. LET'S TALK?",
       title: "Got a project in mind?",
       description:
-        "I'm available for business websites, custom web systems and long-term partnerships. Send me an e-mail with a bit about the idea and I'll get back to you quickly.",
-      emailCta: "Send E-mail",
+        "I'm available for business websites, custom web systems and long-term partnerships. Message me on WhatsApp for a quick reply.",
+      whatsappCta: "Chat on WhatsApp",
+      emailSecondary: "or send an e-mail",
     },
     caseStudy: {
       back: "Back to projects",
@@ -294,7 +296,7 @@ export const translations = {
       visitSite: "Visit Site",
       viewCode: "View Code",
       ctaTitle: "Want a project like this for your business?",
-      ctaText: "Quick response and no-obligation quote by e-mail.",
+      ctaText: "Quick response and no-obligation quote via WhatsApp.",
       notFoundTitle: "Case study not found",
       notFoundText: "This project doesn't have a detailed case study yet.",
     },
