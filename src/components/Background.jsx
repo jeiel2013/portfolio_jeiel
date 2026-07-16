@@ -12,13 +12,9 @@ function Background() {
     const ctx = canvas.getContext("2d");
     let width, height;
     const stars = [];
-    const numStars = 70; // Número de partículas
+    const numStars = 500; // Número de partículas
 
-    // Cor das partículas segue o tema atual (a variável guarda só os
-    // componentes RGB, ex: "255, 255, 255", pra montar o rgba() aqui)
-    const particleRGB = getComputedStyle(document.documentElement)
-      .getPropertyValue("--particle-color")
-      .trim();
+    const particleRGB = theme === "light" ? "0, 0, 0" : "255, 255, 255";
 
     // Configurar tamanho do canvas
     const resize = () => {
@@ -40,7 +36,8 @@ function Background() {
         this.y = height + Math.random() * 100; // Começar abaixo da tela
         this.size = Math.random() * 2;
         this.speed = Math.random() * 0.5 + 0.1;
-        this.opacity = Math.random() * 0.5 + 0.1;
+        this.opacity =
+          theme === "light" ? Math.random() * 0.5 + 0.5 : Math.random() * 0.5 + 0.1;
       }
 
       update() {

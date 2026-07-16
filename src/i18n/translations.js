@@ -93,7 +93,7 @@ export const translations = {
     },
     projectsSection: {
       title: "Projetos",
-      drag: "← ARRASTE →",
+      drag: "← EM DESTAQUE →",
       viewAll: "Ver todos os projetos",
     },
     projetosPage: {
@@ -124,7 +124,7 @@ export const translations = {
     caseStudy: {
       back: "Voltar aos projetos",
       eyebrow: "CASE STUDY",
-      viewCaseStudy: "Ver case study →",
+      viewCaseStudy: "Ver projeto →",
       challengeLabel: "O Desafio",
       solutionLabel: "A Solução",
       resultLabel: "Resultado",
@@ -268,7 +268,7 @@ export const translations = {
     },
     projectsSection: {
       title: "Projects",
-      drag: "← DRAG →",
+      drag: "← FEATURED →",
       viewAll: "View all projects",
     },
     projetosPage: {
@@ -299,7 +299,7 @@ export const translations = {
     caseStudy: {
       back: "Back to projects",
       eyebrow: "CASE STUDY",
-      viewCaseStudy: "View case study →",
+      viewCaseStudy: "View project →",
       challengeLabel: "The Challenge",
       solutionLabel: "The Solution",
       resultLabel: "Result",
