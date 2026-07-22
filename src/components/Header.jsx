@@ -1,16 +1,15 @@
 /* eslint-disable no-unused-vars */
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Settings2, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { getWhatsAppLink } from "../config/whatsapp";
 import { useLanguage } from "../context/LanguageContext";
 import { useTheme } from "../context/ThemeContext";
+import PreferencesMenu, { TogglePill, languageOptions, themeOptions } from "./PreferencesMenu";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isPrefsOpen, setIsPrefsOpen] = useState(false);
-  const prefsRef = useRef(null);
   const location = useLocation();
   const isHome = location.pathname === "/";
   const { language, setLanguage, t } = useLanguage();
@@ -45,17 +44,6 @@ function Header() {
       document.body.style.overflow = "";
     };
   }, [isMenuOpen]);
-
-  // Fecha o dropdown de preferências ao clicar fora dele
-  useEffect(() => {
-    function handleClickOutside(e) {
-      if (prefsRef.current && !prefsRef.current.contains(e.target)) {
-        setIsPrefsOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
 
   const renderNavItem = (item, mobile = false) => {
     const desktopClass = "hover:text-[var(--text-primary)] transition-colors";
@@ -103,39 +91,6 @@ function Header() {
     );
   };
 
-  // Pill de duas opções, reaproveitado pro idioma e pro tema
-  const TogglePill = ({ options, active, onChange }) => (
-    <div className="flex items-center bg-[var(--surface-muted)] border border-[var(--border-subtle)] rounded-full p-0.5">
-      {options.map((opt) => (
-        <button
-          key={opt.value}
-          type="button"
-          onClick={() => onChange(opt.value)}
-          aria-pressed={active === opt.value}
-          aria-label={opt.ariaLabel}
-          className={`flex items-center justify-center rounded-full transition-colors ${
-            opt.icon ? "w-7 h-7" : "px-2.5 py-1 text-[11px] font-mono"
-          } ${
-            active === opt.value
-              ? "bg-[var(--accent)] text-[var(--accent-on)] font-semibold"
-              : "text-[var(--text-secondary)] hover:text-[var(--text-primary)]"
-          }`}
-        >
-          {opt.icon || opt.label}
-        </button>
-      ))}
-    </div>
-  );
-
-  const languageOptions = [
-    { value: "pt", label: "PT" },
-    { value: "en", label: "EN" },
-  ];
-  const themeOptions = [
-    { value: "dark", icon: <Moon className="w-3.5 h-3.5" />, ariaLabel: "Dark" },
-    { value: "light", icon: <Sun className="w-3.5 h-3.5" />, ariaLabel: "Light" },
-  ];
-
   return (
     <nav className="fixed top-0 w-full z-50 border-b border-[var(--border-subtle)] bg-[var(--bg-page-80)] backdrop-blur-md">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -152,38 +107,7 @@ function Header() {
 
         <div className="flex items-center gap-3">
           {/* Menu de preferências (idioma + tema) — só no desktop */}
-          <div className="relative hidden sm:block" ref={prefsRef}>
-            <button
-              type="button"
-              onClick={() => setIsPrefsOpen((prev) => !prev)}
-              aria-label={t.preferences.label}
-              aria-expanded={isPrefsOpen}
-              className="w-9 h-9 flex items-center justify-center bg-[var(--surface-muted)] border border-[var(--border-subtle)] rounded-full text-[var(--text-primary)] hover:bg-[var(--surface-muted-hover)] transition-colors"
-            >
-              <Settings2 className="w-4 h-4" />
-            </button>
-
-            <div
-              className={`absolute right-0 top-12 w-48 rounded-xl border border-[var(--border-subtle)] bg-[var(--bg-card)] shadow-xl p-4 flex flex-col gap-4 transition-all origin-top-right ${
-                isPrefsOpen
-                  ? "opacity-100 scale-100 pointer-events-auto"
-                  : "opacity-0 scale-95 pointer-events-none"
-              }`}
-            >
-              <div className="flex items-center justify-between">
-                <span className="text-xs text-[var(--text-secondary)]">{t.preferences.language}</span>
-                <TogglePill
-                  options={languageOptions}
-                  active={language}
-                  onChange={setLanguage}
-                />
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-xs text-[var(--text-secondary)]">{t.preferences.theme}</span>
-                <TogglePill options={themeOptions} active={theme} onChange={setTheme} />
-              </div>
-            </div>
-          </div>
+          <PreferencesMenu className="hidden sm:block" />
 
           <a
             href={getWhatsAppLink()}

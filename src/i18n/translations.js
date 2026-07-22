@@ -93,7 +93,7 @@ export const translations = {
     },
     projectsSection: {
       title: "Projetos",
-      drag: "← EM DESTAQUE →",
+      drag: "← ARRASTE →",
       viewAll: "Ver todos os projetos",
     },
     projetosPage: {
@@ -124,7 +124,7 @@ export const translations = {
     caseStudy: {
       back: "Voltar aos projetos",
       eyebrow: "CASE STUDY",
-      viewCaseStudy: "Ver projeto →",
+      viewCaseStudy: "Ver case study →",
       challengeLabel: "O Desafio",
       solutionLabel: "A Solução",
       resultLabel: "Resultado",
@@ -167,6 +167,20 @@ export const translations = {
       title: "Página não encontrada",
       text: "A página que você procura não existe ou foi movida.",
       backHome: "Voltar para a Home",
+    },
+    linksPage: {
+      role: "Fullstack Developer",
+      tagline: "Transformando café em código limpo e escalável.",
+      available: "Disponível",
+      badgeNew: "Novo",
+      links: {
+        portfolio: { title: "Ir para meu Portfólio", description: "Voltar para a home" },
+        github: { title: "GitHub", description: "Meus códigos open source" },
+        linkedin: { title: "LinkedIn", description: "Conecte-se profissionalmente" },
+        studioKather: { title: "Studio Kather", description: "Último projeto lançado" },
+        email: { title: "E-mail", description: "Entre em contato" },
+        whatsapp: { title: "Falar no WhatsApp", description: "Resposta rápida, sem enrolação" },
+      },
     },
     copyEmail: {
       copy: "Copiar e-mail",
@@ -268,7 +282,7 @@ export const translations = {
     },
     projectsSection: {
       title: "Projects",
-      drag: "← FEATURED →",
+      drag: "← DRAG →",
       viewAll: "View all projects",
     },
     projetosPage: {
@@ -299,7 +313,7 @@ export const translations = {
     caseStudy: {
       back: "Back to projects",
       eyebrow: "CASE STUDY",
-      viewCaseStudy: "View project →",
+      viewCaseStudy: "View case study →",
       challengeLabel: "The Challenge",
       solutionLabel: "The Solution",
       resultLabel: "Result",
@@ -342,6 +356,20 @@ export const translations = {
       title: "Page not found",
       text: "The page you're looking for doesn't exist or has been moved.",
       backHome: "Back to Home",
+    },
+    linksPage: {
+      role: "Fullstack Developer",
+      tagline: "Turning coffee into clean, scalable code.",
+      available: "Available",
+      badgeNew: "New",
+      links: {
+        portfolio: { title: "Go to my Portfolio", description: "Back to home" },
+        github: { title: "GitHub", description: "My open source code" },
+        linkedin: { title: "LinkedIn", description: "Connect professionally" },
+        studioKather: { title: "Studio Kather", description: "Latest project launched" },
+        email: { title: "E-mail", description: "Get in touch" },
+        whatsapp: { title: "Chat on WhatsApp", description: "Quick reply, no hassle" },
+      },
     },
     copyEmail: {
       copy: "Copy e-mail",

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import {
   Home,
   Github,
@@ -8,156 +8,76 @@ import {
   ExternalLink,
   Send,
   Instagram,
-  Twitter,
+  MessageCircle,
 } from "lucide-react";
 import { SiX } from "react-icons/si";
+import Background from "../components/Background";
+import PreferencesMenu from "../components/PreferencesMenu";
+import { useLanguage } from "../context/LanguageContext";
+import { getWhatsAppLink } from "../config/whatsapp";
+
 const currentYear = new Date().getFullYear();
 
 const Links = () => {
-  const canvasRef = useRef(null);
-
-  // Animação de partículas (stars)
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext("2d");
-    let width, height;
-    const stars = [];
-    const numStars = 40;
-
-    const resize = () => {
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = width;
-      canvas.height = height;
-    };
-
-    class Star {
-      constructor() {
-        this.reset();
-        this.y = Math.random() * height;
-      }
-
-      reset() {
-        this.x = Math.random() * width;
-        this.y = height + Math.random() * 50;
-        this.size = Math.random() * 1.5;
-        this.speed = Math.random() * 0.3 + 0.1;
-        this.opacity = Math.random() * 0.5 + 0.1;
-      }
-
-      update() {
-        this.y -= this.speed;
-        if (this.y < -10) this.reset();
-      }
-
-      draw() {
-        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
-
-    const initStars = () => {
-      for (let i = 0; i < numStars; i++) stars.push(new Star());
-    };
-
-    const animate = () => {
-      ctx.clearRect(0, 0, width, height);
-      stars.forEach((star) => {
-        star.update();
-        star.draw();
-      });
-      requestAnimationFrame(animate);
-    };
-
-    window.addEventListener("resize", resize);
-    resize();
-    initStars();
-    animate();
-
-    return () => window.removeEventListener("resize", resize);
-  }, []);
+  const { t } = useLanguage();
+  const l = t.linksPage.links;
 
   const links = [
     {
-      title: "Portfólio",
+      title: l.portfolio.title,
       url: "/",
       icon: <Home className="w-5 h-5" />,
-      description: "Voltar para a home",
+      description: l.portfolio.description,
       color: "primary",
       delay: "100ms",
     },
     {
-      title: "GitHub",
+      title: l.github.title,
       url: "https://github.com/jeiel2013",
       icon: <Github className="w-5 h-5" />,
-      description: "Meus códigos open source",
+      description: l.github.description,
       color: "primary",
       external: true,
       delay: "200ms",
     },
     {
-      title: "LinkedIn",
-      url: "https://linkedin.com/in/jeiel2013",
-      icon: <Linkedin className="w-5 h-5" />,
-      description: "Conecte-se profissionalmente",
-      color: "linkedin",
+      title: l.studioKather.title,
+      url: "https://studiokather.com/",
+      icon: <Star className="w-5 h-5" />,
+      description: l.studioKather.description,
+      color: "primary",
+      featured: true,
       external: true,
       delay: "300ms",
     },
     {
-      title: "Studio Kather",
-      url: "https://studiokather.com/",
-      icon: <Star className="w-5 h-5" />,
-      description: "Último projeto lançado",
-      color: "primary",
-      featured: true,
-      external: true,
-      delay: "400ms",
-    },
-    {
-      title: "E-mail",
+      title: l.email.title,
       url: "mailto:jeieldev.alves@gmail.com",
       icon: <Mail className="w-5 h-5" />,
-      description: "Entre em contato",
+      description: l.email.description,
       color: "primary",
       rightIcon: <Send className="w-4 h-4" />,
-      delay: "500ms",
+      delay: "400ms",
     },
   ];
 
   return (
-    <div className="relative min-h-screen bg-[#0a0a0a] text-white font-sans antialiased selection:bg-[#00d9a3] selection:text-black flex flex-col items-center justify-center py-12 px-4">
-      {/* Background Elements */}
-      <canvas
-        ref={canvasRef}
-        className="fixed inset-0 w-full h-full pointer-events-none z-0 opacity-30"
-      />
+    <div className="relative min-h-screen bg-[var(--bg-page)] text-[var(--text-primary)] font-sans antialiased selection:bg-[var(--accent)] selection:text-[var(--accent-on)] flex flex-col items-center justify-center py-12 px-4">
+      {/* Background compartilhado (partículas + grid), já ciente do tema */}
+      <Background />
 
-      {/* Grid Background */}
-      <div
-        className="fixed inset-0 z-0 pointer-events-none"
-        style={{
-          backgroundSize: "40px 40px",
-          backgroundImage:
-            "linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px)",
-          maskImage:
-            "radial-gradient(circle at center, black 40%, transparent 100%)",
-          WebkitMaskImage:
-            "radial-gradient(circle at center, black 40%, transparent 100%)",
-        }}
-      />
+      {/* Menu de preferências (idioma + tema) */}
+      <div className="fixed top-4 right-4 z-20">
+        <PreferencesMenu />
+      </div>
 
       {/* Main Content */}
       <main className="w-full max-w-md relative z-10 flex flex-col items-center">
         {/* Profile Header */}
-        <div className="text-center mb-8 w-full animate-[fadeIn_0.5s_ease-out_forwards]">
+        <div className="text-center mb-8 w-full opacity-0 animate-[fadeIn_0.5s_ease-out_forwards]">
           <div className="relative inline-block mb-4 group">
-            <div className="absolute -inset-1 bg-gradient-to-r from-[#00d9a3] to-blue-500 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-700"></div>
-            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-[#00d9a3]/30 p-1 bg-[#121212]">
+            <div className="absolute -inset-1 bg-gradient-to-r from-[var(--accent)] to-blue-500 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-700"></div>
+            <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-[var(--accent-30)] p-1 bg-[var(--bg-card)]">
               <img
                 src="https://github.com/jeiel2013.png"
                 alt="Jeiel Alves"
@@ -165,21 +85,39 @@ const Links = () => {
               />
             </div>
             <div
-              className="absolute bottom-1 right-1 w-4 h-4 bg-[#00d9a3] border-2 border-[#0a0a0a] rounded-full"
-              title="Disponível"
+              className="absolute bottom-1 right-1 w-4 h-4 bg-[var(--accent)] border-2 border-[var(--bg-page)] rounded-full"
+              title={t.linksPage.available}
             ></div>
           </div>
 
-          <h1 className="text-2xl font-semibold tracking-tight text-white flex items-center justify-center gap-2">
-            Jeiel Alves <span className="text-[#00d9a3] animate-pulse">_</span>
+          <h1 className="text-2xl font-semibold tracking-tight text-[var(--text-primary)] flex items-center justify-center gap-2">
+            Jeiel Alves <span className="text-[var(--accent)] animate-pulse">_</span>
           </h1>
-          <p className="text-sm text-[#a1a1aa] font-mono mt-2">
-            Fullstack Developer
+          <p className="text-sm text-[var(--text-secondary)] font-mono mt-2">
+            {t.linksPage.role}
           </p>
-          <p className="text-xs text-[#a1a1aa]/60 mt-1 max-w-[280px] mx-auto">
-            Transformando café em código limpo e escalável.
+          <p className="text-xs text-[var(--text-secondary-50)] mt-1 max-w-[280px] mx-auto">
+            {t.linksPage.tagline}
           </p>
         </div>
+
+        {/* Botão de WhatsApp — em destaque, com o dobro da altura dos demais */}
+        <a
+          href={getWhatsAppLink()}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group w-full flex items-center gap-4 px-5 py-6 sm:py-7 mb-3 rounded-xl bg-[var(--accent)] text-[var(--accent-on)] hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 shadow-lg shadow-[var(--accent-20)] opacity-0 animate-[fadeIn_0.5s_ease-out_forwards]"
+          style={{ animationDelay: "50ms" }}
+        >
+          <div className="w-14 h-14 shrink-0 flex items-center justify-center bg-[var(--accent-on)]/15 rounded-lg">
+            <MessageCircle className="w-7 h-7" />
+          </div>
+          <div className="flex-1 text-left">
+            <h3 className="text-base font-semibold">{l.whatsapp.title}</h3>
+            <p className="text-xs font-mono opacity-80">{l.whatsapp.description}</p>
+          </div>
+          <ExternalLink className="w-4 h-4 opacity-70 group-hover:translate-x-1 transition-transform" />
+        </a>
 
         {/* Links Container */}
         <div className="w-full space-y-3">
@@ -189,50 +127,38 @@ const Links = () => {
               href={link.url}
               target={link.external ? "_blank" : "_self"}
               rel={link.external ? "noopener noreferrer" : ""}
-              className={`group relative flex items-center p-1 pl-1 border border-white/[0.08] rounded-xl hover:border-[#00d9a3]/50 transition-all duration-300 active:scale-[0.99] opacity-0 animate-[fadeIn_0.5s_ease-out_forwards] ${
+              className={`group relative flex items-center p-1 pl-1 border border-[var(--border-subtle)] rounded-xl hover:border-[var(--accent-50)] transition-all duration-300 active:scale-[0.99] opacity-0 animate-[fadeIn_0.5s_ease-out_forwards] ${
                 link.featured
-                  ? "bg-gradient-to-r from-[#121212] to-[#1a1a1a]"
-                  : "bg-[#121212] hover:bg-[#1a1a1a]"
+                  ? "bg-gradient-to-r from-[var(--bg-card)] to-[var(--bg-card-alt)]"
+                  : "bg-[var(--bg-card)] hover:bg-[var(--bg-card-alt)]"
               }`}
               style={{ animationDelay: link.delay }}
             >
               {link.featured && (
-                <div className="absolute inset-0 bg-[#00d9a3]/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
+                <div className="absolute inset-0 bg-[var(--accent-10)] opacity-0 group-hover:opacity-100 transition-opacity rounded-xl"></div>
               )}
 
-              <div
-                className={`w-12 h-12 flex items-center justify-center bg-white/5 rounded-lg text-white transition-colors z-10 ${
-                  link.color === "linkedin"
-                    ? "group-hover:text-[#0A66C2] group-hover:bg-[#0A66C2]/10"
-                    : "group-hover:text-[#00d9a3] group-hover:bg-[#00d9a3]/10"
-                }`}
-              >
+              <div className="w-12 h-12 flex items-center justify-center bg-[var(--surface-muted)] rounded-lg text-[var(--text-primary)] group-hover:text-[var(--accent)] group-hover:bg-[var(--accent-10)] transition-colors z-10">
                 {link.icon}
               </div>
 
-              <div className="flex-1 px-4 z-10">
+              <div className="flex-1 px-4 z-10 min-w-0">
                 <div className="flex items-center gap-2">
-                  <h3
-                    className={`text-sm font-medium text-white transition-colors ${
-                      link.color === "linkedin"
-                        ? "group-hover:text-[#0A66C2]"
-                        : "group-hover:text-[#00d9a3]"
-                    }`}
-                  >
+                  <h3 className="text-sm font-medium text-[var(--text-primary)] group-hover:text-[var(--accent)] transition-colors truncate">
                     {link.title}
                   </h3>
                   {link.featured && (
-                    <span className="text-[9px] font-bold bg-[#00d9a3]/20 text-[#00d9a3] px-1.5 py-0.5 rounded uppercase tracking-wider">
-                      Novo
+                    <span className="text-[9px] font-bold bg-[var(--accent-20)] text-[var(--accent)] px-1.5 py-0.5 rounded uppercase tracking-wider shrink-0">
+                      {t.linksPage.badgeNew}
                     </span>
                   )}
                 </div>
-                <p className="text-[11px] text-[#a1a1aa] font-mono">
+                <p className="text-[11px] text-[var(--text-secondary)] font-mono truncate">
                   {link.description}
                 </p>
               </div>
 
-              <div className="pr-4 text-[#a1a1aa] group-hover:text-white transition-all z-10 group-hover:translate-x-1">
+              <div className="pr-4 text-[var(--text-secondary)] group-hover:text-[var(--text-primary)] transition-all z-10 group-hover:translate-x-1 shrink-0">
                 {link.rightIcon || <ExternalLink className="w-4 h-4" />}
               </div>
             </a>
@@ -247,18 +173,33 @@ const Links = () => {
           <div className="flex justify-center gap-6 mb-6">
             <a
               href="https://instagram.com/jeiel2013"
-              className="text-[#a1a1aa] hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors p-2 hover:bg-[var(--surface-muted)] rounded-full"
             >
               <Instagram className="w-5 h-5" />
             </a>
             <a
-              href="https://x.com/in/jeiel2013"
-              className="text-[#a1a1aa] hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full"
+              href="https://linkedin.com/in/jeiel2013"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="text-[var(--text-secondary)] hover:text-[#0A66C2] transition-colors p-2 hover:bg-[var(--surface-muted)] rounded-full"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a
+              href="https://x.com/jeiel2013"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="X"
+              className="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors p-2 hover:bg-[var(--surface-muted)] rounded-full"
             >
               <SiX className="w-5 h-5" />
             </a>
           </div>
-          <p className="text-xs text-[#a1a1aa]/50 font-mono">
+          <p className="text-xs text-[var(--text-secondary-50)] font-mono">
             © {currentYear} Jeiel Alves
           </p>
         </footer>
