@@ -34,7 +34,7 @@ This combination helped me deliver a beautiful, smooth, and responsive site. ðŸš
 | --- | --- |
 | `/` | Home â€” hero, about, tech stack, featured projects and contact |
 | `/servicos` | What I offer as a freelancer and how the process works |
-| `/solucoes` | Business landing page for companies, clinics, professionals and retailers |
+| `/empresas` | Independent landing page for companies, clinics, professionals and retailers |
 | `/projetos` | All projects, split into Client Projects and Technical & Personal Projects |
 | `/projetos/:slug` | Individual case study for each client project (challenge, solution and result) |
 | `/links` | "Link in bio" style page with my main links |

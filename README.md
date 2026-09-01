@@ -34,7 +34,7 @@ Essa combinação me ajudou a entregar um site bonito, fluido e responsivo. 🚀
 | --- | --- |
 | `/` | Home — hero, sobre, tecnologias, destaques de projetos e contato |
 | `/servicos` | O que ofereço como freelancer e como funciona o processo |
-| `/solucoes` | Landing page comercial para empresas, clínicas, profissionais e comércios |
+| `/empresas` | Landing page comercial independente para empresas, clínicas, profissionais e comércios |
 | `/projetos` | Todos os projetos, separados em Projetos para Clientes e Projetos Técnicos & Pessoais |
 | `/projetos/:slug` | Case study individual de cada projeto para cliente (desafio, solução e resultado) |
 | `/links` | Página estilo "link in bio" com meus principais links |
