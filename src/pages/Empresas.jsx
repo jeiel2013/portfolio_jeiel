@@ -69,7 +69,7 @@ function Empresas() {
 
           <section className="border-y border-[var(--border-subtle)] bg-[var(--bg-card-alt)] px-6 py-8">
             <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 md:flex-row">
-              <p className="max-w-sm text-center text-sm font-medium md:text-left">{content.segments.title}</p>
+              <p className="max-w-md text-center text-base font-semibold leading-snug sm:text-lg md:text-left">{content.segments.title}</p>
               <div className="grid w-full grid-cols-2 gap-3 md:w-auto md:grid-cols-4">
                 {content.segments.items.map((item, index) => {
                   const Icon = SEGMENT_ICONS[index];
