@@ -3,7 +3,6 @@ export const translations = {
     nav: {
       about: "Sobre",
       services: "Serviços",
-      solutions: "Para empresas",
       projects: "Projetos",
       contact: "Contato",
       cta: "Vamos conversar",
@@ -300,7 +299,6 @@ export const translations = {
     nav: {
       about: "About",
       services: "Services",
-      solutions: "For business",
       projects: "Projects",
       contact: "Contact",
       cta: "Let's talk",

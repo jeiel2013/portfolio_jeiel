@@ -19,7 +19,6 @@ function Header() {
   const NAV_LINKS = [
     { label: t.nav.about, hash: "#about" },
     { label: t.nav.services, to: "/servicos" },
-    { label: t.nav.solutions, to: "/solucoes" },
     { label: t.nav.projects, to: "/projetos" },
     { label: t.nav.contact, hash: "#contact" },
   ];
@@ -102,7 +101,7 @@ function Header() {
           JEIEL.DEV<span className="text-[var(--accent)]">_</span>
         </Link>
 
-        <div className="hidden lg:flex gap-5 xl:gap-8 text-sm text-[var(--text-secondary)] font-medium">
+        <div className="hidden md:flex gap-8 text-sm text-[var(--text-secondary)] font-medium">
           {NAV_LINKS.map((item) => renderNavItem(item))}
         </div>
 
@@ -125,7 +124,7 @@ function Header() {
             onClick={() => setIsMenuOpen((prev) => !prev)}
             aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
             aria-expanded={isMenuOpen}
-            className="lg:hidden w-10 h-10 flex items-center justify-center bg-[var(--surface-muted)] border border-[var(--border-subtle)] rounded-full text-[var(--text-primary)] hover:bg-[var(--surface-muted-hover)] transition-colors"
+            className="md:hidden w-10 h-10 flex items-center justify-center bg-[var(--surface-muted)] border border-[var(--border-subtle)] rounded-full text-[var(--text-primary)] hover:bg-[var(--surface-muted-hover)] transition-colors"
           >
             {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -134,7 +133,7 @@ function Header() {
 
       {/* Menu mobile / tablet — mesmo visual (cards + glass) usado nas páginas */}
       <div
-        className={`lg:hidden overflow-hidden border-t border-[var(--border-subtle)] bg-[var(--bg-page-95)] backdrop-blur-md transition-all duration-300 ease-in-out ${
+        className={`md:hidden overflow-hidden border-t border-[var(--border-subtle)] bg-[var(--bg-page-95)] backdrop-blur-md transition-all duration-300 ease-in-out ${
           isMenuOpen ? "max-h-[32rem] opacity-100" : "max-h-0 opacity-0"
         }`}
       >

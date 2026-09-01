@@ -1,7 +1,7 @@
 import {
   ArrowRight, BarChart3, BriefcaseBusiness, Building2, Check, ChevronRight,
   Clock3, Globe2, HeartPulse, LayoutDashboard, MessageCircle, ShieldCheck,
-  Sparkles, Store, Target, UsersRound, Zap,
+  Store, Target, UsersRound, Zap,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Background from "../components/Background";
@@ -16,7 +16,7 @@ const SOLUTION_ICONS = [Globe2, LayoutDashboard, BarChart3];
 const PREVIEW_ICONS = [UsersRound, Zap, Target, ShieldCheck];
 const BENEFIT_ICONS = [MessageCircle, Zap, ShieldCheck, UsersRound];
 
-function Solucoes() {
+function Empresas() {
   const { t, language } = useLanguage();
   const content = t.leadPage;
   const whatsappLink = getWhatsAppLink(
@@ -36,7 +36,7 @@ function Solucoes() {
             <div className="relative mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1.12fr_0.88fr] lg:gap-20">
               <div>
                 <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[var(--accent-20)] bg-[var(--accent-10)] px-3 py-1.5 text-xs font-semibold tracking-wide text-[var(--accent)]">
-                  <Sparkles className="h-3.5 w-3.5" /> {content.hero.badge}
+                  {content.hero.badge}
                 </div>
                 <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
                   {content.hero.title}{" "}
@@ -69,7 +69,7 @@ function Solucoes() {
 
           <section className="border-y border-[var(--border-subtle)] bg-[var(--bg-card-alt)] px-6 py-8">
             <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 md:flex-row">
-              <p className="max-w-sm text-center text-sm font-medium md:text-left">{content.segments.title}</p>
+              <p className="max-w-md text-center text-lg font-semibold leading-tight tracking-tight sm:text-xl md:text-left">{content.segments.title}</p>
               <div className="grid w-full grid-cols-2 gap-3 md:w-auto md:grid-cols-4">
                 {content.segments.items.map((item, index) => {
                   const Icon = SEGMENT_ICONS[index];
@@ -146,8 +146,8 @@ function Solucoes() {
                   return (
                     <div key={item.title} className="bg-[var(--bg-card)] p-6 text-center">
                       <Icon className="mx-auto h-6 w-6 text-[var(--accent)]" />
-                      <h3 className="mt-4 text-sm font-medium">{item.title}</h3>
-                      <p className="mt-2 text-xs leading-5 text-[var(--text-secondary)]">{item.description}</p>
+                      <h3 className="mt-4 text-base font-medium">{item.title}</h3>
+                      <p className="mt-3 text-sm leading-6 text-[var(--text-secondary)]">{item.description}</p>
                     </div>
                   );
                 })}
@@ -257,4 +257,4 @@ function CtaLink({ href, children }) {
   return <a href={href} target="_blank" rel="noopener noreferrer" className="group inline-flex items-center justify-center gap-2 rounded-full bg-[var(--accent)] px-7 py-3.5 text-sm font-semibold text-[var(--accent-on)] shadow-lg shadow-[var(--accent-20)] transition-all hover:-translate-y-0.5 hover:bg-[var(--accent-hover)]">{children}</a>;
 }
 
-export default Solucoes;
+export default Empresas;
