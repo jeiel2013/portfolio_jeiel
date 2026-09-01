@@ -69,13 +69,13 @@ function Empresas() {
 
           <section className="border-y border-[var(--border-subtle)] bg-[var(--bg-card-alt)] px-6 py-8">
             <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-6 md:flex-row">
-              <p className="max-w-md text-center text-lg font-semibold leading-tight tracking-tight sm:text-xl md:text-left">{content.segments.title}</p>
+              <p className="max-w-sm text-center text-sm font-medium md:text-left">{content.segments.title}</p>
               <div className="grid w-full grid-cols-2 gap-3 md:w-auto md:grid-cols-4">
                 {content.segments.items.map((item, index) => {
                   const Icon = SEGMENT_ICONS[index];
                   return (
-                    <div key={item} className="flex items-center justify-center gap-2 rounded-lg border border-[var(--border-subtle)] bg-[var(--glass-bg)] px-4 py-3 text-xs text-[var(--text-secondary)]">
-                      <Icon className="h-4 w-4 shrink-0 text-[var(--accent)]" /> {item}
+                    <div key={item} className="flex min-h-14 items-center justify-center gap-3 rounded-xl border border-[var(--border-subtle)] bg-[var(--glass-bg)] px-5 py-4 text-sm font-medium text-[var(--text-secondary)]">
+                      <Icon className="h-5 w-5 shrink-0 text-[var(--accent)]" /> {item}
                     </div>
                   );
                 })}
