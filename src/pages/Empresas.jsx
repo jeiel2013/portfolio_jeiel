@@ -38,7 +38,7 @@ function Empresas() {
                 <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-[var(--accent-20)] bg-[var(--accent-10)] px-3 py-1.5 text-xs font-semibold tracking-wide text-[var(--accent)]">
                   {content.hero.badge}
                 </div>
-                <h1 className="max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+                <h1 className="max-w-4xl text-5xl font-semibold leading-[1.02] tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl">
                   {content.hero.title}{" "}
                   <span className="text-[var(--accent)]">{content.hero.highlight}</span>
                 </h1>
