@@ -4,13 +4,27 @@ import radioImg from "../assets/images/radio.jpg";
 import todoImg from "../assets/images/todo.jpg";
 import karineImg from "../assets/images/karine.png";
 import katherImg from "../assets/images/studiokather.png";
+import nestForgeImg from "../assets/images/nestforge.png";
 
-// Projetos exibidos em destaque na Home (trabalhos para clientes reais)
-export const FEATURED_TITLES = ["Studio Kather", "Karine Azevedo", "Batista Assessoria"];
+// Projetos exibidos em destaque na Home
+export const FEATURED_TITLES = ["NestForge", "Studio Kather", "Karine Azevedo", "Batista Assessoria"];
 
 // category: "cliente" (trabalho remunerado/entregue) ou "pessoal" (prática/técnico)
 // description e caseStudy são bilíngues ({ pt, en) }); título e tecnologias são iguais nos dois idiomas.
 export const projects = [
+  {
+    title: "NestForge",
+    category: "pessoal",
+    description: {
+      pt: "CLI interativa que gera projetos NestJS prontos para produção com banco de dados, autenticação, testes, Docker e observabilidade.",
+      en: "Interactive CLI that generates production-ready NestJS projects with databases, authentication, testing, Docker and observability.",
+    },
+    technologies: ["NestJS", "TypeScript", "Node.js", "Prisma", "TypeORM", "Drizzle ORM"],
+    githubUrl: "https://github.com/jeiel2013/NestForge",
+    demoUrl: "https://nestforge-gen.vercel.app/",
+    icon: "terminal",
+    image: nestForgeImg,
+  },
   {
     title: "Studio Kather",
     category: "cliente",
