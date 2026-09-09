@@ -19,6 +19,7 @@ function MotionController({ children }) {
         {
           reduceMotion: "(prefers-reduced-motion: reduce)",
           desktop: "(min-width: 768px)",
+          mobile: "(max-width: 767px)",
         },
         ({ conditions }) => {
           if (conditions.reduceMotion) return;
