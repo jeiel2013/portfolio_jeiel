@@ -94,6 +94,9 @@ export const translations = {
     projectsSection: {
       title: "Projetos",
       drag: "← ARRASTE →",
+      previous: "Projeto anterior",
+      next: "Próximo projeto",
+      carouselLabel: "Projetos em destaque",
       viewAll: "Ver todos os projetos",
     },
     projetosPage: {
@@ -391,6 +394,9 @@ export const translations = {
     projectsSection: {
       title: "Projects",
       drag: "← DRAG →",
+      previous: "Previous project",
+      next: "Next project",
+      carouselLabel: "Featured projects",
       viewAll: "View all projects",
     },
     projetosPage: {

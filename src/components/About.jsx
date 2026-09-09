@@ -80,7 +80,7 @@ function AboutSection() {
           </h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-            {technologies.map((tech, index) => (
+            {technologies.map((tech) => (
               <TechItem key={tech.name} {...tech} />
             ))}
           </div>
@@ -90,13 +90,13 @@ function AboutSection() {
   );
 }
 
-function TechItem({ name, icon: Icon, color }) {
+function TechItem({ name, icon, color }) {
   return (
     <div data-reveal-item className="flex flex-col items-center justify-center p-6 rounded-lg bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:border-[var(--accent-50)] transition-all group">
-      <Icon
-        className="w-8 h-8 text-[var(--text-secondary)] group-hover:text-[var(--tech-color)] transition-colors"
-        style={{ "--tech-color": color }}
-      />
+      {React.createElement(icon, {
+        className: "w-8 h-8 text-[var(--text-secondary)] group-hover:text-[var(--tech-color)] transition-colors",
+        style: { "--tech-color": color },
+      })}
       <span className="mt-3 text-xs font-mono text-[var(--text-secondary)] group-hover:text-[var(--text-primary)]">
         {name}
       </span>

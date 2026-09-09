@@ -12,28 +12,33 @@ function Background() {
     const ctx = canvas.getContext("2d");
     let width, height;
     const stars = [];
-    const numStars = 500; // Número de partículas
+    let animationFrame = null;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
     const particleRGB = theme === "light" ? "0, 0, 0" : "255, 255, 255";
 
-    // Configurar tamanho do canvas
     const resize = () => {
       width = window.innerWidth;
       height = window.innerHeight;
       canvas.width = width;
       canvas.height = height;
+      stars.length = 0;
+      initStars();
+
+      if (reducedMotion.matches || document.hidden) {
+        drawFrame(false);
+      }
     };
 
-    // Classe Star para as partículas
     class Star {
       constructor() {
         this.reset();
-        this.y = Math.random() * height; // Começar espalhadas
+        this.y = Math.random() * height;
       }
 
       reset() {
         this.x = Math.random() * width;
-        this.y = height + Math.random() * 100; // Começar abaixo da tela
+        this.y = height + Math.random() * 100;
         this.size = Math.random() * 2;
         this.speed = Math.random() * 0.5 + 0.1;
         this.opacity =
@@ -41,7 +46,7 @@ function Background() {
       }
 
       update() {
-        this.y -= this.speed; // Movimento para cima
+        this.y -= this.speed;
         if (this.y < -10) {
           this.reset();
         }
@@ -55,36 +60,68 @@ function Background() {
       }
     }
 
-    // Inicializar estrelas
     const initStars = () => {
-      for (let i = 0; i < numStars; i++) {
+      const density = width < 768 ? 120 : width < 1280 ? 220 : 300;
+      const starCount = reducedMotion.matches ? Math.min(70, density) : density;
+
+      for (let i = 0; i < starCount; i++) {
         stars.push(new Star());
       }
     };
 
-    // Loop de animação
-    let animationFrame;
-    const animate = () => {
+    const drawFrame = (shouldUpdate = true) => {
       ctx.clearRect(0, 0, width, height);
       stars.forEach((star) => {
-        star.update();
+        if (shouldUpdate) star.update();
         star.draw();
       });
+    };
+
+    const animate = () => {
+      drawFrame();
       animationFrame = requestAnimationFrame(animate);
     };
 
-    // Event listeners
-    window.addEventListener("resize", resize);
+    const stopAnimation = () => {
+      if (animationFrame !== null) {
+        cancelAnimationFrame(animationFrame);
+        animationFrame = null;
+      }
+    };
 
-    // Inicializar
+    const startAnimation = () => {
+      stopAnimation();
+      if (document.hidden || reducedMotion.matches) {
+        drawFrame(false);
+        return;
+      }
+      animate();
+    };
+
+    const handleVisibility = () => {
+      if (document.hidden) {
+        stopAnimation();
+      } else {
+        startAnimation();
+      }
+    };
+
+    const handleMotionPreference = () => {
+      resize();
+      startAnimation();
+    };
+
     resize();
-    initStars();
-    animate();
+    startAnimation();
+    window.addEventListener("resize", resize);
+    document.addEventListener("visibilitychange", handleVisibility);
+    reducedMotion.addEventListener("change", handleMotionPreference);
 
-    // Cleanup
     return () => {
       window.removeEventListener("resize", resize);
-      cancelAnimationFrame(animationFrame);
+      document.removeEventListener("visibilitychange", handleVisibility);
+      reducedMotion.removeEventListener("change", handleMotionPreference);
+      stopAnimation();
     };
   }, [theme]);
 

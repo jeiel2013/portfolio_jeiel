@@ -60,7 +60,7 @@ function ContactSection() {
           </a>
           <a
             href="https://linkedin.com/in/jeiel2013"
-            target="-blank"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-[var(--text-secondary)] hover:text-[#0A66C2] transition-colors"
             aria-label="LinkedIn"

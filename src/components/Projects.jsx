@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { projects as allProjects, FEATURED_TITLES } from "../data/projects";
 import { getProjectIcon } from "../utils/projectIcons";
 import { useLanguage } from "../context/LanguageContext";
@@ -15,39 +16,53 @@ function ProjectsSection({ variant = "full" }) {
 
   const carouselRef = useRef(null);
   const isDragging = useRef(false);
+  const didDrag = useRef(false);
   const startX = useRef(0);
   const scrollLeft = useRef(0);
   const [dragging, setDragging] = useState(false);
 
-  const onMouseDown = (e) => {
-    isDragging.current = true;
-    setDragging(true);
-    startX.current = e.pageX - carouselRef.current.offsetLeft;
-    scrollLeft.current = carouselRef.current.scrollLeft;
+  const scrollCarousel = (direction) => {
+    const carousel = carouselRef.current;
+    if (!carousel) return;
+
+    carousel.scrollBy({
+      left: direction * Math.min(380, carousel.clientWidth * 0.85),
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    });
   };
 
-  const onMouseMove = (e) => {
+  const onPointerDown = (e) => {
+    if (e.pointerType !== "mouse" || e.button !== 0) return;
+    isDragging.current = true;
+    didDrag.current = false;
+    setDragging(true);
+    startX.current = e.clientX;
+    scrollLeft.current = carouselRef.current.scrollLeft;
+    carouselRef.current.setPointerCapture(e.pointerId);
+  };
+
+  const onPointerMove = (e) => {
     if (!isDragging.current) return;
     e.preventDefault();
-    const x = e.pageX - carouselRef.current.offsetLeft;
-    const walk = (x - startX.current) * 1;
+    const walk = e.clientX - startX.current;
+    if (Math.abs(walk) > 5) didDrag.current = true;
     carouselRef.current.scrollLeft = scrollLeft.current - walk;
   };
 
-  const onMouseUp = () => {
+  const onPointerUp = (e) => {
+    if (!isDragging.current) return;
     isDragging.current = false;
     setDragging(false);
+    if (carouselRef.current.hasPointerCapture(e.pointerId)) {
+      carouselRef.current.releasePointerCapture(e.pointerId);
+    }
   };
 
-  const onTouchStart = (e) => {
-    startX.current = e.touches[0].pageX - carouselRef.current.offsetLeft;
-    scrollLeft.current = carouselRef.current.scrollLeft;
-  };
-
-  const onTouchMove = (e) => {
-    const x = e.touches[0].pageX - carouselRef.current.offsetLeft;
-    const walk = (x - startX.current) * 1;
-    carouselRef.current.scrollLeft = scrollLeft.current - walk;
+  const onCarouselKeyDown = (e) => {
+    if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
+      e.preventDefault();
+      scrollCarousel(e.key === "ArrowLeft" ? -1 : 1);
+    }
   };
 
   return (
@@ -62,9 +77,25 @@ function ProjectsSection({ variant = "full" }) {
             <span className="text-[var(--accent)] text-xl">03.</span> {t.projectsSection.title}
           </h2>
           <div className="flex gap-2 text-[var(--text-secondary)]">
-            <span className="text-xs font-mono border border-[var(--border-subtle)] px-2 py-1 rounded select-none">
+            <span className="hidden sm:inline-flex text-xs font-mono border border-[var(--border-subtle)] px-2 py-1 rounded select-none">
               {t.projectsSection.drag}
             </span>
+            <button
+              type="button"
+              onClick={() => scrollCarousel(-1)}
+              aria-label={t.projectsSection.previous}
+              className="w-8 h-8 inline-flex items-center justify-center rounded-full border border-[var(--border-subtle)] bg-[var(--surface-muted)] hover:bg-[var(--surface-muted-hover)] transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4" />
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollCarousel(1)}
+              aria-label={t.projectsSection.next}
+              className="w-8 h-8 inline-flex items-center justify-center rounded-full border border-[var(--border-subtle)] bg-[var(--surface-muted)] hover:bg-[var(--surface-muted-hover)] transition-colors"
+            >
+              <ArrowRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
       </div>
@@ -72,23 +103,25 @@ function ProjectsSection({ variant = "full" }) {
       <div className="max-w-6xl mx-auto">
         <div
           ref={carouselRef}
+          role="region"
+          aria-label={t.projectsSection.carouselLabel}
+          tabIndex={0}
           className={`flex overflow-x-auto snap-x snap-mandatory gap-5 pb-6 pl-6 pr-6 select-none ${
             dragging ? "cursor-grabbing" : "cursor-grab"
           }`}
           style={{
             scrollbarWidth: "none",
             msOverflowStyle: "none",
-            scrollBehavior: "smooth",
+            touchAction: "pan-x pan-y",
           }}
-          onMouseDown={onMouseDown}
-          onMouseMove={onMouseMove}
-          onMouseUp={onMouseUp}
-          onMouseLeave={onMouseUp}
-          onTouchStart={onTouchStart}
-          onTouchMove={onTouchMove}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onPointerCancel={onPointerUp}
+          onKeyDown={onCarouselKeyDown}
         >
           {projects.map((project) => (
-            <ProjectCard key={project.title} project={project} dragging={dragging} />
+            <ProjectCard key={project.title} project={project} dragging={dragging} didDrag={didDrag} />
           ))}
         </div>
       </div>
@@ -124,7 +157,7 @@ function ProjectsSection({ variant = "full" }) {
   );
 }
 
-function ProjectCard({ project, dragging }) {
+function ProjectCard({ project, dragging, didDrag }) {
   const { language } = useLanguage();
 
   return (
@@ -137,6 +170,8 @@ function ProjectCard({ project, dragging }) {
               alt={project.title}
               className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
               draggable={false}
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-card)] via-transparent to-transparent" />
           </>
@@ -178,7 +213,7 @@ function ProjectCard({ project, dragging }) {
             <>
               <a
                 href={dragging ? undefined : project.demoUrl}
-                onClick={(e) => dragging && e.preventDefault()}
+                onClick={(e) => didDrag.current && e.preventDefault()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs font-medium flex items-center gap-1 text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors"
@@ -200,7 +235,7 @@ function ProjectCard({ project, dragging }) {
               </a>
               <a
                 href={dragging ? undefined : project.githubUrl}
-                onClick={(e) => dragging && e.preventDefault()}
+                onClick={(e) => didDrag.current && e.preventDefault()}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs font-medium flex items-center gap-1 hover:text-[var(--text-primary)] text-[var(--text-secondary)] transition-colors"
@@ -214,7 +249,7 @@ function ProjectCard({ project, dragging }) {
           ) : (
             <a
               href={dragging ? undefined : project.githubUrl}
-              onClick={(e) => dragging && e.preventDefault()}
+              onClick={(e) => didDrag.current && e.preventDefault()}
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs font-medium flex items-center gap-1 hover:text-[var(--text-primary)] text-[var(--text-secondary)] transition-colors"

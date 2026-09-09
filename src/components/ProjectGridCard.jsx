@@ -15,6 +15,8 @@ function ProjectGridCard({ project }) {
               src={project.image}
               alt={project.title}
               className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[var(--bg-card)] via-transparent to-transparent" />
           </>
