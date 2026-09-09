@@ -10,10 +10,11 @@ function Process() {
   return (
     <section
       id="process"
+      data-reveal
       className="py-24 px-6 border-t border-[var(--border-subtle)] bg-[var(--bg-card-alt)]"
     >
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-semibold tracking-tight mb-12 flex items-center gap-3">
+        <h2 className="text-3xl font-semibold tracking-tight mb-12 flex items-center gap-3" data-reveal-item>
           <span className="text-[var(--accent)] text-xl">02.</span> {t.process.title}
         </h2>
 
@@ -22,7 +23,8 @@ function Process() {
             const Icon = ICONS[index];
             return (
               <div
-                key={index}
+                key={step.title}
+                data-reveal-item
                 className="group flex flex-col sm:flex-row gap-4 p-5 rounded-xl border border-[var(--border-subtle)] bg-[var(--glass-bg)] backdrop-blur-[10px] hover:bg-[var(--surface-muted)] hover:border-[var(--accent-30)] transition-all duration-300"
               >
                 <div className="shrink-0">

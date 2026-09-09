@@ -18,7 +18,7 @@ function Projetos() {
       <div className="relative z-10">
         <Header />
         <main className="pt-24">
-          <section className="px-6 pb-9 lg:pb-20 pt-6 text-center max-w-3xl mx-auto">
+          <section data-reveal className="px-6 pb-9 lg:pb-20 pt-6 text-center max-w-3xl mx-auto">
             <span className="text-[var(--accent)] font-bold text-lg tracking-widest mb-4 block">
               {t.projetosPage.eyebrow}
             </span>
@@ -27,7 +27,7 @@ function Projetos() {
             </h1>
           </section>
 
-          <section className="py-24 px-6 border-t border-[var(--border-subtle)]">
+          <section data-reveal className="py-24 px-6 border-t border-[var(--border-subtle)]">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-semibold tracking-tight mb-3 flex items-center gap-3">
                 <span className="text-[var(--accent)] text-xl">01.</span> {t.projetosPage.clientTitle}
@@ -37,14 +37,14 @@ function Projetos() {
               </p>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {clientProjects.map((project, index) => (
-                  <ProjectGridCard key={index} project={project} />
+                {clientProjects.map((project) => (
+                  <ProjectGridCard key={project.title} project={project} />
                 ))}
               </div>
             </div>
           </section>
 
-          <section className="py-24 px-6 border-t border-[var(--border-subtle)] bg-[var(--bg-card-alt)]">
+          <section data-reveal className="py-24 px-6 border-t border-[var(--border-subtle)] bg-[var(--bg-card-alt)]">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-3xl font-semibold tracking-tight mb-3 flex items-center gap-3">
                 <span className="text-[var(--accent)] text-xl">02.</span> {t.projetosPage.personalTitle}
@@ -54,8 +54,8 @@ function Projetos() {
               </p>
 
               <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {personalProjects.map((project, index) => (
-                  <ProjectGridCard key={index} project={project} />
+                {personalProjects.map((project) => (
+                  <ProjectGridCard key={project.title} project={project} />
                 ))}
               </div>
             </div>

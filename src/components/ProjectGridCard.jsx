@@ -7,7 +7,7 @@ function ProjectGridCard({ project }) {
   const { t, language } = useLanguage();
 
   return (
-    <article className="bg-[var(--bg-card)] rounded-xl border border-[var(--border-subtle)] overflow-hidden flex flex-col group hover:border-[var(--accent-50)] transition-all duration-300">
+    <article data-reveal-item className="bg-[var(--bg-card)] rounded-xl border border-[var(--border-subtle)] overflow-hidden flex flex-col group hover:border-[var(--accent-50)] transition-all duration-300">
       <div className="h-40 bg-gradient-to-br from-gray-800 to-black relative overflow-hidden group-hover:opacity-90 transition-opacity">
         {project.image ? (
           <>

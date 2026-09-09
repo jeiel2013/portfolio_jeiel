@@ -33,9 +33,9 @@ function AboutSection() {
   return (
     <>
       {/* About Section */}
-      <section id="about" className="py-24 px-6 border-t border-[var(--border-subtle)]">
+      <section id="about" data-reveal className="py-24 px-6 border-t border-[var(--border-subtle)]">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-start">
-          <div className="space-y-6">
+          <div className="space-y-6" data-reveal-item>
             <h2 className="text-3xl font-semibold tracking-tight flex items-center gap-3">
               <span className="text-[var(--accent)] text-xl">01.</span> {t.about.title}
             </h2>
@@ -46,7 +46,7 @@ function AboutSection() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-4">
+          <div className="grid grid-cols-1 gap-4" data-reveal-item>
             <div className="glass-panel p-6 rounded-xl hover:border-[var(--accent-30)] transition-colors group bg-[var(--glass-bg)] backdrop-blur-[10px] border border-[var(--border-subtle)]">
               <Code2 className="w-6 h-6 mb-4 text-[var(--accent)]" />
               <h3 className="font-medium text-[var(--text-primary)] mb-2">{t.about.card1Title}</h3>
@@ -71,16 +71,17 @@ function AboutSection() {
       {/* Tech Stack */}
       <section
         id="tech"
+        data-reveal
         className="py-24 px-6 border-t border-[var(--border-subtle)] bg-[var(--bg-card-alt)]"
       >
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-semibold tracking-tight mb-12 flex items-center gap-3">
+          <h2 className="text-3xl font-semibold tracking-tight mb-12 flex items-center gap-3" data-reveal-item>
             <span className="text-[var(--accent)] text-xl">02.</span> {t.about.techTitle}
           </h2>
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {technologies.map((tech, index) => (
-              <TechItem key={index} {...tech} />
+              <TechItem key={tech.name} {...tech} />
             ))}
           </div>
         </div>
@@ -91,7 +92,7 @@ function AboutSection() {
 
 function TechItem({ name, icon: Icon, color }) {
   return (
-    <div className="flex flex-col items-center justify-center p-6 rounded-lg bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:border-[var(--accent-50)] transition-all group">
+    <div data-reveal-item className="flex flex-col items-center justify-center p-6 rounded-lg bg-[var(--bg-card)] border border-[var(--border-subtle)] hover:border-[var(--accent-50)] transition-all group">
       <Icon
         className="w-8 h-8 text-[var(--text-secondary)] group-hover:text-[var(--tech-color)] transition-colors"
         style={{ "--tech-color": color }}

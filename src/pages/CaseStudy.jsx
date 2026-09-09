@@ -49,7 +49,7 @@ function CaseStudy() {
       <div className="relative z-10">
         <Header />
         <main className="pt-24">
-          <section className="px-6 pb-8 max-w-3xl mx-auto text-center">
+          <section data-reveal className="px-6 pb-8 max-w-3xl mx-auto text-center">
             <Link
               to="/projetos"
               className="inline-flex items-center gap-2 text-xs text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors mb-8"
@@ -78,7 +78,7 @@ function CaseStudy() {
           </section>
 
           {project.image && (
-            <section className="px-6 max-w-4xl mx-auto mb-16">
+            <section data-reveal className="px-6 max-w-4xl mx-auto mb-16">
               <div className="rounded-xl overflow-hidden border border-[var(--border-subtle)]">
                 <img
                   src={project.image}
@@ -89,29 +89,29 @@ function CaseStudy() {
             </section>
           )}
 
-          <section className="px-6 max-w-3xl mx-auto space-y-10 pb-16">
-            <div>
+          <section data-reveal className="px-6 max-w-3xl mx-auto space-y-10 pb-16">
+            <div data-reveal-item>
               <h2 className="text-xl font-semibold tracking-tight mb-3 flex items-center gap-3">
                 <span className="text-[var(--accent)] text-lg">01.</span> {t.caseStudy.challengeLabel}
               </h2>
               <p className="text-[var(--text-secondary)] text-sm leading-7">{challengeText}</p>
             </div>
 
-            <div>
+            <div data-reveal-item>
               <h2 className="text-xl font-semibold tracking-tight mb-3 flex items-center gap-3">
                 <span className="text-[var(--accent)] text-lg">02.</span> {t.caseStudy.solutionLabel}
               </h2>
               <p className="text-[var(--text-secondary)] text-sm leading-7">{solutionText}</p>
             </div>
 
-            <div>
+            <div data-reveal-item>
               <h2 className="text-xl font-semibold tracking-tight mb-3 flex items-center gap-3">
                 <span className="text-[var(--accent)] text-lg">03.</span> {t.caseStudy.resultLabel}
               </h2>
               <p className="text-[var(--text-secondary)] text-sm leading-7">{resultText}</p>
             </div>
 
-            <div className="flex flex-wrap gap-4 pt-4 border-t border-[var(--border-subtle)]">
+            <div data-reveal-item className="flex flex-wrap gap-4 pt-4 border-t border-[var(--border-subtle)]">
               {project.demoUrl && (
                 <a
                   href={project.demoUrl}
@@ -133,7 +133,7 @@ function CaseStudy() {
             </div>
           </section>
 
-          <section className="py-24 px-6 border-t border-[var(--border-subtle)] relative overflow-hidden">
+          <section data-reveal className="py-24 px-6 border-t border-[var(--border-subtle)] relative overflow-hidden">
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-[var(--accent-10)] rounded-full blur-[100px] pointer-events-none"></div>
             <div className="max-w-2xl mx-auto text-center relative">
               <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-[var(--text-primary)] mb-4">

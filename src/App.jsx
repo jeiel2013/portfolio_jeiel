@@ -9,6 +9,7 @@ import Projetos from "./pages/Projetos";
 import CaseStudy from "./pages/CaseStudy";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
+import MotionController from "./components/MotionController";
 
 function App() {
   return (
@@ -16,15 +17,17 @@ function App() {
       <LanguageProvider>
         <Router>
           <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/servicos" element={<Servicos />} />
-            <Route path="/empresas" element={<Empresas />} />
-            <Route path="/projetos" element={<Projetos />} />
-            <Route path="/projetos/:slug" element={<CaseStudy />} />
-            <Route path="/links" element={<Links />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <MotionController>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/servicos" element={<Servicos />} />
+              <Route path="/empresas" element={<Empresas />} />
+              <Route path="/projetos" element={<Projetos />} />
+              <Route path="/projetos/:slug" element={<CaseStudy />} />
+              <Route path="/links" element={<Links />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </MotionController>
         </Router>
       </LanguageProvider>
     </ThemeProvider>

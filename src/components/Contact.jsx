@@ -12,11 +12,12 @@ function ContactSection() {
   return (
     <section
       id="contact"
+      data-reveal
       className="py-32 px-6 border-t border-[var(--border-subtle)] relative overflow-hidden"
     >
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[var(--accent-10)] rounded-full blur-[100px] pointer-events-none"></div>
 
-      <div className="max-w-3xl mx-auto text-center">
+      <div className="max-w-3xl mx-auto text-center" data-reveal-item>
         <span className="text-[var(--accent)] font-mono text-sm tracking-widest mb-4 block">
           {t.contact.eyebrow}
         </span>

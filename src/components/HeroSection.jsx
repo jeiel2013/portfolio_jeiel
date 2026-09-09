@@ -11,7 +11,7 @@ function HeroSection() {
       {/* Decorative gradient blur */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[var(--accent-10)] rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="mb-8 relative group">
+      <div className="mb-8 relative group" data-hero-item>
         <div className="absolute -inset-1 bg-gradient-to-r from-[var(--accent)] to-blue-500 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
         <div className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-[var(--accent-50)] shadow-2xl shadow-[var(--accent-20)]">
           <img
@@ -23,25 +23,25 @@ function HeroSection() {
       </div>
 
       <div className="space-y-4 max-w-4xl mx-auto">
-        <div className="flex items-center justify-center gap-2 mb-2">
+        <div className="flex items-center justify-center gap-2 mb-2" data-hero-item>
           <span className="px-3 py-1 rounded-full bg-[var(--accent-10)] border border-[var(--accent-20)] text-[var(--accent)] text-base font-bold tracking-wide">
             {t.hero.badge}
           </span>
         </div>
 
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tighter leading-[0.9] text-transparent bg-clip-text bg-gradient-to-b from-[var(--text-primary)] via-[var(--text-primary)] to-[var(--text-secondary)]">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tighter leading-[0.9] text-transparent bg-clip-text bg-gradient-to-b from-[var(--text-primary)] via-[var(--text-primary)] to-[var(--text-secondary)]" data-hero-item>
           Jeiel Alves
         </h1>
 
-        <p className="text-lg md:text-xl text-[var(--text-secondary)] font-mono mt-4">
+        <p className="text-lg md:text-xl text-[var(--text-secondary)] font-mono mt-4" data-hero-item>
           <span className="text-[var(--accent)]">&gt;</span> {t.hero.role}
         </p>
 
-        <p className="max-w-xl mx-auto text-[var(--text-secondary)] text-sm md:text-base leading-relaxed pt-4">
+        <p className="max-w-xl mx-auto text-[var(--text-secondary)] text-sm md:text-base leading-relaxed pt-4" data-hero-item>
           {t.hero.description}
         </p>
 
-        <div className="flex flex-wrap gap-4 justify-center items-center mt-10">
+        <div className="flex flex-wrap gap-4 justify-center items-center mt-10" data-hero-item>
           <a
             href={getWhatsAppLink()}
             target="_blank"

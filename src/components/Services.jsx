@@ -14,19 +14,20 @@ function Services() {
   const { t } = useLanguage();
 
   return (
-    <section id="services" className="py-24 px-6 border-t border-[var(--border-subtle)]">
+    <section id="services" data-reveal className="py-24 px-6 border-t border-[var(--border-subtle)]">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-semibold tracking-tight mb-4 flex items-center gap-3">
+        <h2 className="text-3xl font-semibold tracking-tight mb-4 flex items-center gap-3" data-reveal-item>
           <span className="text-[var(--accent)] text-xl">01.</span> {t.services.title}
         </h2>
-        <p className="text-[var(--text-secondary)] text-sm max-w-xl mb-12">{t.services.subtitle}</p>
+        <p className="text-[var(--text-secondary)] text-sm max-w-xl mb-12" data-reveal-item>{t.services.subtitle}</p>
 
         <div className="grid sm:grid-cols-2 gap-6">
           {t.services.items.map((service, index) => {
             const Icon = ICONS[index];
             return (
               <div
-                key={index}
+                key={service.title}
+                data-reveal-item
                 className="glass-panel p-6 rounded-xl hover:border-[var(--accent-30)] transition-colors group bg-[var(--glass-bg)] backdrop-blur-[10px] border border-[var(--border-subtle)]"
               >
                 <Icon className="w-6 h-6 mb-4 text-[var(--accent)]" />

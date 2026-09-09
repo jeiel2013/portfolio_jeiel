@@ -53,10 +53,11 @@ function ProjectsSection({ variant = "full" }) {
   return (
     <section
       id="projects"
+      data-reveal
       className="py-24 border-t border-[var(--border-subtle)] overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex items-center justify-between mb-12">
+        <div className="flex items-center justify-between mb-12" data-reveal-item>
           <h2 className="text-3xl font-semibold tracking-tight flex items-center gap-3">
             <span className="text-[var(--accent)] text-xl">03.</span> {t.projectsSection.title}
           </h2>
@@ -86,8 +87,8 @@ function ProjectsSection({ variant = "full" }) {
           onTouchStart={onTouchStart}
           onTouchMove={onTouchMove}
         >
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} dragging={dragging} />
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} dragging={dragging} />
           ))}
         </div>
       </div>
@@ -127,7 +128,7 @@ function ProjectCard({ project, dragging }) {
   const { language } = useLanguage();
 
   return (
-    <article className="snap-center shrink-0 w-[300px] md:w-[340px] bg-[var(--bg-card)] rounded-xl border border-[var(--border-subtle)] overflow-hidden flex flex-col group hover:border-[var(--accent-50)] transition-all duration-300">
+    <article data-reveal-item className="snap-center shrink-0 w-[300px] md:w-[340px] bg-[var(--bg-card)] rounded-xl border border-[var(--border-subtle)] overflow-hidden flex flex-col group hover:border-[var(--accent-50)] transition-all duration-300">
       <div className="h-40 bg-gradient-to-br from-gray-800 to-black relative overflow-hidden group-hover:opacity-90 transition-opacity">
         {project.image ? (
           <>

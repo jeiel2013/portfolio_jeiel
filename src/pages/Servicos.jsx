@@ -18,7 +18,7 @@ function Servicos() {
       <div className="relative z-10">
         <Header />
         <main className="pt-24">
-          <section className="px-6 pb-9 lg:pb-20 pt-6 text-center max-w-3xl mx-auto">
+          <section data-reveal className="px-6 pb-9 lg:pb-20 pt-6 text-center max-w-3xl mx-auto">
             <span className="text-[var(--accent)] font-bold text-lg tracking-widest mb-4 block">
               {t.servicosPage.eyebrow}
             </span>
@@ -30,9 +30,9 @@ function Servicos() {
           <Services />
           <Process />
 
-          <section className="py-24 px-6 border-t border-[var(--border-subtle)] relative overflow-hidden">
+          <section data-reveal className="py-24 px-6 border-t border-[var(--border-subtle)] relative overflow-hidden">
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-[var(--accent-10)] rounded-full blur-[100px] pointer-events-none"></div>
-            <div className="max-w-2xl mx-auto text-center relative">
+            <div className="max-w-2xl mx-auto text-center relative" data-reveal-item>
               <span className="text-[var(--accent)] font-mono text-sm tracking-widest mb-4 block">
                 {t.servicosPage.ctaEyebrow}
               </span>

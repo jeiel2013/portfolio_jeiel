@@ -21,17 +21,18 @@ export default function Education() {
   return (
     <section
       id="education"
+      data-reveal
       className="py-24 px-6 border-t border-[var(--border-subtle)]"
     >
       <div className="max-w-5xl mx-auto">
 
-        <h2 className="text-3xl font-semibold tracking-tight mb-12 flex items-center gap-3">
+        <h2 className="text-3xl font-semibold tracking-tight mb-12 flex items-center gap-3" data-reveal-item>
           <span className="text-[var(--accent)] text-xl">04.</span> {t.education.title}
         </h2>
 
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
 
-          <div className="md:w-1/3">
+          <div className="md:w-1/3" data-reveal-item>
             <div className="sticky top-24">
 
               <div className="w-10 h-10 rounded-lg bg-[var(--accent-10)] flex items-center justify-center text-[var(--accent)] mb-4 border border-[var(--accent-20)]">
@@ -60,7 +61,8 @@ export default function Education() {
               const { icon: Icon, institution, period } = meta[index];
               return (
                 <div
-                  key={index}
+                  key={`${institution}-${item.title}`}
+                  data-reveal-item
                   className="group flex flex-col sm:flex-row gap-4 p-5 rounded-xl border border-[var(--border-subtle)] bg-[var(--glass-bg)] backdrop-blur-[10px] hover:bg-[var(--surface-muted)] hover:border-[var(--accent-30)] transition-all duration-300"
                 >
                   <div className="shrink-0">
