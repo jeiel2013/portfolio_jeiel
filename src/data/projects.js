@@ -15,6 +15,7 @@ export const projects = [
   {
     title: "NestForge",
     category: "pessoal",
+    slug: "nestforge",
     description: {
       pt: "CLI interativa que gera projetos NestJS prontos para produção com banco de dados, autenticação, testes, Docker e observabilidade.",
       en: "Interactive CLI that generates production-ready NestJS projects with databases, authentication, testing, Docker and observability.",
@@ -24,6 +25,20 @@ export const projects = [
     demoUrl: "https://nestforge-gen.vercel.app/",
     icon: "terminal",
     image: nestForgeImg,
+    caseStudy: {
+      challenge: {
+        pt: "Iniciar uma API NestJS pronta para produção exige configurar repetidamente banco de dados, autenticação, segurança, testes, Docker e observabilidade antes de desenvolver as regras do negócio.",
+        en: "Starting a production-ready NestJS API requires repeatedly configuring databases, authentication, security, testing, Docker and observability before building business rules.",
+      },
+      solution: {
+        pt: "Criei uma CLI interativa que gera a base do projeto conforme as escolhas do desenvolvedor, com suporte a Prisma, TypeORM ou Drizzle, diferentes bancos, estratégias de autenticação e recursos opcionais.",
+        en: "I built an interactive CLI that generates the project foundation from the developer's choices, supporting Prisma, TypeORM or Drizzle, multiple databases, authentication strategies and optional features.",
+      },
+      result: {
+        pt: "O NestForge entrega uma estrutura consistente e testada, reduz o trabalho inicial e permite começar uma API com documentação, segurança, CI, testes e infraestrutura já preparados.",
+        en: "NestForge delivers a consistent, tested structure, reduces setup work and lets developers start an API with documentation, security, CI, testing and infrastructure already prepared.",
+      },
+    },
   },
   {
     title: "Studio Kather",

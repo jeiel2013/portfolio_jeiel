@@ -112,6 +112,7 @@ export const translations = {
       ctaEyebrow: "03. VAMOS COMEÇAR?",
       ctaTitle: "Me conta sobre seu projeto.",
       ctaText: "Resposta rápida e orçamento sem compromisso pelo WhatsApp.",
+      businessCta: "Ver soluções para empresas",
     },
     leadPage: {
       hero: {
@@ -408,6 +409,7 @@ export const translations = {
       ctaEyebrow: "03. READY TO START?",
       ctaTitle: "Tell me about your project.",
       ctaText: "Quick response and no-obligation quote via WhatsApp.",
+      businessCta: "View business solutions",
     },
     leadPage: {
       hero: {

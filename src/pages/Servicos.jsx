@@ -1,4 +1,5 @@
-import { MessageCircle } from "lucide-react";
+import { ArrowRight, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 import Background from "../components/Background";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -41,15 +42,24 @@ function Servicos() {
               <p className="text-[var(--text-secondary)] mb-10 max-w-md mx-auto">
                 {t.servicosPage.ctaText}
               </p>
-              <a
-                href={getWhatsAppLink()}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--accent)] text-[var(--accent-on)] font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg shadow-[var(--accent-20)]"
-              >
-                <MessageCircle className="w-5 h-5" />
-                {t.contact.whatsappCta}
-              </a>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                <a
+                  href={getWhatsAppLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-[var(--accent)] text-[var(--accent-on)] font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg shadow-[var(--accent-20)]"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                  {t.contact.whatsappCta}
+                </a>
+                <Link
+                  to="/empresas"
+                  className="group inline-flex items-center gap-2 px-8 py-4 bg-[var(--surface-muted)] border border-[var(--border-subtle)] text-[var(--text-primary)] font-medium rounded-full hover:bg-[var(--surface-muted-hover)] transition-colors"
+                >
+                  {t.servicosPage.businessCta}
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
             </div>
           </section>
         </main>
