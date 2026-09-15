@@ -3,6 +3,7 @@ import { MessageCircle, ArrowLeft } from "lucide-react";
 import Background from "../components/Background";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ProjectGallery from "../components/ProjectGallery";
 import { projects } from "../data/projects";
 import { getWhatsAppLink } from "../config/whatsapp";
 import { useLanguage } from "../context/LanguageContext";
@@ -77,7 +78,9 @@ function CaseStudy() {
             </div>
           </section>
 
-          {project.image && (
+          {project.gallery?.length ? (
+            <ProjectGallery project={project} language={language} labels={t.caseStudy} />
+          ) : project.image && (
             <section data-reveal className="px-6 max-w-4xl mx-auto mb-16">
               <div className="rounded-xl overflow-hidden border border-[var(--border-subtle)]">
                 <img
