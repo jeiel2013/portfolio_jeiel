@@ -5,6 +5,15 @@ import todoImg from "../assets/images/todo.jpg";
 import karineImg from "../assets/images/karine.png";
 import katherImg from "../assets/images/studiokather.png";
 import nestForgeImg from "../assets/images/nestforge.png";
+import katherScreen1 from "../assets/images/cases/studio-kather-01.jpg";
+import katherScreen2 from "../assets/images/cases/studio-kather-02.jpg";
+import katherScreen3 from "../assets/images/cases/studio-kather-03.jpg";
+import karineScreen1 from "../assets/images/cases/karine-azevedo-01.jpg";
+import karineScreen2 from "../assets/images/cases/karine-azevedo-02.jpg";
+import karineScreen3 from "../assets/images/cases/karine-azevedo-03.jpg";
+import batistaScreen1 from "../assets/images/cases/batista-assessoria-01.jpg";
+import batistaScreen2 from "../assets/images/cases/batista-assessoria-02.jpg";
+import batistaScreen3 from "../assets/images/cases/batista-assessoria-03.jpg";
 
 // Projetos exibidos em destaque na Home
 export const FEATURED_TITLES = ["NestForge", "Studio Kather", "Karine Azevedo", "Batista Assessoria"];
@@ -53,6 +62,20 @@ export const projects = [
     demoUrl: "https://studiokather.com",
     icon: "layout-template",
     image: katherImg,
+    gallery: [
+      {
+        image: katherScreen1,
+        alt: { pt: "Página inicial do Studio Kather", en: "Studio Kather home page" },
+      },
+      {
+        image: katherScreen2,
+        alt: { pt: "Portfólio e depoimentos do Studio Kather", en: "Studio Kather portfolio and testimonials" },
+      },
+      {
+        image: katherScreen3,
+        alt: { pt: "Contato e perguntas frequentes do Studio Kather", en: "Studio Kather contact and frequently asked questions" },
+      },
+    ],
     caseStudy: {
       challenge: {
         pt: "O Studio Kather precisava de um site institucional profissional para apresentar seus serviços e fortalecer a presença digital da marca.",
@@ -87,6 +110,20 @@ export const projects = [
     demoUrl: "https://karineazevedo.vercel.app/",
     icon: "layout-template",
     image: karineImg,
+    gallery: [
+      {
+        image: karineScreen1,
+        alt: { pt: "Página inicial de Karine Azevedo Fotografia", en: "Karine Azevedo Photography home page" },
+      },
+      {
+        image: karineScreen2,
+        alt: { pt: "Galeria de fotos de Karine Azevedo", en: "Karine Azevedo photo gallery" },
+      },
+      {
+        image: karineScreen3,
+        alt: { pt: "Depoimentos e contato de Karine Azevedo", en: "Karine Azevedo testimonials and contact" },
+      },
+    ],
     caseStudy: {
       challenge: {
         pt: "A fotógrafa Karine Azevedo precisava de uma landing page para apresentar seu portfólio e facilitar o contato com clientes.",
@@ -115,6 +152,20 @@ export const projects = [
     demoUrl: "https://batistaecontabil.vercel.app/",
     icon: "building-2",
     image: batistaImg,
+    gallery: [
+      {
+        image: batistaScreen1,
+        alt: { pt: "Página inicial da Batista Assessoria", en: "Batista Assessoria home page" },
+      },
+      {
+        image: batistaScreen2,
+        alt: { pt: "Apresentação e serviços da Batista Assessoria", en: "Batista Assessoria overview and services" },
+      },
+      {
+        image: batistaScreen3,
+        alt: { pt: "Contato da Batista Assessoria", en: "Batista Assessoria contact section" },
+      },
+    ],
     caseStudy: {
       challenge: {
         pt: "A Batista Assessoria Contábil precisava de uma plataforma institucional moderna, rápida e otimizada para conversão de visitantes.",
