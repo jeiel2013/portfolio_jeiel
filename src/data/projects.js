@@ -8,6 +8,7 @@ import nestForgeImg from "../assets/images/nestforge.png";
 import katherScreen1 from "../assets/images/cases/studio-kather-01.jpg";
 import katherScreen2 from "../assets/images/cases/studio-kather-02.jpg";
 import katherScreen3 from "../assets/images/cases/studio-kather-03.jpg";
+import katherScreen4 from "../assets/images/cases/studio-kather-04.jpg";
 import karineScreen1 from "../assets/images/cases/karine-azevedo-01.jpg";
 import karineScreen2 from "../assets/images/cases/karine-azevedo-02.jpg";
 import karineScreen3 from "../assets/images/cases/karine-azevedo-03.jpg";
@@ -69,11 +70,15 @@ export const projects = [
       },
       {
         image: katherScreen2,
-        alt: { pt: "Portfólio e depoimentos do Studio Kather", en: "Studio Kather portfolio and testimonials" },
+        alt: { pt: "Página de portfólio do Studio Kather", en: "Studio Kather portfolio page" },
       },
       {
         image: katherScreen3,
-        alt: { pt: "Contato e perguntas frequentes do Studio Kather", en: "Studio Kather contact and frequently asked questions" },
+        alt: { pt: "Página sobre o Studio Kather", en: "Studio Kather about page" },
+      },
+      {
+        image: katherScreen4,
+        alt: { pt: "Página de contato do Studio Kather", en: "Studio Kather contact page" },
       },
     ],
     caseStudy: {

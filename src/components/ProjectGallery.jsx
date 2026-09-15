@@ -13,6 +13,7 @@ function ProjectGallery({ project, language, labels }) {
   const scrollTriggerRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const markerInset = `${50 / project.gallery.length}%`;
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -122,13 +123,19 @@ function ProjectGallery({ project, language, labels }) {
         </div>
 
         <div className="relative mx-auto mt-7 max-w-xl px-3">
-          <div className="absolute left-[16.66%] right-[16.66%] top-4 h-px bg-[var(--border-subtle)]" />
+          <div
+            className="absolute top-4 h-px bg-[var(--border-subtle)]"
+            style={{ left: markerInset, right: markerInset }}
+          />
           <div
             ref={progressRef}
-            className="absolute left-[16.66%] right-[16.66%] top-4 h-px origin-left bg-[var(--accent)]"
-            style={{ transform: "scaleX(0)" }}
+            className="absolute top-4 h-px origin-left bg-[var(--accent)]"
+            style={{ left: markerInset, right: markerInset, transform: "scaleX(0)" }}
           />
-          <div className="relative grid grid-cols-3">
+          <div
+            className="relative grid"
+            style={{ gridTemplateColumns: `repeat(${project.gallery.length}, minmax(0, 1fr))` }}
+          >
             {project.gallery.map((item, index) => (
               <button
                 key={item.image}

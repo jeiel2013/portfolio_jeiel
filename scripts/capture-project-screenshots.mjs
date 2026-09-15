@@ -10,10 +10,26 @@ const OUTPUT_DIR = join(process.cwd(), "src", "assets", "images", "cases");
 const PROFILE_DIR = join(tmpdir(), `portfolio-project-capture-${process.pid}`);
 
 const projects = [
-  { slug: "studio-kather", url: "https://studiokather.com/" },
+  {
+    slug: "studio-kather",
+    captures: [
+      { url: "https://studiokather.com/", filename: "studio-kather-01.jpg" },
+      { url: "https://studiokather.com/portfolio", filename: "studio-kather-02.jpg" },
+      { url: "https://studiokather.com/about", filename: "studio-kather-03.jpg" },
+      { url: "https://studiokather.com/contact", filename: "studio-kather-04.jpg" },
+    ],
+  },
   { slug: "karine-azevedo", url: "https://karineazevedo.vercel.app/" },
   { slug: "batista-assessoria", url: "https://batistaecontabil.vercel.app/" },
 ];
+const requestedSlug = process.argv[2];
+const selectedProjects = requestedSlug
+  ? projects.filter((project) => project.slug === requestedSlug)
+  : projects;
+
+if (selectedProjects.length === 0) {
+  throw new Error(`Projeto não encontrado: ${requestedSlug}`);
+}
 
 function connectCDP(url) {
   return new Promise((resolve, reject) => {
@@ -63,11 +79,16 @@ async function waitForBrowser() {
 }
 
 async function captureProject(project) {
+  const captures = project.captures ?? [0, 0.48, 1].map((scrollRatio, index) => ({
+    url: project.url,
+    scrollRatio,
+    filename: `${project.slug}-${String(index + 1).padStart(2, "0")}.jpg`,
+  }));
   const response = await fetch(
-    `http://127.0.0.1:${DEBUG_PORT}/json/new?${encodeURIComponent(project.url)}`,
+    `http://127.0.0.1:${DEBUG_PORT}/json/new?${encodeURIComponent(captures[0].url)}`,
     { method: "PUT" },
   );
-  if (!response.ok) throw new Error(`Falha ao abrir ${project.url}`);
+  if (!response.ok) throw new Error(`Falha ao abrir ${captures[0].url}`);
 
   const page = await response.json();
   const cdp = await connectCDP(page.webSocketDebuggerUrl);
@@ -79,24 +100,22 @@ async function captureProject(project) {
     deviceScaleFactor: 1,
     mobile: false,
   });
-  await cdp.send("Page.navigate", { url: project.url });
-
-  await new Promise((resolve) => setTimeout(resolve, 3500));
-  await cdp.send("Runtime.evaluate", {
-    expression: "document.fonts?.ready",
-    awaitPromise: true,
-  });
-
-  const { result } = await cdp.send("Runtime.evaluate", {
-    expression: "Math.max(document.body.scrollHeight, document.documentElement.scrollHeight)",
-    returnByValue: true,
-  });
-  const maxScroll = Math.max(0, result.value - VIEWPORT.height);
-  const positions = [0, Math.round(maxScroll * 0.48), maxScroll];
-
-  for (let index = 0; index < positions.length; index += 1) {
+  for (const capture of captures) {
+    await cdp.send("Page.navigate", { url: capture.url });
+    await new Promise((resolve) => setTimeout(resolve, 3500));
     await cdp.send("Runtime.evaluate", {
-      expression: `window.scrollTo({ top: ${positions[index]}, behavior: "instant" })`,
+      expression: "Promise.all([document.fonts?.ready, ...Array.from(document.images, (image) => image.complete ? true : new Promise((resolve) => { image.addEventListener('load', resolve, { once: true }); image.addEventListener('error', resolve, { once: true }); }))])",
+      awaitPromise: true,
+    });
+
+    const { result } = await cdp.send("Runtime.evaluate", {
+      expression: "Math.max(document.body.scrollHeight, document.documentElement.scrollHeight)",
+      returnByValue: true,
+    });
+    const maxScroll = Math.max(0, result.value - VIEWPORT.height);
+    const position = Math.round(maxScroll * (capture.scrollRatio ?? 0));
+    await cdp.send("Runtime.evaluate", {
+      expression: `window.scrollTo({ top: ${position}, behavior: "instant" })`,
     });
     await new Promise((resolve) => setTimeout(resolve, 900));
 
@@ -105,9 +124,8 @@ async function captureProject(project) {
       quality: 86,
       fromSurface: true,
     });
-    const filename = `${project.slug}-${String(index + 1).padStart(2, "0")}.jpg`;
-    await writeFile(join(OUTPUT_DIR, filename), Buffer.from(screenshot.data, "base64"));
-    console.log(`Capturado: ${filename}`);
+    await writeFile(join(OUTPUT_DIR, capture.filename), Buffer.from(screenshot.data, "base64"));
+    console.log(`Capturado: ${capture.filename} (${capture.url})`);
   }
 
   cdp.close();
@@ -131,7 +149,7 @@ const edge = spawn(
 
 try {
   const browser = await waitForBrowser();
-  for (const project of projects) {
+  for (const project of selectedProjects) {
     await captureProject(project);
   }
 
